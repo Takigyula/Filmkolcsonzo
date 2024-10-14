@@ -1,0 +1,28 @@
+nav {
+    background-color: blue;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+}
+
+nav li a {
+    color: whitesmoke;
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+}
+
+img {
+    width: 350px;
+}
+
+#ket-gomb button {
+    margin: 1em 1em 1em 0em;
+}
+
+#ar-kat,
+#ido-pontok {
+    list-style-type: none;
+}
