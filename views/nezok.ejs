@@ -21,12 +21,19 @@
             rel="stylesheet"
             href="/css/stilus.css"
         />
-        <title>Nézők</title>
+        <style>
+            body{
+                background-image: url('/images/brendon.jpg');
+                /*background-repeat: no-repeat;     
+                background-size: cover;*/
+            }
+        </style>
+        <title>Sorozatok</title>
     </head>
     <body>
         <%- include('./nav.ejs') %>
         <div class="container">
-            <h1>Nézők</h1>
+            <h1>Sorozatok</h1>
             <div class="row">
                 <% for( let j = 0; j < nezok.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">

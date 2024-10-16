@@ -31,6 +31,25 @@
         <title>Filmek</title>
     </head>
     <body>
+        <style>
+            h3{
+                color: white;
+                
+            }
+            label{
+                color: white;
+            }
+            p{
+                color: white;
+            }
+            h1{
+                color: white;
+            }
+            img{
+                width: 200px;
+                height: 350px;
+            }
+        </style>
         <%- include('./nav.ejs') %>
         <div class="container">
             <h1>Filmek</h1>
@@ -38,14 +57,14 @@
                 <% for( let j = 0; j < filmek.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">
                     <h3>
-                        <%= filmek[j].cim %>
+                        <%= filmek[j].cim %> <br>
                         <a href="egyedifilm/<%= filmek[j].id %>">Adatok</a>
                     </h3>
                     <img
                         src="<%= filmek[j].plakat %>"
                         alt="thor"
                     />
-                    <p>A film hossza: <%= filmek[j].hossz %> perc</p>
+                    <p>film hossza: <%= filmek[j].hossz %> perc</p>
                     <label for="idopontok">Időpontok:</label>
                     <select
                         name="idopontok"
