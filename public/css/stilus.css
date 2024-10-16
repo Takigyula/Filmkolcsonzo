@@ -28,3 +28,10 @@ img {
 #ido-pontok {
     list-style-type: none;
 }
+
+#gomb{
+    font-size: 15px;
+    float: right;
+    margin-top: 15px;
+
+}
