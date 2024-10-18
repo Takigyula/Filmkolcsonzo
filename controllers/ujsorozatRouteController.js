@@ -1,5 +1,5 @@
 const path = require('node:path');
-const Film = require('../models/sorozat');
+const sorozat = require('../models/sorozat');
 
 exports.getUjSorozat = (req, res) => {
     try {
@@ -16,14 +16,14 @@ exports.postUjSorozat = async (req, res) => {
     const arkategoriaTomb = arkategoria.split('\n');
 
     try {
-        const newFilm = new Film({
+        const newSorozat = new Sorozat({
             cim,
             hossz,
             plakat,
             idopontok: idopontTomb,
             arkategoria: arkategoriaTomb,
         });
-        await newFilm.save();
+        await newSorozat.save();
 
         res.status(200).json({ msg: 'Sikeres sorozat felvétel!' });
     } catch (error) {
