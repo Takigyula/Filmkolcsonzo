@@ -33,3 +33,4 @@ app.use(
 );
 app.use('/api/cinema/Sorozatok', require('./routes/nezokRoutes'));
 app.use('/api/cinema/foglalasok', require('./routes/foglalasokRoutes'));
+app.use('/api/cinema/ujsorozat', require('./routes/ujsorozatRoutes'));
