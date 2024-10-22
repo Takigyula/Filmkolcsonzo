@@ -21,12 +21,17 @@
             rel="stylesheet"
             href="/css/stilus.css"
         />
+        <link
+        rel="stylesheet"
+        href="/css/hozzadas.css"
+    />
         <title>Új Sorozatok</title>
     </head>
     <body>
         <%- include('./nav.ejs') %>
-        <div class="container">
+        <div id="tartalom" class="container">
             <h1>Új sorozat felvétele</h1>
+            <hr>
             <form>
                 <p>
                     <label for="cim">Cím: </label>
@@ -69,6 +74,7 @@
                     <button id="feldolgoz">Feldolgoz</button>
                 </p>
             </form>
+            <hr>
         </div>
         <script src="/js/ujfeladatok.js"></script>
     </body>
