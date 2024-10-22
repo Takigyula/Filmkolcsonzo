@@ -21,12 +21,17 @@
             rel="stylesheet"
             href="/css/stilus.css"
         />
-        <title>Új film</title>
+        <link
+        rel="stylesheet"
+        href="/css/hozzadas.css"
+    />
+        <title>Új Film</title>
     </head>
     <body>
         <%- include('./nav.ejs') %>
-        <div class="container">
-            <h1>Új film felvétele</h1>
+        <div id="tartalom" class="container">
+            <h1>Új Film felvétele</h1>
+            <hr>
             <form>
                 <p>
                     <label for="cim">Cím: </label>
@@ -69,7 +74,8 @@
                     <button id="feldolgoz">Feldolgoz</button>
                 </p>
             </form>
+            <hr>
         </div>
-        <script src="/js/feladatok.js"></script>
+        <script src="/js/ujfeladatok.js"></script>
     </body>
 </html>

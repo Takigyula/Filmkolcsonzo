@@ -1,12 +1,19 @@
 
 
 nav {
-    background-color: black;
+    background-color: grey;
     list-style-type: none;
 }
 
 nav li {
     display: inline;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
 }
 
 nav li a {
