@@ -1,0 +1,44 @@
+
+
+nav {
+    background-color: grey;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+}
+
+nav li a {
+    color: whitesmoke;
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+}
+
+img {
+    width: 350px;
+}
+
+#ket-gomb button {
+    margin: 1em 1em 1em 0em;
+}
+
+#ar-kat,
+#ido-pontok {
+    list-style-type: none;
+}
+
+#gomb{
+    font-size: 15px;
+    float: right;
+    margin-top: 15px;
+
+}
