@@ -1,0 +1,21 @@
+body {
+    background-image: url('../../assets/images/hatter.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: rgb(34, 255, 34);
+    text-align: center;
+    padding-top: 150px;
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: -15px 5px 20px black;
+    letter-spacing: -0.05em;
+    font-family: 'Anton', Arial, sans-serif;
+    user-select: none;
+    text-transform: uppercase;
+    font-size: 250px;
+    transition: all 0.25s ease-out;
+    font-weight: 500;
+}

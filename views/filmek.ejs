@@ -21,31 +21,35 @@
             rel="stylesheet"
             href="/css/stilus.css"
         />
+        <link
+            rel="shortcut icon"
+            href="/images/logo.png"
+            type="image/x-icon"
+        />
         <style>
-            body{
-    background-image: url('/images/netflixszin.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+            body {
+                background-image: url('/images/netflixszin.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
         </style>
         <title>Filmek</title>
     </head>
     <body>
         <style>
-            h3{
-                color: white;
-                
-            }
-            label{
+            h3 {
                 color: white;
             }
-            p{
+            label {
                 color: white;
             }
-            h1{
+            p {
                 color: white;
             }
-            .img{
+            h1 {
+                color: white;
+            }
+            .img {
                 width: 200px;
                 height: 350px;
             }
@@ -57,7 +61,7 @@
                 <% for( let j = 0; j < filmek.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">
                     <h3>
-                        <%= filmek[j].cim %> <br>
+                        <%= filmek[j].cim %> <br />
                         <a href="egyedifilm/<%= filmek[j].id %>">Adatok</a>
                     </h3>
                     <img
@@ -88,7 +92,6 @@
                             id="also"
                         />
                         <br />
-                        
                     </div>
                 </div>
                 <% } %>
@@ -96,4 +99,3 @@
         </div>
     </body>
 </html>
-

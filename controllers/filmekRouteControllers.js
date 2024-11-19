@@ -10,3 +10,12 @@ exports.getFilmek = async (req, res) => {
         res.status(500).json({ msg: error });
     }
 };
+
+exports.getFilms = async (req, res) => {
+    const filmek = await Film.find({});
+    try {
+        res.status(200).json({ filmek });
+    } catch (error) {
+        res.status(500).json({ msg: error });
+    }
+};
