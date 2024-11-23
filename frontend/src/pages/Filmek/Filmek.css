@@ -1,19 +1,12 @@
-body {
-    background-image: url('../../assets/images/netflixszin.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.container {
+.filmek-container {
+    background-color: aquamarine;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 80%;
-    margin: auto;
-}
-
-h1 {
+    margin: 100px auto;
+    height: min(100vh);
 }
 
 img {
-    width: 100px;
+    width: 200px;
 }

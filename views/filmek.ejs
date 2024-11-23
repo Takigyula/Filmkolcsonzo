@@ -28,46 +28,42 @@
         />
         <style>
             body {
-                background-image: url('/images/netflixszin.jpg');
-                background-repeat: no-repeat;
-                background-size: cover;
             }
-        </style>
-        <title>Filmek</title>
-    </head>
-    <body>
-        <style>
+
             h3 {
-                color: white;
+                color: black;
             }
             label {
-                color: white;
+                color: black;
             }
             p {
-                color: white;
+                color: black;
             }
             h1 {
-                color: white;
+                color: black;
             }
             .img {
                 width: 200px;
                 height: 350px;
             }
         </style>
+        <title>Filmek</title>
+    </head>
+    <body>
         <%- include('./nav.ejs') %>
         <div class="container">
             <h1>Filmek</h1>
             <div class="row">
                 <% for( let j = 0; j < filmek.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">
-                    <h3>
-                        <%= filmek[j].cim %> <br />
-                        <a href="egyedifilm/<%= filmek[j].id %>">Adatok</a>
-                    </h3>
                     <img
                         src="<%= filmek[j].plakat %>"
                         alt="thor"
                     />
+                    <h3>
+                        <%= filmek[j].cim %> <br />
+                        <a href="egyedifilm/<%= filmek[j].id %>">Adatok</a>
+                    </h3>
                     <p>film hossza: <%= filmek[j].hossz %> perc</p>
                     <label for="idopontok">Időpontok:</label>
                     <select

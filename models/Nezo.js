@@ -3,13 +3,18 @@ const Foglalas = require('../models/Foglalas');
 
 const NezoSchema = new mongoose.Schema(
     {
-        nev: {
-            type: String,
-            required: true,
-        },
         email: {
             type: String,
             required: true,
+        },
+        password: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+        admine: {
+            type: Boolean,
+            default: false,
         },
         avatar: {
             type: String,

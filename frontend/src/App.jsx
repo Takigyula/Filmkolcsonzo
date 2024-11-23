@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
 import Home from './pages/Home/Home';
 import FelsoNav from './components/Navbar/Navbar';
 import Filmek from './pages/Filmek/Filmek';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import './App.css';
 
 function App() {
     return (
@@ -16,6 +18,14 @@ function App() {
                 <Route
                     path="/filmek"
                     element={<Filmek />}
+                />
+                <Route
+                    path="/login"
+                    element={<Login />}
+                />
+                <Route
+                    path="/register"
+                    element={<Register />}
                 />
             </Routes>
         </BrowserRouter>

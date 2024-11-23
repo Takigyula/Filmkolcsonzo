@@ -22,7 +22,7 @@ const Filmek = () => {
     }, []);
 
     return (
-        <div className="container">
+        <div className="filmek-container">
             {filmek.map((film) => (
                 <div
                     className="film-tarto"

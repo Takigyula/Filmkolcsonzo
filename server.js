@@ -25,6 +25,8 @@ mongoDbConnection()
         console.log(`Valami hiba történt: ${error}`);
     });
 
+app.use('/api/register', require('./routes/registerRoutes'));
+app.use('/api/login', require('./routes/loginRoutes'));
 app.use('/api/cinema', require('./routes/mainRoutes'));
 app.use('/api/cinema/filmek', require('./routes/filmekRoutes'));
 app.use('/api/cinema/ujfilm', require('./routes/ujFilmRoutes'));
