@@ -4,7 +4,7 @@ import './Home.css';
 const Home = () => {
     return (
         <div className="home-container">
-            <h1 id="csetflix">CSETFLIX</h1>
+            <h1 id="csetflix">NextStream</h1>
         </div>
     );
 };

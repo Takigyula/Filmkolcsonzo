@@ -36,15 +36,15 @@ const FelsoNav = () => {
                 id="kereses"
                 placeholder="Keresés..."
             />
-            <Link>Sorozatok</Link>
-            <Link to="/filmek">Filmek</Link>
+            <Link className='nav_item'>Sorozatok</Link>
+            <Link className='nav_item' to="/filmek">Filmek</Link>
 
             {isLoggedIn ? (
                 <button onClick={kilep}>Kijelentkezés</button>
             ) : (
                 <>
-                    <Link to="/login">Bejelentkezés</Link>
-                    <Link to="/register">Regisztráció</Link>
+                    <Link className='nav_item' to="/login">Bejelentkezés</Link>
+                    <Link className='nav_item' to="/register">Regisztráció</Link>
                 </>
             )}
             {isAdmin ? (
