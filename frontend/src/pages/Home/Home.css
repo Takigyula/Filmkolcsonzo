@@ -13,7 +13,7 @@
 h1 {
     color: #66FCF1;
     text-align: center;
-    padding-top: 150px;
+    padding-top: 100px;
     position: relative;
     text-transform: uppercase;
     text-shadow: -15px 5px 20px black;
@@ -23,7 +23,7 @@ h1 {
         'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     user-select: none;
     text-transform: uppercase;
-    font-size: 250px;
+    font-size: 50px;
     transition: all 0.25s ease-out;
     font-weight: 500;
 }

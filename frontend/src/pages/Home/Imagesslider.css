@@ -1,0 +1,47 @@
+/* Imagesslider.css */
+*{
+    text-align: center;
+}
+.mySlides {
+    display: none; /* Minden diát alapértelmezés szerint elrejtünk */
+    width: 500px;
+    margin: auto;
+    text-align: center; /* Középre igazítjuk a szöveget */
+    font-size: 100px; /* Növeljük a betűméretet */
+    padding: 20px; /* Néhány belső margó */
+    border-radius: 40px; /* Lekerekített sarkok */   
+}
+
+button {
+    cursor: pointer; /* Mutatóujj kurzor a gombokon */
+    padding: 10px 15px; /* Belső margó a gombok körül */
+    margin: auto; /* Külső margó a gombok között */
+    border: none; /* Nincs határ */
+    border-radius: 5px; /* Lekerekített sarkok */
+    background-color: #007BFF; /* Gomb háttérszín */
+    color: white; /* Szöveg színe */
+    font-size: 16px; /* Betűméret */
+}
+
+button:hover {
+    background-color: #0056b3; /* Sötétebb kék a gomb fölé viszve */
+}
+
+.dot {
+    height: 15px; /* A pont magassága */
+    width: 15px; /* A pont szélessége */
+    margin: 0 2px; /* Margó a pontok között */
+    background-color: #bbb; /* Alapértelmezett szín */
+    border-radius: 50%; /* Kerek pontok */
+    display: inline-block; /* Sorban elhelyezés */
+    cursor: pointer; /* Mutatóujj kurzor a pontok fölött */
+}
+
+.active {
+    background-color: #717171; /* Aktív pont színe */
+}
+.asd{
+    width: 400px ;
+    height: 220px;
+    object-fit: cover;
+}
