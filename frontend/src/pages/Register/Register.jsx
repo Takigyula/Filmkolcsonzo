@@ -27,25 +27,33 @@ const Register = () => {
             window.alert(valasz.msg);
         }
     };
-
     return (
-        <div className="register-container">
-            <form>
-                <label htmlFor="email">E-mail:</label>
-                <input
-                    type="text"
-                    id="email"
-                />
-                <br />
-                <label htmlFor="password">Jelszó:</label>
-                <input
-                    type="text"
-                    id="password"
-                />
-                <br />
-                <button onClick={feltolt}>Feltölt</button>
-            </form>
-        </div>
+        <div className='container'>
+        <div className='header'>
+        <div className='text'>Regisztráció</div>
+        <div className='underline'></div>
+                
+                    </div>
+                    <div className="inputs">
+                        <div className="input">
+                            
+                            <input type="text" placeholder='Name' />
+                        </div>
+                        <div className="input">
+                            
+                            <input type="E-mail" placeholder='Email ' />
+                        </div>
+                        <div className="input">
+                            
+                            <input type="Password" placeholder='password' />
+                        </div>
+                    </div>
+                    <div className="forgot-password">Helytelen jelszó? <span>Jelszó változtatás</span></div>
+                    <div className="submit=container">
+                        <div className="submit">Regisztráció</div>
+
+                    </div>
+                </div>
     );
 };
 
