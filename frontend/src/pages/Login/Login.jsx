@@ -35,27 +35,29 @@ const Login = () => {
         }
     };
     return (
+        <div className='container'>
+        <div className='header'>
+        <div className='text'>Bejelentkezés</div>
+        <div className='underline'></div>
         <div className="login-container">
-            <form>
-                <label htmlFor="email">E-mail:</label>
-                <input
-                    type="text"
-                    id="email"
-                />
-                <br />
-                <label htmlFor="password">Jelszó:</label>
-                <input
-                    type="text"
-                    id="password"
-                />
-                <br />
-                <button onClick={belep}>Belép</button>
-            </form>
-            <h2>
-                Ha még nem regisztrált! <a href="/register">Regisztráció</a>
-            </h2>
+                
+    </div>
+                <div className="inputs">
+                        <div className="input">
+                            <input type="E-mail" placeholder='Email ' />
+                        </div>
+                        <div className="input">
+                            
+                            <input type="Password" placeholder='Jelszó' />
+                        </div>
+                    </div>
+                    <div className="forgot-password">Nincs még fiókod?<a href="/register">Regisztrálj</a></div>
+                <div className="submit=container">
+                <button onClick={belep} class="button-37" role="button">Bejelentkezés</button>
+                </div>
+            </div>
         </div>
-    );
+        );
 };
 
 export default Login;
