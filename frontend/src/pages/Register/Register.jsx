@@ -36,22 +36,17 @@ const Register = () => {
                     </div>
                     <div className="inputs">
                         <div className="input">
-                            
-                            <input type="text" placeholder='Name' />
-                        </div>
-                        <div className="input">
-                            
                             <input type="E-mail" placeholder='Email ' />
                         </div>
                         <div className="input">
                             
-                            <input type="Password" placeholder='password' />
+                            <input type="Password" placeholder='Jelszó' />
                         </div>
                     </div>
                     <div className="forgot-password">Helytelen jelszó? <span>Jelszó változtatás</span></div>
+                    <input type="checkbox" id='aszfc'></input>
                     <div className="submit=container">
-                        <div className="submit">Regisztráció</div>
-
+                    <button onClick={feltolt} class="button-37" role="button">Regisztráció</button>
                     </div>
                 </div>
     );

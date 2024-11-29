@@ -1,12 +1,154 @@
-.login-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: aqua;
-    /* background-image: url('../../assets/images/netflixszin.jpg'); */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: darkcyan;
+    background-image: url(./hatter2.jpg);
+    height: 500px;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-radius: 50px;
+    border-width: 3px;
+    border-color: #020a17;
+    padding: 10px;
+    margin-top: 200px;
+    width: 600px;
+    background: white;
+    padding: 30px;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
     width: 100%;
+    margin-top: 30px;
+}
+
+.reg-a {
+    color: red;
+}
+
+.text{
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    -webkit-text-stroke: 0.9px black;
+    font-family: "Oswald", serif;
+  }
+
+.underline{
+    width: 61px;
+    height: 6px;
+    background: cyan;
+    border-radius: 9px;
+}
+
+.inputs{
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input{
+    display:flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 80px;
+    background: #eaeaea;
+    border-radius: 6px;
+}
+
+.input input{
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 19px;
+}
+
+.forgot-password{
+    padding-left: 62px;
+    margin-top: 27px;
+    color: lightgrey;
+    font-size: 18px;
+    -webkit-text-stroke: 0.5px black;
+    font-family: "Oswald", serif;
+}
+
+.forgot-password span{
+    color: blue;
+    cursor: pointer;
+}
+
+.submit-container{
+    display: flex;
+    gap: 30px;
+    margin: 60px auto;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: white;
+    background: #4c00b4;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Oswald", serif;   
+}
+
+/* CSS */
+.button-37 {
+  background-color: cornflowerblue;
+  border: 1px solid black;
+ -webkit-text-stroke: 0px black;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-family: "Oswald", serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
 }
