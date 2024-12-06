@@ -1,5 +1,5 @@
 .filmek-container {
-    background-color: aquamarine;
+    /* background-color: #0a0b0f; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 80%;

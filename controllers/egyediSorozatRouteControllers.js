@@ -1,5 +1,5 @@
 const path = require('node:path');
-const Sorozat = require('../models/Film');
+const Sorozat = require('../models/sorozat');
 
 exports.getEgyediSorozat = async (req, res) => {
     const parameterek = req.params;
