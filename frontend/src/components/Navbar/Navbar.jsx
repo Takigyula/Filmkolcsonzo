@@ -22,36 +22,37 @@ const FelsoNav = () => {
         setAdmin(false);
         navigate('/');
     };
-
-    return (
-        <nav>
-            <Link to="/">
-                <img
-                    src={logo}
-                    className="logo-img"
-                />
-            </Link>
-            <input
-                type="text"
-                id="kereses"
-                placeholder="Keresés..."
+return (
+    <nav>
+        <Link to="/">
+            <img
+                src={logo}
+                className="logo-img"
             />
-            <Link className='nav_item'>Sorozatok</Link>
-            <Link className='nav_item' to="/filmek">Filmek</Link>
+        </Link>
+        <input
+            type="text"
+            id="kereses"
+            placeholder="Keresés..."
+        />
+        <Link className='nav_item'>Sorozatok</Link>
+        <Link className='nav_item' to="/filmek">Filmek</Link>
+    
+        {isLoggedIn ? (
+            <button onClick={kilep}>Kijelentkezés</button>
+        ) : (
+            <>
+                <Link className='nav_item' to="/login">Bejelentkezés</Link>
+                <Link className='nav_item' to="/register">Regisztráció</Link>
+            </>
+        )}
+        {isAdmin ? (
+            <Link to="http://localhost:3500/api/cinema">Szerver</Link>
+        ) : null}
+    </nav>
 
-            {isLoggedIn ? (
-                <button onClick={kilep}>Kijelentkezés</button>
-            ) : (
-                <>
-                    <Link className='nav_item' to="/login">Bejelentkezés</Link>
-                    <Link className='nav_item' to="/register">Regisztráció</Link>
-                </>
-            )}
-            {isAdmin ? (
-                <Link to="http://localhost:3500/api/cinema">Szerver</Link>
-            ) : null}
-        </nav>
-    );
-};
-
-export default FelsoNav;
+);
+    };
+    
+    export default FelsoNav;
+    

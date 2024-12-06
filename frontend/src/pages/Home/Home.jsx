@@ -5,7 +5,7 @@ import Imagesslider from './Imagesslider';
 const Home = () => {
     return (
         <div className="home-container">
-           <div className='col-sm-5'><h1 id="csetflix">NextStream</h1></div>
+           {/* <div className='col-sm-5'><h1 id="csetflix">NextStream</h1></div> */}
            <div><Imagesslider /></div>
         </div>
         

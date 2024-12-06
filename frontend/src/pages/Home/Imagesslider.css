@@ -1,47 +1,129 @@
-/* Imagesslider.css */
-*{
-    text-align: center;
-}
-.mySlides {
-    display: none; /* Minden diát alapértelmezés szerint elrejtünk */
+/* Globális stílusok */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+  }
+  
+  /* Navigációs sáv */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .nav-logo {
+    width: 100px;
+    object-fit: contain;
+  }
+  
+  .menu-button {
+    font-size: 30px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Lenyitható menü */
+  .dropdown-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+  }
+  
+  .dropdown-menu ul {
+    list-style-type: none;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #444;
+  }
+  
+  /* Banner */
+  .banner {
+    position: relative;
+    height: 448px;
+    background-image: url('https://image.tmdb.org/t/p/original/x3lgptKkm0KrFlAFIm2uk1VhRfC.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 600px;
+  }
+  
+  .banner-contents {
+    max-width: 500px;
+  }
+  .kep{
     width: 500px;
-    margin: auto;
-    text-align: center; /* Középre igazítjuk a szöveget */
-    font-size: 100px; /* Növeljük a betűméretet */
-    padding: 20px; /* Néhány belső margó */
-    border-radius: 40px; /* Lekerekített sarkok */   
-}
+    position: center;
+    padding-top:20px;
+  }
 
-button {
-    cursor: pointer; /* Mutatóujj kurzor a gombokon */
-    padding: 10px 15px; /* Belső margó a gombok körül */
-    margin: auto; /* Külső margó a gombok között */
-    border: none; /* Nincs határ */
-    border-radius: 5px; /* Lekerekített sarkok */
-    background-color: #007BFF; /* Gomb háttérszín */
-    color: white; /* Szöveg színe */
-    font-size: 16px; /* Betűméret */
-}
-
-button:hover {
-    background-color: #0056b3; /* Sötétebb kék a gomb fölé viszve */
-}
-
-.dot {
-    height: 15px; /* A pont magassága */
-    width: 15px; /* A pont szélessége */
-    margin: 0 2px; /* Margó a pontok között */
-    background-color: #bbb; /* Alapértelmezett szín */
-    border-radius: 50%; /* Kerek pontok */
-    display: inline-block; /* Sorban elhelyezés */
-    cursor: pointer; /* Mutatóujj kurzor a pontok fölött */
-}
-
-.active {
-    background-color: #717171; /* Aktív pont színe */
-}
-.asd{
-    width: 400px ;
-    height: 220px;
+  
+  .banner-title {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .banner-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Filmek */
+  .movie-row {
+    margin-top: 50px;
+    padding-left: 20px;
+  }
+  
+  .movie-row h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .row-posters {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .row-poster {
+    width: 200px;
+    height: 300px;
     object-fit: cover;
-}
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .row-poster:hover {
+    transform: scale(1.08);
+  }
+  
