@@ -6,6 +6,7 @@ const Filmek = () => {
 
     useEffect(() => {
         const filmleker = async () => {
+            console.log('Hello');
             const response = await fetch(
                 'http://localhost:3500/api/cinema/filmek/films'
             );

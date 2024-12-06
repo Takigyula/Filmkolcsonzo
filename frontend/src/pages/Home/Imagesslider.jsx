@@ -27,8 +27,8 @@ const App = () => {
       { title: 'Top Movie 3', imgUrl: 'https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaSWW48t0IluMnNMUonTWQgWcAlj8wyBOu2HYjiNTyy406d8vAGtfcUMq2M0qMGVSng0NUQQn5rP4QCE_ElHCt6M3F62W05Ksc7-Mo1OGv4rcu1vGBk9HaL5HPUR-AVB8MZXVg.jpg?r=488' },
     ],
     action: [
-      { title: 'Action Movie 1', imgUrl: 'https://image.tmdb.org/t/p/original/a3Wpt1VVufpGjrwMbqKKfwg8tmw.jpg' },
-      { title: 'Action Movie 2', imgUrl: 'https://image.tmdb.org/t/p/original/owXj2cocfSvwNlg1HeppmeccyGQ.jpg' },
+      { title: 'Action Movie 1', imgUrl: 'https://media.port.hu/images/001/569/360.webp' },
+      { title: 'Action Movie 2', imgUrl: 'https://m.media-amazon.com/images/S/pv-target-images/d67c22b7666dbb6b8b041c6f28d9f7184f5e0c905bd223088b029f3f2bf0c5a6.jpg' },
     ],
     comedy: [
       { title: 'Comedy Movie 1', imgUrl: 'https://image.tmdb.org/t/p/original/4AQ4J2YrVn9L02ujs9UNmjZfJ3M.jpg' },
@@ -78,6 +78,14 @@ const App = () => {
         <h2>Top Rated</h2>
         <div className="row-posters">
           {movies.topRated.map((movie, index) => (
+            <img key={index} className="row-poster" src={movie.imgUrl} alt={movie.title} />
+          ))}
+        </div>
+      </div>
+      <div className="movie-row">
+        <h2>action</h2>
+        <div className="row-posters">
+          {movies.action.map((movie, index) => (
             <img key={index} className="row-poster" src={movie.imgUrl} alt={movie.title} />
           ))}
         </div>
