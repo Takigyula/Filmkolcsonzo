@@ -150,6 +150,7 @@ const App = () => {
           )}
         </div>
       </div>
+
       {/* Top Rated */}
       <div className="movie-row">
         <h2>Top Rated</h2>
