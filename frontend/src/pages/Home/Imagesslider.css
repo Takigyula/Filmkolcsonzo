@@ -11,6 +11,14 @@
     color: white;
   }
   
+  .image-slider {
+    background-image: url('./hatter1.jpg'); /* Frissítsd a helyes elérési útra */
+    background-size: cover; /* A kép kitölti a teljes területet */
+    background-position: center; /* A kép középre van igazítva */
+    height: 100vh; /* Magasság beállítása, pl. 100% a viewport magasságából */
+    width: 100%; /* Szélesség beállítása, pl. 100% */
+}
+
   /* Navigációs sáv */
   .nav {
     display: flex;

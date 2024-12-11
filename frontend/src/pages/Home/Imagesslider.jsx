@@ -1,9 +1,34 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Imagesslider.css';
+
+const MovieRow = ({ movies, selectedCategory, handleMovieClick }) => {
+  return (
+    <div className="movie-row">
+      <h2>{selectedCategory ? selectedCategory : 'Trending'}</h2>
+      <div className="row-posters">
+        {(selectedCategory === '' ? movies.trending : movies[selectedCategory])?.map((movie, index) => (
+          <img
+            key={index}
+            className="row-poster"
+            src={movie.imgUrl}
+            alt={movie.title}
+            onClick={() => handleMovieClick(movie.title)} // Kattintás esemény a film címével
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(''); // Aktuális kiválasztott kategória
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Menü állapot (nyitva vagy zárva)
+  const navigate = useNavigate();
+
+  const handleMovieClick = (movieId) => {
+    navigate(`/movie/${movieId}`); // Navigálás az adott film/sorozat oldalára
+  };
 
   // Filmek adatainak szimulálása
   const movies = {
@@ -20,11 +45,11 @@ const App = () => {
     topRated: [
       { title: 'Top Movie 1', imgUrl: 'https://m.media-amazon.com/images/M/MV5BYzM3ZTFmMTUtODAxNy00N2IxLWI2MGMtYTdmMDFhNmZkMDI3XkEyXkFqcGc@._V1_.jpg' },
       { title: 'Top Movie 2', imgUrl: 'https://img2.filmek.hu/original/roXSRnno9M6zDQIs1QAWx5F5KDR.jpg' },
-      { title: 'Top Movie 2', imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR20iFsO9v7uRw5PfW_UMwGczKRvZ8G-n_zIw&s' },
-      { title: 'Top Movie 2', imgUrl: 'https://lh5.googleusercontent.com/proxy/evyCd70ZKzDeHbgkoOBeZzVIfZ8qYwwEM-RxY4FC2aMo1OEpEUJsIveGUqylRd2rm1PI15Mvch8GaERxLGTfVwvxnQiweNSGc19BURuOovfi1AE' },
-      { title: 'Top Movie 2', imgUrl: 'https://media.port.hu/images/001/152/122.jpg' },
-      { title: 'Top Movie 2', imgUrl: 'https://filmtett.ro/resized/2023/04/filmsidebar_papa-ordoguzo-plakat.jpg' },
-      { title: 'Top Movie 3', imgUrl: 'https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaSWW48t0IluMnNMUonTWQgWcAlj8wyBOu2HYjiNTyy406d8vAGtfcUMq2M0qMGVSng0NUQQn5rP4QCE_ElHCt6M3F62W05Ksc7-Mo1OGv4rcu1vGBk9HaL5HPUR-AVB8MZXVg.jpg?r=488' },
+      { title: 'Top Movie 3', imgUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR20iFsO9v7uRw5PfW_UMwGczKRvZ8G-n_zIw&s' },
+      { title: 'Top Movie 4', imgUrl: 'https://lh5.googleusercontent.com/proxy/evyCd70ZKzDeHbgkoOBeZzVIfZ8qYwwEM-RxY4FC2aMo1OEpEUJsIveGUqylRd2rm1PI15Mvch8GaERxLGTfVwvxnQiweNSGc19BURuOovfi1AE' },
+      { title: 'Top Movie 5', imgUrl: 'https://media.port.hu/images/001/152/122.jpg' },
+      { title: 'Top Movie 6', imgUrl: 'https://filmtett.ro/resized/2023/04/filmsidebar_papa-ordoguzo-plakat.jpg' },
+      { title: 'Top Movie 7', imgUrl: 'https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaSWW48t0IluMnNMUonTWQgWcAlj8wyBOu2HYjiNTyy406d8vAGtfcUMq2M0qMGVSng0NUQQn5rP4QCE_ElHCt6M3F62W05Ksc7-Mo1OGv4rcu1vGBk9HaL5HPUR-AVB8MZXVg.jpg?r=488' },
     ],
     action: [
       { title: 'Action Movie 1', imgUrl: 'https://media.port.hu/images/001/569/360.webp' },
@@ -56,56 +81,26 @@ const App = () => {
       {/* Hero Banner */}
       <div className="banner">
         <div className="banner-contents">
-        <h1>NextStream</h1>
-            <img className='kep' src="../src/assets/images/Stranger_Things_logo.jpg" alt="asd" />
+          <h1>NextStream </h1>
+          <img className='kep' src="../src/assets/images/Stranger_Things_logo.jpg" alt="asd" />
           <h1 className="banner-title">Stranger Things</h1>
           <a href="https://www.youtube.com/watch?v=b9EkMc79ZSU" target="_blank" rel="noopener noreferrer">
-            <button className="banner-button">Play</button>
-            </a>
+            <button className="banner-button ">Play</button>
+          </a>
         </div>
       </div>
 
       {/* Filmek megjelenítése a kiválasztott kategória szerint */}
-      <div className="movie-row">
-        <h2>{selectedCategory ? selectedCategory : 'Trending'}</h2>
-        <div className="row-posters">
-          {selectedCategory === '' ? (
-            movies.trending.map((movie, index) => (
-              <img key={index} className="row-poster" src={movie.imgUrl} alt={movie.title} />
-            ))
-          ) : (
-            movies[selectedCategory]?.map((movie, index) => (
-              <img key={index} className="row-poster" src={movie.imgUrl} alt={movie.title} />
-            ))
-          )}
-        </div>
-      </div>
+      <MovieRow movies={movies} selectedCategory={selectedCategory} handleMovieClick={handleMovieClick} />
 
       {/* Top Rated */}
-      <div className="movie-row">
-        <h2>Top Rated</h2>
-        <div className="row-posters">
-          {movies.topRated.map((movie, index) => (
-            <img key={index} className="row-poster" src={movie.imgUrl} alt={movie.title} />
-          ))}
-        </div>
-      </div>
-      <div className="movie-row">
-        <h2>action</h2>
-        <div className="row-posters">
-          {movies.action.map((movie, index) => (
-            <img key={index} className="row-poster" src={movie.imgUrl} alt={movie.title} />
-          ))}
-        </div>
-      </div>
-      <div className="movie-row">
-        <h2>Comedy</h2>
-        <div className="row-posters">
-          {movies.comedy.map((movie, index) => (
-            <img key={index} className="row-poster" src={movie.imgUrl} alt={movie.title} />
-          ))}
-        </div>
-      </div>
+      <MovieRow movies={movies} selectedCategory="topRated" handleMovieClick={handleMovieClick} />
+
+      {/* Action Movies */}
+      <MovieRow movies={movies} selectedCategory="action" handleMovieClick={handleMovieClick} />
+
+      {/* Comedy Movies */}
+      <MovieRow movies={movies} selectedCategory="comedy" handleMovieClick={handleMovieClick} />
     </div>
   );
 };

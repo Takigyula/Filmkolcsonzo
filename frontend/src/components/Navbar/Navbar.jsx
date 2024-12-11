@@ -35,9 +35,7 @@ return (
             id="kereses"
             placeholder="Keresés..."
         />
-        <Link className='nav_item'>Sorozatok</Link>
-        <Link className='nav_item' to="/filmek">Filmek</Link>
-    
+            
         {isLoggedIn ? (
             <button onClick={kilep}>Kijelentkezés</button>
         ) : (
