@@ -1,190 +1,53 @@
-/* Globális stílusok */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-  }
-  
-  .image-slider {
-    background-image: url('./hatter1.jpg'); /* Frissítsd a helyes elérési útra */
-    background-size: cover; /* A kép kitölti a teljes területet */
-    background-position: center; /* A kép középre van igazítva */
-    height: 100vh; /* Magasság beállítása, pl. 100% a viewport magasságából */
-    width: 100%; /* Szélesség beállítása, pl. 100% */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-  /* Navigációs sáv */
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .nav-logo {
-    width: 100px;
-    object-fit: contain;
-  }
-  
-  .menu-button {
-    font-size: 30px;
-    color: white;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Lenyitható menü */
-  .dropdown-menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #333;
-    padding: 10px;
-    width: 200px;
-    border-radius: 5px;
-  }
-  
-  .dropdown-menu ul {
-    list-style-type: none;
-  }
-  
-  .dropdown-menu li {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .dropdown-menu li:hover {
-    background-color: #444;
-  }
-  
-  /* Banner */
-  .banner {
-    position: relative;
-    height: 448px;
-    background-image: url('https://image.tmdb.org/t/p/original/x3lgptKkm0KrFlAFIm2uk1VhRfC.jpg');
-    background-size: cover;
-    background-position: center center;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-top: 600px;
-  }
-  
-  .banner-contents {
-    max-width: 500px;
-  }
-  .kep{
-    width: 500px;
-    position: center;
-    padding-top:20px;
-  }
+html{
+  overflow-x: hidden;
+}
 
-  
-  .banner-title {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  
-  .banner-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    border-radius: 5px;
-  }
-  
-  /* Filmek */
-  .movie-row {
-    margin-top: 50px;
-    padding-left: 20px;
-  }
-  
-  .movie-row h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .row-posters {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .row-poster {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    transition: transform 0.3s;
-    cursor: pointer;
-  }
-  
-  .row-poster:hover {
-    transform: scale(1.08);
-  }
+body{
+  font-family: "Fredoka", sans-serif;
+  background-color: black;
+}
 
-  .asd{
-    width: 650px;
-    height: 400px;
-    font-size: medium;
-  }
-  
-  .label{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: #000;
-    border: 1px solid hsla(0, 0%, 100%, .9);
-    border-radius: 0;
-    box-sizing: border-box;
-    color: #fff;
-    display: inline-block;
-    font-size: 1.25rem;
-    font-weight: 500;
-    height: 2.5rem;
-    letter-spacing: 1px;
-    line-height: 2.5rem;
-    padding-left: 10px;
-    padding-right: 50px;
-    position: relative;
-  }
+header{
+  height: 80px;
+  position: relative;
+  z-index: 1;
+}
 
-  .arrow{
-    border-color: #fff transparent transparent;
-    border-style: solid;
-    border-width: 5px 5px 0;
-    height: 0;
-    position: absolute;
-    right: 10px;
-    top: 44%;
-    width: 0;
-  }
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 80px;
+  align-items: center;
+}
 
-  .row-poster{
-    margin: 0;
-    padding: 5px 0;
-  }
+.logo{
+  font-weight: 600;
+  font-size: 22px;
+  color: #fff;
+}
 
-  .movie-row{
-    font-size: 14px;
-    left: 0;
-    margin: 0;
-    overflow-x: hidden;
-    padding: 0;
-    top: 2.5rem;
-    z-index: 2;
-    opacity: 1;
-    transition-duration: 150ms;
-  }
+.navigation{
+  display: flex;
+  gap: 40px;
+}
+
+.navigation a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16;
+  color: #fff;
+}
+
+.navigation a.active{
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+

@@ -53,7 +53,7 @@ const Login = () => {
                     </div>
                     <div className="forgot-password">Nincs még fiókod?<a href="/register">Regisztrálj</a></div>
                 <div className="submit=container">
-                <button onClick={belep} class="button-37" role="button">Bejelentkezés</button>
+                <button onClick={belep} className="button-37" role="button">Bejelentkezés</button>
                 </div>
             </div>
         </div>

@@ -46,7 +46,7 @@ const Register = () => {
                     <div className="forgot-password">Helytelen jelszó? <span>Jelszó változtatás</span></div>
                     <input type="checkbox" id='aszfc'></input>
                     <div className="submit=container">
-                    <button onClick={feltolt} class="button-37" role="button">Regisztráció</button>
+                    <button onClick={feltolt} className="button-37" role="button">Regisztráció</button>
                     </div>
                 </div>
     );
