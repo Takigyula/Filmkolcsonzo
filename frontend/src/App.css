@@ -1,3 +1,19 @@
+@import url('../public/css/Adatok.css');
+@import url('../public/css/Navbar.css');
+@import url('../public/css/Filmek.css');
+@import url('../public/css/Sorozatok.css');
+@import url('../public/css/Home.css');
+@import url('../public/css/Login.css');
+@import url('../public/css/Register.css');
+@import url('../public/css/Imagesslider.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
-    min-height: 100vh;
+    background-color: black;
+    font-family: 'Fredoka', sans-serif;
 }

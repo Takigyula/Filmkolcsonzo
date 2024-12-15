@@ -1,0 +1,6 @@
+.filmek-container {
+    background-image: url('/images/deadpool.jpg');
+    padding-top: 100px;
+    width: 100vw;
+    height: 100vh;
+}

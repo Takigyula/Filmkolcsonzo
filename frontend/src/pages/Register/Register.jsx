@@ -1,5 +1,6 @@
 import React from 'react';
-import './Register.css';
+// import './Register.css';
+import FelsoNav from '../../components/Navbar/Navbar';
 
 const Register = () => {
     const feltolt = async (event) => {
@@ -28,27 +29,50 @@ const Register = () => {
         }
     };
     return (
-        <div className='container'>
-        <div className='header'>
-        <div className='text'>Regisztráció</div>
-        <div className='underline'></div>
-                
+        <div className="register-container">
+            <FelsoNav
+                filmekaktiv={false}
+                sorozatokaktiv={false}
+                loginaktiv={false}
+                registeraktiv={true}
+            />
+            <div className="register-form-container">
+                <div className="header">
+                    <div className="text">Regisztráció</div>
+                    <div className="register-underline"></div>
+                </div>
+                <div className="inputs">
+                    <div className="input">
+                        <input
+                            type="E-mail"
+                            placeholder="Email "
+                        />
                     </div>
-                    <div className="inputs">
-                        <div className="input">
-                            <input type="E-mail" placeholder='Email ' />
-                        </div>
-                        <div className="input">
-                            
-                            <input type="Password" placeholder='Jelszó' />
-                        </div>
-                    </div>
-                    <div className="forgot-password">Helytelen jelszó? <span>Jelszó változtatás</span></div>
-                    <input type="checkbox" id='aszfc'></input>
-                    <div className="submit=container">
-                    <button onClick={feltolt} className="button-37" role="button">Regisztráció</button>
+                    <div className="input">
+                        <input
+                            type="Password"
+                            placeholder="Jelszó"
+                        />
                     </div>
                 </div>
+                <div className="forgot-password">
+                    Helytelen jelszó? <span>Jelszó változtatás</span>
+                </div>
+                <input
+                    type="checkbox"
+                    id="aszfc"
+                ></input>
+                <div className="submit=container">
+                    <button
+                        onClick={feltolt}
+                        className="button-37"
+                        role="button"
+                    >
+                        Regisztráció
+                    </button>
+                </div>
+            </div>
+        </div>
     );
 };
 

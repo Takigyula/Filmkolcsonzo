@@ -1,13 +1,9 @@
-.filmek-container {
-    /* background-color: #0a0b0f; */
+/* .filmek-container {
+    background-color: #0a0b0f;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 80%;
     margin: 100px auto;
     height: min(100vh);
-
 }
-
-img {
-    width: 200px;
-}
+ */

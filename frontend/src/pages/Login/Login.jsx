@@ -1,9 +1,10 @@
-import { useContext } from 'react';
-import BelepContext from '../../utils/LoginContext';
-import './Login.css';
+// import { useContext } from 'react';
+// import BelepContext from '../../utils/LoginContext';
+// import './Login.css';
+import FelsoNav from '../../components/Navbar/Navbar';
 
 const Login = () => {
-    const { setBelep, setAdmin } = useContext(BelepContext);
+    // const { setBelep, setAdmin } = useContext(BelepContext);
     localStorage.clear();
 
     const belep = async (event) => {
@@ -35,29 +36,47 @@ const Login = () => {
         }
     };
     return (
-        <div className='container'>
-        <div className='header'>
-        <div className='text'>Bejelentkezés</div>
-        <div className='underline'></div>
         <div className="login-container">
-                
-    </div>
-                <div className="inputs">
+            <FelsoNav
+                filmekaktiv={false}
+                sorozatokaktiv={false}
+                loginaktiv={true}
+                registeraktiv={false}
+            />
+            <div className="login-form-container">
+                <div className="header">
+                    <div className="text">Bejelentkezés</div>
+                    <div className="login-underline"></div>
+                    <div className="inputs">
                         <div className="input">
-                            <input type="E-mail" placeholder='Email ' />
+                            <input
+                                type="E-mail"
+                                placeholder="Email "
+                            />
                         </div>
                         <div className="input">
-                            
-                            <input type="Password" placeholder='Jelszó' />
+                            <input
+                                type="Password"
+                                placeholder="Jelszó"
+                            />
                         </div>
                     </div>
-                    <div className="forgot-password">Nincs még fiókod?<a href="/register">Regisztrálj</a></div>
-                <div className="submit=container">
-                <button onClick={belep} className="button-37" role="button">Bejelentkezés</button>
+                    <div className="forgot-password">
+                        Nincs még fiókod?<a href="/register">Regisztrálj</a>
+                    </div>
+                    <div className="submit=container">
+                        <button
+                            onClick={belep}
+                            className="button-37"
+                            role="button"
+                        >
+                            Bejelentkezés
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        );
+    );
 };
 
 export default Login;

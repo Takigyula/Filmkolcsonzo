@@ -1,0 +1,41 @@
+.navbar-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+.login-regisztracio {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.login-regisztracio a {
+    color: white;
+    text-decoration: none;
+}
+
+.filmek-sorozatok {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.filmek-sorozatok a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 60px;
+}
+
+.active {
+    color: red;
+    font-size: 3em;
+}

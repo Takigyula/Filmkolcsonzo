@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './Filmek.css';
+import './Sorozatok.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 
-const Filmek = () => {
+const Sorozatok = () => {
     const [filmek, setFilmek] = useState([]);
 
     useEffect(() => {
@@ -24,10 +24,10 @@ const Filmek = () => {
     }, []);
 
     return (
-        <div className="filmek-container">
+        <div className="sorozatok-container">
             <FelsoNav
-                filmekaktiv={true}
-                sorozatokaktiv={false}
+                filmekaktiv={false}
+                sorozatokaktiv={true}
                 loginaktiv={false}
                 registeraktiv={false}
             />
@@ -45,4 +45,4 @@ const Filmek = () => {
     );
 };
 
-export default Filmek;
+export default Sorozatok;
