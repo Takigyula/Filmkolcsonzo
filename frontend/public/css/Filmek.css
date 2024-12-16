@@ -3,4 +3,21 @@
     padding-top: 100px;
     width: 100vw;
     height: 100vh;
+    text-shadow:
+    1.5px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.slider-raitings {
+    width: 10%;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+    ;
 }
