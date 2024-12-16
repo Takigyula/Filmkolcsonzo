@@ -1,3 +1,11 @@
+body {
+    text-shadow:
+    1.5px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
 .filmek-container {
     background-image: url('/images/deadpool.jpg');
     padding-top: 100px;
@@ -9,6 +17,7 @@
     1px 1px 0 #000,
     1px 1px 0 #000;
 }
+
 
 .slider-raitings {
     width: 10%;

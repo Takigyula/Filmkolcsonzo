@@ -1,3 +1,12 @@
+body{
+    text-shadow:
+    1.5px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+
 .home-container {
     background-image: url('./images/deadpool.jpg');
     background-position: center;
@@ -26,11 +35,22 @@
     text-shadow: -15px 5px 20px black;
     letter-spacing: -0.05em;
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
-        'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     user-select: none;
     text-transform: uppercase;
     font-size: 50px;
     transition: all 0.25s ease-out;
     font-weight: 500;
-}
+    }
+    
+.slider-btn {
+        background-color: #04AA6D; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+ }

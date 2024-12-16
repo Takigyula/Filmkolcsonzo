@@ -138,7 +138,7 @@ const Home = () => {
                         </div>
                         <info className="slider-title">Deadpool</info>
                     </div>
-                    <button className="slider-btn">view Details</button>
+                    <button className="slider-btn">Részletek</button>
                 </div>
                 <div className="sliderThumbs-container">
                     {filmek.map((value, index) => (
