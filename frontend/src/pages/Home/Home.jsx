@@ -115,6 +115,7 @@ const Home = () => {
         thumbImg[index].style.width = '200px';
         thumbImg[index].style.transform = 'height width 1s';
     };
+    
 
     return (
         <div className="home-container">
