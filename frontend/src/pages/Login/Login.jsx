@@ -1,6 +1,6 @@
 // import { useContext } from 'react';
 // import BelepContext from '../../utils/LoginContext';
-// import './Login.css';
+ import './Login.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 
 const Login = () => {

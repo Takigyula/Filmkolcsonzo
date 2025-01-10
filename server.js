@@ -35,6 +35,7 @@ app.use(
     '/api/cinema/egyedifilmmodosit',
     require('./routes/egyediFilmModositRoutes')
 );
-app.use('/api/cinema/sorozatok', require('./routes/nezokRoutes'));
+app.use('/api/cinema/nezok', require('./routes/nezokRoutes'));
+app.use('/api/cinema/sorozatok', require('./routes/sorozatokRoutes'));
 app.use('/api/cinema/foglalasok', require('./routes/foglalasokRoutes'));
 app.use('/api/cinema/ujsorozat', require('./routes/ujsorozatRoutes'));

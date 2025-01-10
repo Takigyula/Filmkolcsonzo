@@ -21,5 +21,8 @@ feldolgoz.addEventListener('click', async (event) => {
     if (response.ok) {
         window.alert(valasz.msg);
         window.location.replace('/api/cinema/sorozatok');
+    } else {
+        window.alert(valasz.msg);
+
     }
 });

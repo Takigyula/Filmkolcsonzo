@@ -48,40 +48,40 @@
                 height: 350px;
             }
         </style>
-        <title>Filmek</title>
+        <title>sorozatok</title>
     </head>
     <body>
         <%- include('./nav.ejs') %>
         <div class="container">
-            <h1>Filmek</h1>
+            <h1>sorozatok</h1>
             <div class="row">
-                <% for( let j = 0; j < filmek.length; j++ ) { %>
+                <% for( let j = 0; j < sorozatok.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">
                     <img
-                        src="<%= filmek[j].plakat %>"
+                        src="<%= sorozatok[j].plakat %>"
                         alt="thor"
                     />
                     <h3>
-                        <%= filmek[j].cim %> <br />
-                        <a href="egyedifilm/<%= filmek[j].id %>">Adatok</a>
+                        <%= sorozatok[j].cim %> <br />
+                        <a href="egyedifilm/<%= sorozatok[j].id %>">Adatok</a>
                     </h3>
-                    <p>film hossza: <%= filmek[j].hossz %> perc</p>
+                    <p>film hossza: <%= sorozatok[j].hossz %> perc</p>
                     <label for="idopontok">Időpontok:</label>
                     <select
                         name="idopontok"
                         id="idopontok"
                     >
-                        <% for( let i = 0; i < filmek[j].idopontok.length; i++ )
+                        <% for( let i = 0; i < sorozatok[j].idopontok.length; i++ )
                         { %>
-                        <option value="<%= filmek[j].idopontok[i] %>">
-                            <%= filmek[j].idopontok[i] %>
+                        <option value="<%= sorozatok[j].idopontok[i] %>">
+                            <%= sorozatok[j].idopontok[i] %>
                         </option>
                         <% } %>
                     </select>
                     <div class="arkategoria">
                         <p>Árkategória:</p>
                         <label for="also"
-                            ><%= filmek[j].arkategoria[0] %> Ft:
+                            ><%= sorozatok[j].arkategoria[0] %> Ft:
                         </label>
                         <input
                             type="radio"
