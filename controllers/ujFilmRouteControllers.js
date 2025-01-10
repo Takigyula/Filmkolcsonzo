@@ -11,17 +11,15 @@ exports.getUjFilm = (req, res) => {
 };
 
 exports.postUjFilm = async (req, res) => {
-    const { cim, hossz, plakat, idopontok, arkategoria } = req.body;
-    const idopontTomb = idopontok.split('\n');
-    const arkategoriaTomb = arkategoria.split('\n');
+    const { cim, hossz, plakat, statuszok } = req.body;
+    console.log(req.body);
 
     try {
         const newFilm = new Film({
             cim,
             hossz,
             plakat,
-            idopontok: idopontTomb,
-            arkategoria: arkategoriaTomb,
+            statuszok: statuszokTomb,
         });
         await newFilm.save();
 
