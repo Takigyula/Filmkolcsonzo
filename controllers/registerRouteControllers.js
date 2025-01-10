@@ -2,8 +2,8 @@ const bcrypt = require('bcrypt');
 const Nezo = require('../models/Nezo');
 
 exports.postRegister = async (req, res) => {
-    const { email, password } = req.body;
-
+    const { email, password, statusz } = req.body;
+    console.log(email, password, statusz);
     try {
         if (!email || !password) {
             return res
@@ -23,9 +23,9 @@ exports.postRegister = async (req, res) => {
 
         const hashedPassword = bcrypt.hashSync(password, salt);
 
-        const newNezo = new Nezo({ email, password: hashedPassword });
+        const newNezo = new Nezo({ email, password: hashedPassword, statusz });
 
-        // console.log(newNezo);
+        console.log(newNezo);
 
         await newNezo.save();
 

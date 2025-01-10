@@ -27,8 +27,6 @@ const Login = () => {
 
         if (response.ok) {
             window.alert(valasz.msg);
-            setBelep(true);
-            setAdmin(valasz.regisztralt.admine);
             window.location.replace('/');
             console.log(valasz.regisztralt);
         } else {
@@ -50,12 +48,14 @@ const Login = () => {
                     <div className="inputs">
                         <div className="input">
                             <input
-                                type="E-mail"
-                                placeholder="Email "
+                            id="email"
+                            type="E-mail"
+                            placeholder="Email "
                             />
                         </div>
                         <div className="input">
                             <input
+                            id="password"
                                 type="Password"
                                 placeholder="Jelszó"
                             />

@@ -14,14 +14,9 @@ const filmSchema = new mongoose.Schema(
             type: String,
             required: true,
         }],
-        idopontok: [{
-            type: String,
-            required: true,
-        }],
-        arkategoria: [{
-            type: String,
-            required: true,
-        }],
+        statuszok: [
+            {type: String}
+        ]
     },
     {
         timestamps: true,

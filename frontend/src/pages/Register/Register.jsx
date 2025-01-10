@@ -8,6 +8,7 @@ const Register = () => {
 
         const email = document.querySelector('#email').value;
         const password = document.querySelector('#password').value;
+        const statusz = document.querySelector('#statusz').value;
 
         console.log(email, password);
 
@@ -16,7 +17,7 @@ const Register = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, password, statusz }),
         });
 
         const valasz = await response.json();
@@ -46,13 +47,25 @@ const Register = () => {
                         <input
                             type="E-mail"
                             placeholder="Email "
-                        />
+                            id='email'
+                            />
                     </div>
                     <div className="input">
                         <input
                             type="Password"
                             placeholder="Jelszó"
+                            id='password'
+                            
                         />
+                    </div>
+                    <div className="input">
+                        <span>Előfizetői státusz:</span>
+                        <select id='statusz'>
+                            <option value="vip">VIP</option>
+                            <option value="Zsirkirály">Zsírkirály</option>
+                            <option value="Mindenható">Mindenható</option>
+                        </select>
+                        
                     </div>
                 </div>
                 <div className="forgot-password">
