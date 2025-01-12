@@ -31,7 +31,7 @@
                 <input
                     type="hidden"
                     id="rejtett"
-                    value="<%= modFilm.id %>"
+                    value="<%= modFilm._id %>"
                 />
                 <p>
                     <label for="cim">Cím: </label>
@@ -52,7 +52,7 @@
                 <h4>Eredeti plakát:</h4>
                 <p>
                     <img
-                        src="<%= modFilm.plakat %>"
+                        src="/images/<%= modFilm.plakat %>"
                         alt="kép"
                     />
                 </p>
@@ -64,60 +64,28 @@
                         value="<%= modFilm.plakat %>"
                     />
                 </p>
-                <h4>Eredeti időpontok:</h4>
-                <ul id="ido-pontok">
-                    <% for( let i = 0; i < modFilm.idopontok.length; i++ ) { %>
-                    <li>
-                        <input
-                            type="checkbox"
-                            name="idopont"
-                            id="<%= modFilm.idopontok[i] %>"
-                            value="<%= modFilm.idopontok[i] %>"
-                        />
-                        <label for="<%= modFilm.idopontok[i] %>"
-                            ><%= modFilm.idopontok[i] %></label
-                        >
-                    </li>
+                <h4>Erdeti státuszok:</h4>
+                <ul>
+                    <% for( let i = 0; i < modFilm.statuszok.length; i++ ) { %>
+                    <li><%= modFilm.statuszok[i] %></li>
                     <% } %>
                 </ul>
-                <p>
-                    <label for="idopontok">Időpontok: </label>
-                    <textarea
-                        rows="10"
-                        cols="50"
-                        id="idopontok"
-                    ></textarea>
-                </p>
-                <h4>Eredeti árkategóriák:</h4>
-                <ul id="ar-kat">
-                    <% for( let i = 0; i < modFilm.arkategoria.length; i++ ) {
-                    %>
-                    <li>
-                        <input
-                            type="checkbox"
-                            name="arkat"
-                            id="<%= modFilm.arkategoria[i] %>"
-                            value="<%= modFilm.arkategoria[i] %>"
-                        />
-                        <label for="<%= modFilm.arkategoria[i] %>"
-                            ><%= modFilm.arkategoria[i] %> Ft</label
-                        >
-                    </li>
-                    <% } %>
-                </ul>
-                <p>
-                    <label for="arkategoria">Árkategóriák: </label>
-                    <textarea
-                        rows="3"
-                        cols="20"
-                        id="arkategoria"
-                    ></textarea>
-                </p>
+
+                <label for="statuszok">Státuszok: </label>
+                <select
+                    id="statuszok"
+                    multiple
+                >
+                    <option value="VIP">VIP</option>
+                    <option value="Zsírkirály">Zsírkirály</option>
+                    <option value="Mindenható">Mindenható</option>
+                </select>
+
                 <p>
                     <button id="feldolgoz">Feldolgoz</button>
                 </p>
             </form>
         </div>
-        <script src="/js/egyedimodosit.js"></script>
+        <script src="/js/egyediFilmmodosit.js"></script>
     </body>
 </html>

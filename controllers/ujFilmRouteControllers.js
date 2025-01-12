@@ -12,15 +12,15 @@ exports.getUjFilm = (req, res) => {
 
 exports.postUjFilm = async (req, res) => {
     const { cim, hossz, plakat, statuszok } = req.body;
-    console.log(req.body);
 
     try {
         const newFilm = new Film({
             cim,
             hossz,
             plakat,
-            statuszok: statuszokTomb,
+            statuszok,
         });
+
         await newFilm.save();
 
         res.status(200).json({ msg: 'Sikeres film felvétel!' });

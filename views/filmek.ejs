@@ -28,7 +28,6 @@
         />
         <style>
             body {
-                
             }
 
             h3 {
@@ -58,26 +57,21 @@
                 <% for( let j = 0; j < filmek.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">
                     <img
-                        src="<%= filmek[j].plakat %>"
-                        alt="thor"
+                        src="/images/<%= filmek[j].plakat %>"
+                        alt="<%= filmek[j].cim %>"
                     />
                     <h3>
                         <%= filmek[j].cim %> <br />
-                        <a href="egyedifilm/<%= filmek[j].id %>">Adatok</a>
+                        <a href="egyedifilm/<%= filmek[j]._id %>">Adatok</a>
                     </h3>
                     <p>film hossza: <%= filmek[j].hossz %> perc</p>
-                    <label for="statuszok">Statuszok:</label>
-                    <select
-                        name="statuszok"
-                        id="statuszok"
-                    >
-                        <% for( let i = 0; i < filmek[j].statuszok.length; i++ ) { %>
-                        <option value="<%= filmek[j].statuszok[i] %>">
-                            <%= filmek[j].statuszok[i] %>
-                        </option>
+                    <h2>Statuszok:</h2>
+                    <ul>
+                        <% for( let i = 0; i < filmek[j].statuszok.length; i++ )
+                        { %>
+                        <li><%= filmek[j].statuszok[i] %></li>
                         <% } %>
-                        <br />
-                    </div>
+                    </ul>
                 </div>
                 <% } %>
             </div>

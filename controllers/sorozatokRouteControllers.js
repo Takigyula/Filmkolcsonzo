@@ -1,5 +1,5 @@
 const path = require('node:path');
-const Sorozat = require('../models/sorozat');
+const Sorozat = require('../models/Sorozat');
 
 exports.getSorozatok = async (req, res) => {
     const sorozatok = await Sorozat.find({});

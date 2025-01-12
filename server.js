@@ -25,9 +25,16 @@ mongoDbConnection()
         console.log(`Valami hiba történt: ${error}`);
     });
 
-app.use('/api/register', require('./routes/registerRoutes'));
-app.use('/api/login', require('./routes/loginRoutes'));
 app.use('/api/cinema', require('./routes/mainRoutes'));
+// Sorozatok
+app.use('/api/cinema/sorozatok', require('./routes/sorozatokRoutes'));
+app.use('/api/cinema/ujsorozat', require('./routes/ujsorozatRoutes'));
+app.use('/api/cinema/egyedisorozat', require('./routes/egyediSorozatRoutes'));
+app.use(
+    '/api/cinema/egyedisorozatmodosit',
+    require('./routes/egyediSorozatModositRoutes')
+);
+// Filmek
 app.use('/api/cinema/filmek', require('./routes/filmekRoutes'));
 app.use('/api/cinema/ujfilm', require('./routes/ujFilmRoutes'));
 app.use('/api/cinema/egyedifilm', require('./routes/egyediFilmRoutes'));
@@ -35,7 +42,10 @@ app.use(
     '/api/cinema/egyedifilmmodosit',
     require('./routes/egyediFilmModositRoutes')
 );
+// Felhasználó
 app.use('/api/cinema/nezok', require('./routes/nezokRoutes'));
-app.use('/api/cinema/sorozatok', require('./routes/sorozatokRoutes'));
+// Foglalások
 app.use('/api/cinema/foglalasok', require('./routes/foglalasokRoutes'));
-app.use('/api/cinema/ujsorozat', require('./routes/ujsorozatRoutes'));
+// Frontend
+app.use('/api/register', require('./routes/registerRoutes'));
+app.use('/api/login', require('./routes/loginRoutes'));

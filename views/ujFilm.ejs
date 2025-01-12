@@ -22,16 +22,19 @@
             href="/css/stilus.css"
         />
         <link
-        rel="stylesheet"
-        href="/css/hozzadas.css"
-    />
+            rel="stylesheet"
+            href="/css/hozzadas.css"
+        />
         <title>Új Film</title>
     </head>
     <body>
         <%- include('./nav.ejs') %>
-        <div id="tartalom" class="container">
+        <div
+            id="tartalom"
+            class="container"
+        >
             <h1>Új Film felvétele</h1>
-            <hr>
+            <hr />
             <form>
                 <p>
                     <label for="cim">Cím: </label>
@@ -56,18 +59,21 @@
                 </p>
                 <p>
                     <label for="statuszok">Státuszok: </label>
-                    <select id="statuszok" multiple>
-                        <option value="vip">vip</option>
-                        <option value="zs">zs</option>
-                        <option value="min">min</option>
+                    <select
+                        id="statuszok"
+                        multiple
+                    >
+                        <option value="VIP">VIP</option>
+                        <option value="Zsírkirály">Zsírkirály</option>
+                        <option value="Mindenható">Mindenható</option>
                     </select>
                 </p>
-               
+
                 <p>
                     <button id="feldolgoz">Feldolgoz</button>
                 </p>
             </form>
-            <hr>
+            <hr />
         </div>
         <script src="/js/ujfilmek.js"></script>
     </body>

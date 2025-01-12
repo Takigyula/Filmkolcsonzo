@@ -6,7 +6,7 @@ const sorozatSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        hossz: {
+        epizodokSzama: {
             type: Number,
             required: true,
         },
@@ -14,14 +14,7 @@ const sorozatSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        idopontok: {
-            type: Array,
-            required: true,
-        },
-        arkategoria: {
-            type: Array,
-            required: true,
-        },
+        statuszok: [{ type: String }],
     },
     {
         timestamps: true,

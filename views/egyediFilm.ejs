@@ -28,43 +28,26 @@
         <div class="container">
             <h1><%= film.cim %></h1>
             <div id="ket-gomb">
-                <a href="/api/cinema/egyedifilmmodosit/<%= film.id %>"
+                <a href="/api/cinema/egyedifilmmodosit/<%= film._id %>"
                     >Módosít</a
                 >
-                <button onclick="torol('<%= film.id%>')">Töröl</button>
+                <button onclick="torol('<%= film._id%>')">Töröl</button>
             </div>
             <img
-                src="<%= film.plakat %>"
+                src="/images/<%= film.plakat %>"
                 alt="<%= film.cim %>"
             />
             <p>A film hossza: <%= film.hossz %> perc</p>
-            <select
-                name="idopontok"
-                id="idopontok"
-            >
-                <% for( let i = 0; i < film.idopontok.length; i++ ) { %>
-                <option value="<%= film.idopontok[i] %>">
-                    <%= film.idopontok[i] %>
-                </option>
-                <% } %>
-            </select>
             <div class="arkategoria">
-                <p>Árkategória:</p>
-                <label for="also"><%= film.arkategoria[0] %> Ft: </label>
-                <input
-                    type="radio"
-                    name="arkat"
-                    id="also"
-                />
-                <br />
-                <label for="felso"><%= film.arkategoria[1] %> Ft: </label>
-                <input
-                    type="radio"
-                    name="arkat"
-                    id="felso"
-                />
+                <p>Státuszok:</p>
+                <ul>
+                    <% for( let i = 0; i < film.statuszok.length; i++ ) { %>
+                    <li><%= film.statuszok[i] %></li>
+
+                    <% } %>
+                </ul>
             </div>
         </div>
-        <script src="/js/egyedi.js"></script>
+        <script src="/js/egyediFilm.js"></script>
     </body>
 </html>

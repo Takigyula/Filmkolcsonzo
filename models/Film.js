@@ -2,21 +2,19 @@ const mongoose = require('mongoose');
 
 const filmSchema = new mongoose.Schema(
     {
-        cim: [{
+        cim: {
             type: String,
             required: true,
-        }],
-        hossz: [{
+        },
+        hossz: {
             type: Number,
             required: true,
-        }],
-        plakat: [{
+        },
+        plakat: {
             type: String,
             required: true,
-        }],
-        statuszok: [
-            {type: String}
-        ]
+        },
+        statuszok: [{ type: String }],
     },
     {
         timestamps: true,

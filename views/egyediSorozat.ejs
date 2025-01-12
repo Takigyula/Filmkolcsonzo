@@ -28,43 +28,26 @@
         <div class="container">
             <h1><%= sorozat.cim %></h1>
             <div id="ket-gomb">
-                <a href="/api/cinema/sorozatfilmmodosit/<%= sorozat.id %>"
+                <a href="/api/cinema/egyedisorozatmodosit/<%= sorozat._id %>"
                     >Módosít</a
                 >
-                <button onclick="torol('<%= sorozat.id%>')">Töröl</button>
+                <button onclick="torol('<%= sorozat._id%>')">Töröl</button>
             </div>
             <img
-                src="<%= sorozat.plakat %>"
+                src="/images/<%= sorozat.plakat %>"
                 alt="<%= sorozat.cim %>"
             />
-            <p>A sorozat hossza: <%= sorozat.hossz %> perc</p>
-            <select
-                name="idopontok"
-                id="idopontok"
-            >
-                <% for( let i = 0; i < sorozat.idopontok.length; i++ ) { %>
-                <option value="<%= sorozat.idopontok[i] %>">
-                    <%= sorozat.idopontok[i] %>
-                </option>
-                <% } %>
-            </select>
-            <div class="arkategoria">
-                <p>Árkategória:</p>
-                <label for="also"><%= sorozat.arkategoria[0] %> Ft: </label>
-                <input
-                    type="radio"
-                    name="arkat"
-                    id="also"
-                />
-                <br />
-                <label for="felso"><%= sorozat.arkategoria[1] %> Ft: </label>
-                <input
-                    type="radio"
-                    name="arkat"
-                    id="felso"
-                />
+            <p>Epizódok száma: <%= sorozat.epizodokSzama %></p>
+
+            <div class="statuszok">
+                <p>Státuszok:</p>
+                <ul>
+                    <% for( let i = 0; i < sorozat.statuszok.length; i++ ) { %>
+                    <li><%= sorozat.statuszok[i] %></li>
+                    <% } %>
+                </ul>
             </div>
         </div>
-        <script src="/js/egyedi.js"></script>
+        <script src="/js/egyediSorozat.js"></script>
     </body>
 </html>

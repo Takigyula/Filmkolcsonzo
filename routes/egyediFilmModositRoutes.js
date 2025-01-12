@@ -1,12 +1,12 @@
 const express = require('express');
 const {
     getEgyediFilmModosit,
-    postEgyediFilmModosit,
+    updateEgyediFilmModosit,
 } = require('../controllers/egyediFilmModositRouteControllers');
 
 const router = express.Router();
 
 router.get('/:id', getEgyediFilmModosit);
-router.post('/', postEgyediFilmModosit);
+router.put('/', updateEgyediFilmModosit);
 
 module.exports = router;

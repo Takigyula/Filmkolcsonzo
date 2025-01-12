@@ -22,11 +22,9 @@
             href="/css/nezok.css"
         />
         <style>
-        
-            h1{
+            h1 {
                 color: black;
             }
-            
         </style>
         <title>Nezok</title>
     </head>
@@ -37,17 +35,22 @@
             <div class="row">
                 <% for( let j = 0; j < nezok.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">
-                    <h3>
-                        <%= nezok[j].cim %>
-                        <a href="egyedifilm/<%= nezok[j].nev %>"><%= nezok[j].nev %></a>
-                    </h3>
+                    <h3>E-mail:</h3>
+                    <p><%= nezok[j].email %></p>
+                    <h3>Státusz:</h3>
+                    <p><%= nezok[j].statusz %></p>
+                    <h3>Avatar:</h3>
                     <img
-                        src="<%= nezok[j].avatar %>"
-                        alt="thor"
+                        src="/images/output/<%= nezok[j].avatar %>"
+                        alt="<%= nezok[j].avatar %>"
                     />
+                    <button onclick="torles('<%= nezok[j]._id%>')">
+                        Törlés
+                    </button>
                 </div>
                 <% } %>
             </div>
         </div>
+        <script src="/js/nezotorol.js"></script>
     </body>
 </html>

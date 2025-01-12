@@ -23,7 +23,6 @@
         />
         <style>
             body {
-                
             }
 
             h3 {
@@ -53,38 +52,23 @@
                 <% for( let j = 0; j < sorozatok.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">
                     <img
-                        src="<%= sorozatok[j].plakat %>"
-                        alt="thor"
+                        src="/images/<%= sorozatok[j].plakat %>"
+                        alt="<%= sorozatok[j].cim %>"
                     />
                     <h3>
                         <%= sorozatok[j].cim %> <br />
-                        <a href="egyedifilm/<%= sorozatok[j].id %>">Adatok</a>
+                        <a href="egyedisorozat/<%= sorozatok[j]._id %>"
+                            >Adatok</a
+                        >
                     </h3>
-                    <p>film hossza: <%= sorozatok[j].hossz %> perc</p>
-                    <label for="idopontok">Időpontok:</label>
-                    <select
-                        name="idopontok"
-                        id="idopontok"
-                    >
-                        <% for( let i = 0; i < sorozatok[j].idopontok.length; i++ )
-                        { %>
-                        <option value="<%= sorozatok[j].idopontok[i] %>">
-                            <%= sorozatok[j].idopontok[i] %>
-                        </option>
+                    <p>Epizódok száma: <%= sorozatok[j].epizodokSzama %></p>
+                    <h2>Statuszok:</h2>
+                    <ul>
+                        <% for( let i = 0; i < sorozatok[j].statuszok.length;
+                        i++ ) { %>
+                        <li><%= sorozatok[j].statuszok[i] %></li>
                         <% } %>
-                    </select>
-                    <div class="arkategoria">
-                        <p>Árkategória:</p>
-                        <label for="also"
-                            ><%= sorozatok[j].arkategoria[0] %> Ft:
-                        </label>
-                        <input
-                            type="radio"
-                            name="arkat"
-                            id="also"
-                        />
-                        <br />
-                    </div>
+                    </ul>
                 </div>
                 <% } %>
             </div>

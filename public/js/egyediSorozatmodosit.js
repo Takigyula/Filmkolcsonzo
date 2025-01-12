@@ -2,6 +2,7 @@ let feldolgoz = document.querySelector('#feldolgoz');
 
 feldolgoz.addEventListener('click', async (event) => {
     event.preventDefault();
+    const id = document.querySelector('#rejtett').value;
     const cim = document.querySelector('#cim').value;
     const epizodokSzama = Number(
         document.querySelector('#epizodokSzama').value
@@ -16,12 +17,18 @@ feldolgoz.addEventListener('click', async (event) => {
         statuszok.push(temp[i].value);
     }
 
-    const response = await fetch('/api/cinema/ujsorozat', {
-        method: 'POST',
+    const response = await fetch('/api/cinema/egyedisorozatmodosit', {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ cim, epizodokSzama, plakat, statuszok }),
+        body: JSON.stringify({
+            id,
+            cim,
+            epizodokSzama,
+            plakat,
+            statuszok,
+        }),
     });
 
     const valasz = await response.json();
@@ -29,7 +36,5 @@ feldolgoz.addEventListener('click', async (event) => {
     if (response.ok) {
         window.alert(valasz.msg);
         window.location.replace('/api/cinema/sorozatok');
-    } else {
-        window.alert(valasz.msg);
     }
 });

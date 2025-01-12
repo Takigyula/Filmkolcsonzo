@@ -16,10 +16,10 @@ const NezoSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
-        statusz:{
+        statusz: {
             type: String,
             required: true,
-            default: 'vip'
+            default: 'VIP',
         },
         avatar: {
             type: String,

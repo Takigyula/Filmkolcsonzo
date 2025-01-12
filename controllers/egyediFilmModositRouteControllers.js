@@ -6,7 +6,7 @@ exports.getEgyediFilmModosit = async (req, res) => {
 
     try {
         const modFilm = await Film.findById(parameterek.id);
-        // console.log(modFilm);
+
         const viewsUt = path.join(
             __dirname,
             '..',
@@ -19,18 +19,16 @@ exports.getEgyediFilmModosit = async (req, res) => {
     }
 };
 
-exports.postEgyediFilmModosit = async (req, res) => {
-    const { id, cim, hossz, plakat, idopontok, arkategoria } = req.body;
-
+exports.updateEgyediFilmModosit = async (req, res) => {
     try {
+        const { id, cim, hossz, plakat, statuszok } = req.body;
         await Film.findByIdAndUpdate(
             { _id: id },
             {
                 cim,
                 hossz,
                 plakat,
-                idopontok,
-                arkategoria,
+                statuszok,
             }
         );
 

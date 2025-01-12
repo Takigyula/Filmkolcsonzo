@@ -1,5 +1,5 @@
 const path = require('node:path');
-const Sorozat = require('../models/sorozat');
+const Sorozat = require('../models/Sorozat');
 
 exports.getUjSorozat = (req, res) => {
     try {
@@ -12,16 +12,13 @@ exports.getUjSorozat = (req, res) => {
 
 exports.postUjSorozat = async (req, res) => {
     try {
-    const { cim, hossz, plakat, idopontok, arkategoria } = req.body;
-    const idopontTomb = idopontok.split('\n');
-    const arkategoriaTomb = arkategoria.split('\n');
-    
+        const { cim, epizodokSzama, plakat, statuszok } = req.body;
+
         const newSorozat = new Sorozat({
             cim,
-            hossz,
+            epizodokSzama,
             plakat,
-            idopontok: idopontTomb,
-            arkategoria: arkategoriaTomb,
+            statuszok,
         });
         console.log(newSorozat);
         await newSorozat.save();

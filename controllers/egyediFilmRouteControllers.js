@@ -2,9 +2,11 @@ const path = require('node:path');
 const Film = require('../models/Film');
 
 exports.getEgyediFilm = async (req, res) => {
-    const parameterek = req.params;
-    const film = await Film.findById(parameterek.id);
     try {
+        const parameterek = req.params;
+
+        const film = await Film.findById(parameterek.id);
+
         const viewsUt = path.join(__dirname, '..', 'views', 'egyediFilm.ejs');
         res.status(200).render(viewsUt, { film });
     } catch (error) {

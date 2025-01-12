@@ -3,9 +3,7 @@ import './Filmek.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 
 const Filmek = () => {
-    +
-
-    useEffect(() => {
+    +useEffect(() => {
         const filmleker = async () => {
             // console.log('Hello');
             const response = await fetch(
@@ -26,42 +24,42 @@ const Filmek = () => {
     const filmek = [
         {
             cim: 'Oppenheimer',
-            kep: '../../public/images/Oppenheimer.jpg',
+            kep: '/images/Oppenheimer.jpg',
             kategoria: 'filmek',
         },
         {
             cim: 'Wall street farkasai',
-            kep: '../../public/images/Wall street farkasai.jpg',
+            kep: '/images/Wall street farkasai.jpg',
             kategoria: 'filmek,',
         },
         {
             cim: 'Top Gun',
-            kep: '../../public/images/topgun.jpg',
+            kep: '/images/topgun.jpg',
             kategoria: 'filmek',
         },
         {
             cim: 'Sötét lovag',
-            kep: '../../public/images/sotetlovag.jpg',
+            kep: '/images/sotetlovag.jpg',
             kategoria: 'filmek',
         },
         {
             cim: 'Prison Break',
-            kep: '../../public/images/JohnWick.jpg',
+            kep: '/images/JohnWick.jpg',
             kategoria: 'filmek',
         },
         {
             cim: 'Deadpool',
-            kep: '../../public/images/deadpool.jpg',
+            kep: '/images/deadpool.jpg',
             kategoria: 'filmek',
         },
         {
             cim: 'Pókverzum',
-            kep: '../../public/images/pokverzum.jpg',
+            kep: '/images/pokverzum.jpg',
             kategoria: 'filmek',
         },
         {
             cim: 'Bosszuallok',
-            kep: '../../public/images/Bosszualok.jpg',
+            kep: '/images/Bosszualok.jpg',
             kategoria: 'filmek',
         },
     ];
@@ -146,27 +144,27 @@ const Filmek = () => {
                 <h1 id="csetflix">NextStream</h1>
             </div> */}
         </div>
-        );
+    );
 };
 
-    // return (
-    //     <div className="filmek-container">
-    //         <FelsoNav
-    //             filmekaktiv={true}
-    //             sorozatokaktiv={false}
-    //             loginaktiv={false}
-    //             registeraktiv={false}
-    //         />
-    //         <h1>Dejó</h1>
-    //         {filmek.map((film) => (
-    //             <div
-    //                 className="film-tarto"
-    //                 key={film._id}
-    //             >
-    //                 <h3>{film.cim}</h3>
-    //                 <img src={film.plakat} />
-    //             </div>
-    //         ))}
-    //     </div>
+// return (
+//     <div className="filmek-container">
+//         <FelsoNav
+//             filmekaktiv={true}
+//             sorozatokaktiv={false}
+//             loginaktiv={false}
+//             registeraktiv={false}
+//         />
+//         <h1>Dejó</h1>
+//         {filmek.map((film) => (
+//             <div
+//                 className="film-tarto"
+//                 key={film._id}
+//             >
+//                 <h3>{film.cim}</h3>
+//                 <img src={film.plakat} />
+//             </div>
+//         ))}
+//     </div>
 
 export default Filmek;

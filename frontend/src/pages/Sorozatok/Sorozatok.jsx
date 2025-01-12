@@ -44,42 +44,42 @@ const Home = () => {
     const filmek = [
         {
             cim: 'Totál Szívás',
-            kep: '../../public/images/brakingbad.jpg',
+            kep: '/images/brakingbad.jpg',
             kategoria: 'sorozatok',
         },
         {
             cim: 'Narcos',
-            kep: '../../public/images/Narcos.jpg',
+            kep: '/images/Narcos.jpg',
             kategoria: 'sorozatok',
         },
         {
             cim: 'Fehér Hó',
-            kep: '../../public/images/snowfall.jpg',
+            kep: '/images/Snowfall.jpg',
             kategoria: 'sorozatok',
         },
         {
             cim: 'Top Boy',
-            kep: '../../public/images/TopBoy.jpg',
+            kep: '/images/TopBoy.jpg',
             kategoria: 'sorozatok',
         },
         {
             cim: 'Prison Break',
-            kep: '../../public/images/PrisonBreak.jpg',
+            kep: '/images/PrisonBreak.jpg',
             kategoria: 'sorozatok',
         },
         {
             cim: 'Peaky Blinders',
-            kep: '../../public/images/peakyblinders.jpg',
+            kep: '/images/peakyblinders.jpg',
             kategoria: 'sorozatok',
         },
         {
             cim: 'Vikings',
-            kep: '../../public/images/Vikings.jpg',
+            kep: '/images/Vikings.jpg',
             kategoria: 'sorozatok',
         },
         {
             cim: 'Csernobil',
-            kep: '../../public/images/chernobyl.jpg',
+            kep: '/images/chernobyl.jpg',
             kategoria: 'sorozatok',
         },
     ];
@@ -132,7 +132,9 @@ const Home = () => {
                                 <p className="slider-raiting">*****</p>
                                 <p className="slider-category">
                                     <span className="category">Kategória</span>
-                                    <span className="slider-tipus">Sorozatok</span>
+                                    <span className="slider-tipus">
+                                        Sorozatok
+                                    </span>
                                 </p>
                             </div>
                         </div>

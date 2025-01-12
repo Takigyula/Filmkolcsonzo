@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -43,17 +42,17 @@
                     />
                 </p>
                 <p>
-                    <label for="hossz">Hossz: </label>
+                    <label for="epizodokSzama">Epizódok száma: </label>
                     <input
                         type="number"
-                        id="hossz"
-                        value="<%= modSorozat.hossz %>"
+                        id="epizodokSzama"
+                        value="<%= modSorozat.epizodokSzama %>"
                     />
                 </p>
                 <h4>Eredeti plakát:</h4>
                 <p>
                     <img
-                        src="<%= modSorozat.plakat %>"
+                        src="/images/<%= modSorozat.plakat %>"
                         alt="kép"
                     />
                 </p>
@@ -65,60 +64,27 @@
                         value="<%= modSorozat.plakat %>"
                     />
                 </p>
-                <h4>Eredeti időpontok:</h4>
-                <ul id="ido-pontok">
-                    <% for( let i = 0; i < modSorozat.idopontok.length; i++ ) { %>
-                    <li>
-                        <input
-                            type="checkbox"
-                            name="idopont"
-                            id="<%= modSorozat.idopontok[i] %>"
-                            value="<%= modSorozat.idopontok[i] %>"
-                        />
-                        <label for="<%= modSorozat.idopontok[i] %>"
-                            ><%= modSorozat.idopontok[i] %></label
-                        >
-                    </li>
-                    <% } %>
-                </ul>
-                <p>
-                    <label for="idopontok">Időpontok: </label>
-                    <textarea
-                        rows="10"
-                        cols="50"
-                        id="idopontok"
-                    ></textarea>
-                </p>
-                <h4>Eredeti árkategóriák:</h4>
-                <ul id="ar-kat">
-                    <% for( let i = 0; i < modSorozat.arkategoria.length; i++ ) {
+                <h4>Eredeti státuszok:</h4>
+                <ul>
+                    <% for( let i = 0; i < modSorozat.statuszok.length; i++ ) {
                     %>
-                    <li>
-                        <input
-                            type="checkbox"
-                            name="arkat"
-                            id="<%= modSorozat.arkategoria[i] %>"
-                            value="<%= modSorozat.arkategoria[i] %>"
-                        />
-                        <label for="<%= modSorozat.arkategoria[i] %>"
-                            ><%= modSorozat.arkategoria[i] %> Ft</label
-                        >
-                    </li>
+                    <li><%= modSorozat.statuszok[i] %></li>
                     <% } %>
                 </ul>
-                <p>
-                    <label for="arkategoria">Árkategóriák: </label>
-                    <textarea
-                        rows="3"
-                        cols="20"
-                        id="arkategoria"
-                    ></textarea>
-                </p>
+                <label for="statuszok">Státuszok: </label>
+                <select
+                    id="statuszok"
+                    multiple
+                >
+                    <option value="VIP">VIP</option>
+                    <option value="Zsírkirály">Zsírkirály</option>
+                    <option value="Mindenható">Mindenható</option>
+                </select>
                 <p>
                     <button id="feldolgoz">Feldolgoz</button>
                 </p>
             </form>
         </div>
-        <script src="/js/egyedimodosit.js"></script>
+        <script src="/js/egyediSorozatmodosit.js"></script>
     </body>
 </html>

@@ -1,8 +1,12 @@
 const express = require('express');
-const { getNezok } = require('../controllers/nezokRouteControllers');
+const {
+    getNezok,
+    deleteNezo,
+} = require('../controllers/nezokRouteControllers');
 
 const router = express.Router();
 
 router.get('/', getNezok);
+router.delete('/:id', deleteNezo);
 
 module.exports = router;
