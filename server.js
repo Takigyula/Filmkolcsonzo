@@ -47,5 +47,5 @@ app.use('/api/cinema/nezok', require('./routes/nezokRoutes'));
 // Foglalások
 app.use('/api/cinema/foglalasok', require('./routes/foglalasokRoutes'));
 // Frontend
-app.use('/api/register', require('./routes/registerRoutes'));
-app.use('/api/login', require('./routes/loginRoutes'));
+app.use('/api/cinema/register', require('./routes/registerRoutes'));
+app.use('/api/cinema/login', require('./routes/loginRoutes'));

@@ -1,99 +1,152 @@
-import React from 'react';
 import './Register.css';
 import FelsoNav from '../../components/Navbar/Navbar';
+import { useState } from 'react';
 
 const Register = () => {
-  const feltolt = async (event) => {
-    event.preventDefault();
+    const [avatar, setAvatar] = useState('');
+    const feltolt = async (event) => {
+        event.preventDefault();
 
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
-    const statusz = document.querySelector('#statusz').value;
-    // const avatar = document.querySelector('#myfile').files[0];
-    
-    let formData = new FormData();
-    formData.append('email', email);
-    formData.append('password', password);
-    formData.append('statusz', statusz);
-    // formData.append('avatar', avatar);
-    console.log(email);
+        const email = document.querySelector('#email').value;
+        const password = document.querySelector('#password').value;
+        const statusz = document.querySelector('#statusz').value;
 
-    const response = await fetch('http://localhost:3500/api/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(email),
-    });
+        console.log(email, password, statusz, avatar);
 
-    const valasz = await response.json();
+        const response = await fetch(
+            'http://localhost:3500/api/cinema/register',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                    statusz,
+                    avatar,
+                }),
+            }
+        );
 
-    if (response.ok) {
-      window.alert(valasz.msg);
-      window.location.replace('/login');
-    } else {
-      window.alert(valasz.msg);
+        const valasz = await response.json();
+
+        if (response.ok) {
+            window.alert(valasz.msg);
+            window.location.replace('/login');
+        } else {
+            window.alert(valasz.msg);
+        }
+    };
+
+    const felfed = () => {
+        const kepekTarto = document.querySelectorAll('.kepek-tarto')[0];
+        kepekTarto.style.display = 'grid';
+    };
+
+    const kepek = [
+        '/images/output/avatar_001.jpg',
+        '/images/output/avatar_002.jpg',
+        '/images/output/avatar_003.jpg',
+        '/images/output/avatar_004.jpg',
+        '/images/output/avatar_005.jpg',
+        '/images/output/avatar_006.jpg',
+        '/images/output/avatar_007.jpg',
+        '/images/output/avatar_008.jpg',
+        '/images/output/avatar_009.jpg',
+        '/images/output/avatar_010.jpg',
+        '/images/output/avatar_011.jpg',
+        '/images/output/avatar_012.jpg',
+        '/images/output/avatar_013.jpg',
+        '/images/output/avatar_014.jpg',
+        '/images/output/avatar_015.jpg',
+        '/images/output/avatar_016.jpg',
+    ];
+
+    function beagyaz(elem) {
+        const kep = elem.split('/')[3];
+        setAvatar(kep);
+        const kepekTarto = document.querySelectorAll('.kepek-tarto')[0];
+        kepekTarto.style.display = 'none';
+        const avatarName = document.querySelectorAll('.avatar-name')[0];
+        avatarName.style.display = 'inline-block';
+        avatarName.innerText = kep;
     }
-  };
 
-  return (
-    <div className="register-container">
-      <FelsoNav
-        filmekaktiv={false}
-        sorozatokaktiv={false}
-        loginaktiv={false}
-        registeraktiv={true}
-      />
-      <div className="register-form-container">
-        <div className="header">
-          <div className="text">Regisztráció</div>
-          <div className="register-underline"></div>
-        </div>
-        <div className="inputs">
-          <div className="input">
-            <input
-              type="E-mail"
-              placeholder="Email "
-              id='email'
+    return (
+        <div className="register-container">
+            <FelsoNav
+                filmekaktiv={false}
+                sorozatokaktiv={false}
+                loginaktiv={false}
+                registeraktiv={true}
             />
-          </div>
-          <div className="input">
-            <input
-              type="Password"
-              placeholder="Jelszó"
-              id='password'
-            />
-          </div>
-          <div className="input">
-            <span>Előfizetői státusz:</span>
-            <select id='statusz'>
-              <option value="vip">VIP</option>
-              <option value="Zsirkirály">Zsírkirály</option>
-              <option value="Mindenható">Mindenható</option>
-            </select>
-          </div>
-        </div>
+            <div className="register-form-container">
+                <div className="header">
+                    <div className="text">Regisztráció</div>
+                    <div className="register-underline"></div>
+                </div>
+                <div className="inputs">
+                    <div className="input">
+                        <input
+                            type="text"
+                            placeholder="Email "
+                            id="email"
+                        />
+                    </div>
+                    <div className="input">
+                        <input
+                            type="text"
+                            placeholder="Jelszó"
+                            id="password"
+                        />
+                    </div>
+                    <div className="input">
+                        <span>Előfizetői státusz:</span>
+                        <select id="statusz">
+                            <option value="vip">VIP</option>
+                            <option value="Zsírkirály">Zsírkirály</option>
+                            <option value="Mindenható">Mindenható</option>
+                        </select>
+                    </div>
+                    <div className="input">
+                        <button onClick={felfed}>Válassz egy avatárt!</button>
+                        <span className="avatar-name"></span>
+                        {/* <input
+                            type="file"
+                            id="myfile"
+                            name="myfile"
+                        /> */}
+                    </div>
+                </div>
 
-        <div className="input">
-          <label htmlFor="myfile">Tölts fel egy avatárt!</label>
-          <input type="file" id="myfile" name="myfile" />
+                <div className="forgot-password">
+                    Van már fiókod? <a href="login">Jelentkezz be itt!</a>
+                </div>
+                <div className="submit=container">
+                    <button
+                        onClick={feltolt}
+                        className="button-37"
+                        role="button"
+                    >
+                        Regisztráció
+                    </button>
+                </div>
+                <div className="kepek-tarto">
+                    {kepek.map((elem, index) => (
+                        <div
+                            className="kep"
+                            key={index}
+                        >
+                            <button onClick={() => beagyaz(elem)}>
+                                <img src={elem} />
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-
-        <div className="forgot-password">
-          Van már fiókod? <a href="login">Jelentkezz be itt!</a>
-        </div>
-        <div className="submit=container">
-          <button
-            onClick={feltolt}
-            className="button-37"
-            role="button"
-          >
-            Regisztráció
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Register;

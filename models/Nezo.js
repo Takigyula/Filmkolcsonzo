@@ -23,6 +23,8 @@ const NezoSchema = new mongoose.Schema(
         },
         avatar: {
             type: String,
+            required: true,
+            default: 'avatar_001.jpg',
         },
         foglalas: [
             {

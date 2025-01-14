@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     background-color: darkcyan;
@@ -9,7 +9,7 @@ body {
     background-size: cover;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -26,7 +26,7 @@ body {
     padding: 30px;
 }
 
-.header{
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,30 +35,30 @@ body {
     margin-top: 30px;
 }
 
-.text{
+.text {
     color: white;
     font-size: 48px;
     font-weight: 700;
     -webkit-text-stroke: 0.9px black;
-    font-family: "Oswald", serif;
-  }
+    font-family: 'Oswald', serif;
+}
 
-.underline{
+.underline {
     width: 61px;
     height: 6px;
     background: cyan;
     border-radius: 9px;
 }
 
-.inputs{
+.inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.input{
-    display:flex;
+.input {
+    display: flex;
     align-items: center;
     margin: auto;
     width: 480px;
@@ -67,7 +67,7 @@ body {
     border-radius: 6px;
 }
 
-.input input{
+.input input {
     height: 50px;
     width: 400px;
     background: transparent;
@@ -77,7 +77,7 @@ body {
     font-size: 19px;
 }
 
-.input select{
+.input select {
     height: 50px;
     width: 400px;
     background: transparent;
@@ -87,27 +87,27 @@ body {
     font-size: 19px;
 }
 
-.forgot-password{
+.forgot-password {
     padding-left: 62px;
     margin-top: 27px;
     color: lightgrey;
     font-size: 18px;
     -webkit-text-stroke: 0.5px black;
-    font-family: "Oswald", serif;
+    font-family: 'Oswald', serif;
 }
 
-.forgot-password span{
+.forgot-password span {
     color: blue;
     cursor: pointer;
 }
 
-.submit-container{
+.submit-container {
     display: flex;
     gap: 30px;
     margin: 60px auto;
 }
 
-.submit{
+.submit {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,40 +120,46 @@ body {
     font-weight: 700;
     cursor: pointer;
     text-align: center;
-    font-family: "Oswald", serif;   
+    font-family: 'Oswald', serif;
 }
 
 .button-37 {
-  background-color: cornflowerblue;
-  border: 1px solid black;
- -webkit-text-stroke: 0px black;
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
-  box-sizing: border-box;
-  color: white;
-  cursor: pointer;
-  font-family: "Oswald", serif;
-  font-optical-sizing: auto;
-  font-size: 18px;
-  font-weight: 400;
-  outline: none;
-  outline: 0;
-  padding: 10px 25px;
-  text-align: center;
-  transform: translateY(0);
-  transition: transform 150ms, box-shadow 150ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    -webkit-text-stroke: 0px black;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-family: 'Oswald', serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 25px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .button-37:hover {
-  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
-  transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+    transform: translateY(-2px);
+}
+
+.kepek-tarto {
+    position: fixed;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 @media (min-width: 768px) {
-  .button-37 {
-    padding: 10px 30px;
-  }
-} 
+    .button-37 {
+        padding: 10px 30px;
+    }
+}

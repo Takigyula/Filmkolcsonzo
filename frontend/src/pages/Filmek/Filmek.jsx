@@ -3,7 +3,8 @@ import './Filmek.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 
 const Filmek = () => {
-    +useEffect(() => {
+    // const [filmek, setFilmek] = useState([]);
+    useEffect(() => {
         const filmleker = async () => {
             // console.log('Hello');
             const response = await fetch(
@@ -14,7 +15,7 @@ const Filmek = () => {
                 let result = await response.json();
                 // console.log(result.filmek);
 
-                setFilmek(result.filmek);
+                // setFilmek(result.filmek);
             }
         };
 
