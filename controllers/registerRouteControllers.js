@@ -2,8 +2,8 @@ const bcrypt = require('bcrypt');
 const Nezo = require('../models/Nezo');
 
 exports.postRegister = async (req, res) => {
-    const { email, password, statusz } = req.body;
-    console.log(email, password, statusz);
+    const { email } = req.body;
+    console.log(email);
     try {
         if (!email || !password) {
             return res
@@ -27,7 +27,7 @@ exports.postRegister = async (req, res) => {
 
         console.log(newNezo);
 
-        await newNezo.save();
+        // await newNezo.save();
 
         res.status(201).json({ msg: 'Sikeres regisztráció!' });
     } catch (error) {
