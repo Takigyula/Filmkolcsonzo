@@ -45,22 +45,22 @@ const Register = () => {
     };
 
     const kepek = [
-        '/images/output/avatar_001.jpg',
-        '/images/output/avatar_002.jpg',
-        '/images/output/avatar_003.jpg',
-        '/images/output/avatar_004.jpg',
-        '/images/output/avatar_005.jpg',
-        '/images/output/avatar_006.jpg',
-        '/images/output/avatar_007.jpg',
-        '/images/output/avatar_008.jpg',
-        '/images/output/avatar_009.jpg',
-        '/images/output/avatar_010.jpg',
-        '/images/output/avatar_011.jpg',
-        '/images/output/avatar_012.jpg',
-        '/images/output/avatar_013.jpg',
-        '/images/output/avatar_014.jpg',
-        '/images/output/avatar_015.jpg',
-        '/images/output/avatar_016.jpg',
+        '/images/output/avatar_001.png',
+        '/images/output/avatar_002.png',
+        '/images/output/avatar_003.png',
+        '/images/output/avatar_004.png',
+        '/images/output/avatar_005.png',
+        '/images/output/avatar_006.png',
+        '/images/output/avatar_007.png',
+        '/images/output/avatar_008.png',
+        '/images/output/avatar_009.png',
+        '/images/output/avatar_010.png',
+        '/images/output/avatar_011.png',
+        '/images/output/avatar_012.png',
+        '/images/output/avatar_013.png',
+        '/images/output/avatar_014.png',
+        '/images/output/avatar_015.png',
+        '/images/output/avatar_016.png',
     ];
 
     function beagyaz(elem) {
