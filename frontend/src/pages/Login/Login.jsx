@@ -1,11 +1,12 @@
-// import { useContext } from 'react';
-// import BelepContext from '../../utils/LoginContext';
- import './Login.css';
+import { useContext } from 'react';
+import BelepContext from '../../utils/LoginContext';
+import './Login.css';
 import FelsoNav from '../../components/Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    // const { setBelep, setAdmin } = useContext(BelepContext);
-    localStorage.clear();
+    const { setBelep, setAdmin } = useContext(BelepContext);
+    const navigate = useNavigate();
 
     const belep = async (event) => {
         event.preventDefault();
@@ -15,7 +16,7 @@ const Login = () => {
 
         console.log(email, password);
 
-        const response = await fetch('http://localhost:3500/api/login', {
+        const response = await fetch('http://localhost:3500/api/cinema/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,13 +27,15 @@ const Login = () => {
         const valasz = await response.json();
 
         if (response.ok) {
-            window.alert(valasz.msg);
-            window.location.replace('/');
-            console.log(valasz.regisztralt);
+            
+            setBelep(true);
+            setAdmin(valasz.regisztralt.admine);
+            navigate('/'); // Sikeres bejelentkezés után átirányítás a filmek oldalra
         } else {
             window.alert(valasz.msg);
         }
     };
+
     return (
         <div className="login-container">
             <FelsoNav
@@ -48,14 +51,14 @@ const Login = () => {
                     <div className="inputs">
                         <div className="input">
                             <input
-                            id="email"
-                            type="E-mail"
-                            placeholder="Email "
+                                id="email"
+                                type="E-mail"
+                                placeholder="Email "
                             />
                         </div>
                         <div className="input">
                             <input
-                            id="password"
+                                id="password"
                                 type="Password"
                                 placeholder="Jelszó"
                             />

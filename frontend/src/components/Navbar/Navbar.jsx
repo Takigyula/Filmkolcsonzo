@@ -10,9 +10,6 @@ const FelsoNav = ({
     loginaktiv,
     registeraktiv,
 }) => {
-    // console.log(filmekaktiv);
-    // console.log(sorozatokaktiv);
-
     const filmekRef = useRef();
     const sorozatokRef = useRef();
     const loginRef = useRef();
@@ -69,11 +66,6 @@ const FelsoNav = ({
                     className="logo-img"
                 />
             </Link>
-            {/* <input
-            type="text"
-            id="kereses"
-            placeholder="Keresés..."
-        /> */}
             <div className="filmek-sorozatok">
                 <Link
                     to="/filmek"
@@ -89,7 +81,13 @@ const FelsoNav = ({
                 </Link>
             </div>
             {isLoggedIn ? (
-                <button onClick={kilep}>Kijelentkezés</button>
+                <button
+                    onClick={kilep}
+                    className="btn-17"
+                    
+                >
+                    Kijelentkezés
+                </button>
             ) : (
                 <>
                     <div className="login-regisztracio">
