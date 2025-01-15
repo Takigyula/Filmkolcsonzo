@@ -31,8 +31,18 @@
     <body>
         <%- include('./nav.ejs') %>
         <div class="container">
-            <h1>Felhasználók</h1>
+            <h1 class="felhasznalok-felirat">Felhasználók</h1>
             <div class="row">
+                <div class="col-12">
+                    <input
+                        type="text"
+                        id="kereso"
+                        placeholder="Keresés e-mail cím alapján"
+                        oninput="kereso()"
+                    />
+                </div>
+            </div>
+            <div class="row" id="felhasznalok">
                 <% for( let j = 0; j < nezok.length; j++ ) { %>
                 <div class="col-sm-12 col-lg-6 col-xl-4">
                     <h3>E-mail:</h3>
@@ -44,7 +54,8 @@
                         src="/images/output/<%= nezok[j].avatar %>"
                         alt="<%= nezok[j].avatar %>"
                     />
-                    <button onclick="torles('<%= nezok[j]._id%>')">
+                    <p style="color: red;">Figyelem! A törlés visszavonhatatlan!</p>
+                    <button onclick="confirmTorles('<%= nezok[j]._id%>')">
                         Törlés
                     </button>
                 </div>
@@ -52,5 +63,30 @@
             </div>
         </div>
         <script src="/js/nezotorol.js"></script>
+        <script>
+            function confirmTorles(id) {
+                if (confirm("Biztosan törölni szeretnéd a felhasználót?")) {
+                    torles(id);
+                }
+            }
+
+            function kereso() {
+                const keresoInput = document.getElementById("kereso");
+                const keresoErtek = keresoInput.value.toLowerCase();
+                const felhasznalok = document.getElementById("felhasznalok");
+                const felhasznaloKartyak = felhasznalok.children;
+
+                for (let i = 0; i < felhasznaloKartyak.length; i++) {
+                    const felhasznaloKartya = felhasznaloKartyak[i];
+                    const email = felhasznaloKartya.querySelector("p").textContent.toLowerCase();
+
+                    if (email.includes(keresoErtek)) {
+                        felhasznaloKartya.style.display = "block";
+                    } else {
+                        felhasznaloKartya.style.display = "none";
+                    }
+                }
+            }
+        </script>
     </body>
 </html>

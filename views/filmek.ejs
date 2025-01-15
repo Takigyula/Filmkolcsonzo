@@ -26,6 +26,10 @@
             href="/images/logo.png"
             type="image/x-icon"
         />
+        <link
+            rel="stylesheet"
+            href="/css/filmek.css"
+        />
         <style>
             body {
             }
@@ -51,30 +55,32 @@
     </head>
     <body>
         <%- include('./nav.ejs') %>
-        <div class="container">
+        <div class="container filmek-container">
             <h1>Filmek</h1>
             <div class="row">
-                <% for( let j = 0; j < filmek.length; j++ ) { %>
-                <div class="col-sm-12 col-lg-6 col-xl-4">
-                    <img
-                        src="/images/<%= filmek[j].plakat %>"
-                        alt="<%= filmek[j].cim %>"
-                    />
-                    <h3>
-                        <%= filmek[j].cim %> <br />
-                        <a href="egyedifilm/<%= filmek[j]._id %>">Adatok</a>
-                    </h3>
-                    <p>film hossza: <%= filmek[j].hossz %> perc</p>
-                    <h2>Statuszok:</h2>
-                    <ul>
-                        <% for( let i = 0; i < filmek[j].statuszok.length; i++ )
-                        { %>
-                        <li><%= filmek[j].statuszok[i] %></li>
-                        <% } %>
-                    </ul>
-                </div>
-                <% } %>
+              <% for( let j = 0; j < filmek.length; j++ ) { %>
+              <div class="col-sm-12 col-lg-6 col-xl-4">
+                <img
+                  src="/images/<%= filmek[j].plakat %>"
+                  alt="<%= filmek[j].cim %>"
+                />
+                <h3>
+                  <%= filmek[j].cim %>
+                </h3>
+                <p>ilm hossza: <%= filmek[j].hossz %> perc</p>
+                <h2>Statuszok:</h2>
+                <ul>
+                  <% for( let i = 0; i < filmek[j].statuszok.length; i++ )
+                  { %>
+                  <li><%= filmek[j].statuszok[i] %></li>
+                  <% } %>
+                </ul>
+                <button class="adatok-gomb">
+                  <a href="egyedifilm/<%= filmek[j]._id %>">Adatok</a>
+                </button>
+              </div>
+              <% } %>
             </div>
-        </div>
+          </div>
     </body>
 </html>

@@ -1,23 +1,38 @@
 .col-sm-12.col-lg-6.col-xl-4 {
-    border: 2px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     margin-right: 5px;
     margin-left: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33.33% - 20px); /* hozzáadott flex tulajdonság */
-    margin: 10px; /* módosított margin */
+    flex: 1 1 calc(33.33% - 20px); 
+    margin: 10px; 
 }
 
-/* új osztály a sorokhoz */
 .kocka-sor {
     display: block;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-/* új osztály az utolsó kockához */
 .kocka-sor .col-sm-12.col-lg-6.col-xl-4:nth-child(4n+1) {
-    flex: 0 0 calc(33.33% - 20px); /* módosított flex tulajdonság */
+    flex: 0 0 calc(33.33% - 20px); 
+}
+
+h1 {
+    text-align: center;
+  }
+
+.felhasznalok-felirat {
+    text-align: center;
+  }
+
+#kereso {
+    width: 50%;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
