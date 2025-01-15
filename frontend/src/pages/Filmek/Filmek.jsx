@@ -3,77 +3,77 @@ import './Filmek.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 
 const Filmek = () => {
-    // const [filmek, setFilmek] = useState([]);
+    const [filmek, setFilmek] = useState([]);
     useEffect(() => {
         const filmleker = async () => {
             // console.log('Hello');
             const response = await fetch(
-                'http://localhost:3500/api/cinema/filmek/films'
+                'http://localhost:3501/api/cinema/filmek/films'
             );
 
             if (response.ok) {
                 let result = await response.json();
-                // console.log(result.filmek);
+                console.log(result.filmek);
 
-                // setFilmek(result.filmek);
+                setFilmek(result.filmek);
             }
         };
 
         filmleker();
     }, []);
 
-    const filmek = [
-        {
-            cim: 'Oppenheimer',
-            kep: '/images/Oppenheimer.jpg',
-            kategoria: 'filmek',
-        },
-        {
-            cim: 'Wall street farkasai',
-            kep: '/images/Wall street farkasai.jpg',
-            kategoria: 'filmek,',
-        },
-        {
-            cim: 'Top Gun',
-            kep: '/images/topgun.jpg',
-            kategoria: 'filmek',
-        },
-        {
-            cim: 'Sötét lovag',
-            kep: '/images/sotetlovag.jpg',
-            kategoria: 'filmek',
-        },
-        {
-            cim: 'Prison Break',
-            kep: '/images/JohnWick.jpg',
-            kategoria: 'filmek',
-        },
-        {
-            cim: 'Deadpool',
-            kep: '/images/deadpool.jpg',
-            kategoria: 'filmek',
-        },
-        {
-            cim: 'Pókverzum',
-            kep: '/images/pokverzum.jpg',
-            kategoria: 'filmek',
-        },
-        {
-            cim: 'Bosszuallok',
-            kep: '/images/Bosszualok.jpg',
-            kategoria: 'filmek',
-        },
-    ];
+    // const filmek = [
+    //     {
+    //         cim: 'Oppenheimer',
+    //         kep: '/images/Oppenheimer.jpg',
+    //         kategoria: 'filmek',
+    //     },
+    //     {
+    //         cim: 'Wall street farkasai',
+    //         kep: '/images/Wall street farkasai.jpg',
+    //         kategoria: 'filmek,',
+    //     },
+    //     {
+    //         cim: 'Top Gun',
+    //         kep: '/images/topgun.jpg',
+    //         kategoria: 'filmek',
+    //     },
+    //     {
+    //         cim: 'Sötét lovag',
+    //         kep: '/images/sotetlovag.jpg',
+    //         kategoria: 'filmek',
+    //     },
+    //     {
+    //         cim: 'Prison Break',
+    //         kep: '/images/JohnWick.jpg',
+    //         kategoria: 'filmek',
+    //     },
+    //     {
+    //         cim: 'Deadpool',
+    //         kep: '/images/deadpool.jpg',
+    //         kategoria: 'filmek',
+    //     },
+    //     {
+    //         cim: 'Pókverzum',
+    //         kep: '/images/pokverzum.jpg',
+    //         kategoria: 'filmek',
+    //     },
+    //     {
+    //         cim: 'Bosszuallok',
+    //         kep: '/images/Bosszualok.jpg',
+    //         kategoria: 'filmek',
+    //     },
+    // ];
 
     const betolt = (index) => {
         let homeContainer = document.querySelector('.home-container');
-        homeContainer.style.backgroundImage = `url('${filmek[index].kep}')`;
+        homeContainer.style.backgroundImage = `url('/public/images/${filmek[index].plakat}')`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
 
-        sliderInfoImg.src = filmek[index].kep;
+        sliderInfoImg.src = `/public/images/${filmek[index].plakat}`;
         sliderInfoKategoria.innerText = filmek[index].kategoria;
         sliderInfoCim.innerText = filmek[index].cim;
 
@@ -106,7 +106,7 @@ const Filmek = () => {
                         <div className="slider-info">
                             <img
                                 className="info-img"
-                                src="../../public/images/deadpool.jpg"
+                                src="/public/images/deadpool.jpg"
                                 alt=""
                             />
                             <div className="slider-raitings">
@@ -130,7 +130,7 @@ const Filmek = () => {
                             <div className="sliderThumbs-img">
                                 <img
                                     className="thumb-img"
-                                    src={value.kep}
+                                    src={`/images/${value.plakat}`}
                                     onClick={() => betolt(index)}
                                     onMouseEnter={() => szinez(index)}
                                     onMouseLeave={() => torol(index)}

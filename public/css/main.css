@@ -4,3 +4,17 @@ h1, h2 {
     text-align: center;
 
 }
+
+.a-container {
+    height: 200px;
+    position: relative;
+  }
+  
+  .vertical-center {
+    margin: 0s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }

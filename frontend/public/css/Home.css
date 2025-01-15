@@ -9,15 +9,17 @@ body{
 
 .home-container {
     background-image: url('./images/deadpool.jpg');
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: max(100vh, 1700px);
     width: 100vw;
-    position: fixed;
+    /* position: fixed; */
     top: 0px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    
 }
 
 .home-main-container {

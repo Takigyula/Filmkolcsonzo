@@ -120,6 +120,7 @@ const Home = () => {
     return (
         <div className="home-container">
             <FelsoNav />
+            
             <div className="slider-container">
                 <div className="slider-info-container">
                     <div className="infoWrapper">
