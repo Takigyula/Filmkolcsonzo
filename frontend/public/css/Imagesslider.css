@@ -1,8 +1,9 @@
 .slider-container {
-    display: flex;
+    /* display: flex; */
     height: 35vh;
+    padding-top: 35vh;
     flex-direction: column;
-    gap: 10em;
+    gap: 8em;
     padding-left: 5em;
 }
 
@@ -65,14 +66,18 @@
     font-size: 2em;
     font-weight: 600;
 }
-
-.sliderThumbs-container {
+ 
+ .sliderThumbs-container {
     display: flex;
     flex-direction: row;
-    gap: 1em;
-    margin-left: 4em;
-    width: 90%;
-}
+    gap: 4em;
+    margin-left: 1em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 100px auto;
+    height: min(100%);
+}  
 
 .thumb-img {
     border-radius: 5px;
