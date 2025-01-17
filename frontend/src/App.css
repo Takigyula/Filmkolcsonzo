@@ -18,6 +18,6 @@ body {
     font-family: 'Fredoka', sans-serif;
         margin: 0;
         padding: 0;
-        height: 200vh; /* Példa: 200% magasság, hogy legyen mit görgetni */
+        /* height: 200vh; */
         overflow-y: scroll; /* Görgetés engedélyezése */
 }

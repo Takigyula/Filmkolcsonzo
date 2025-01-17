@@ -11,10 +11,10 @@ exports.getSorozatok = async (req, res) => {
     }
 };
 
-exports.getFilms = async (req, res) => {
-    const filmek = await Film.find({});
+exports.getSeries = async (req, res) => {
+    const sorozatok = await Sorozat.find({});
     try {
-        res.status(200).json({ filmek });
+        res.status(200).json({ sorozatok });
     } catch (error) {
         res.status(500).json({ msg: error });
     }

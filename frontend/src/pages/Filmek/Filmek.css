@@ -1,9 +1,0 @@
-.sliderThumbs-container {
-    /* background-color: #0a0b0f; */
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    width: 100%;
-    margin: 100px auto;
-    height: min(100%);
-
-}
