@@ -6,11 +6,13 @@ body {
     1px 1px 0 #000;
 }
 
-.filmek-container {
+.filmek-home-container {
     background-image: url('/images/deadpool.jpg');
+    background-attachment: fixed;
+    background-size: cover;
     padding-top: 100px;
     width: 100vw;
-    height: 100vh;
+    height: 1500px;
     text-shadow:
     1.5px 1px 0 #000,
     1px 1px 0 #000,
@@ -30,3 +32,4 @@ body {
     text-align: center;
     ;
 }
+
