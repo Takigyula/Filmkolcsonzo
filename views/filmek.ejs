@@ -56,8 +56,17 @@
     <body>
         <%- include('./nav.ejs') %>
         <div class="container filmek-container">
-            <h1>Filmek</h1>
+            <h1 class="felhasznalok-felirat">Filmek</h1>
+            <hr class="rounded">
             <div class="row">
+                <div class="col-12">
+                    <input
+                        type="text"
+                        id="kereso"
+                        placeholder="Keresés film cím alapján"
+                        oninput="kereso()"
+                    />
+                </div>
               <% for( let j = 0; j < filmek.length; j++ ) { %>
               <div class="col-sm-12 col-lg-6 col-xl-4">
                 <img
@@ -67,7 +76,7 @@
                 <h3>
                   <%= filmek[j].cim %>
                 </h3>
-                <p>ilm hossza: <%= filmek[j].hossz %> perc</p>
+                <p>Film hossza: <%= filmek[j].hossz %> perc</p>
                 <h2>Statuszok:</h2>
                 <ul>
                   <% for( let i = 0; i < filmek[j].statuszok.length; i++ )
@@ -82,5 +91,24 @@
               <% } %>
             </div>
           </div>
+          <script>
+    function kereso() {
+        const keresoInput = document.getElementById("kereso");
+        const keresoErtek = keresoInput.value.toLowerCase();
+        const filmekContainer = document.querySelector(".filmek-container");
+        const filmKartyak = filmekContainer.querySelectorAll(".col-sm-12.col-lg-6.col-xl-4");
+
+        for (let i = 0; i < filmKartyak.length; i++) {
+            const filmKartya = filmKartyak[i];
+                const filmCim = filmKartya.querySelector("h3").textContent.toLowerCase();
+
+                if (filmCim.includes(keresoErtek)) {
+                   filmKartya.style.display = "block";
+                } else {
+                    filmKartya.style.display = "none";
+                }
+              }
+         }
+        </script>
     </body>
 </html>

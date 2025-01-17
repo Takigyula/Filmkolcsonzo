@@ -1,5 +1,5 @@
 .filmek-container {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -86,3 +86,21 @@
   .filmek-container .col-sm-12.col-lg-6.col-xl-4 .adatok-gomb a:hover {
     color: black; 
   }
+
+  #kereso {
+    width: 50%;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.felhasznalok-felirat {
+  text-align: center;
+}
+
+hr.rounded {
+  border-top: 7px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}

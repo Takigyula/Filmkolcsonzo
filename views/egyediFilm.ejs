@@ -19,35 +19,37 @@
         ></script>
         <link
             rel="stylesheet"
-            href="/css/stilus.css"
+            href="/css/egyediFilm.css"
         />
         <title>Mozi</title>
     </head>
     <body>
         <%- include('./nav.ejs') %>
-        <div class="container">
+        <div class="egyediFilm">
             <h1><%= film.cim %></h1>
+            <hr class="rounded">
             <div id="ket-gomb">
-                <a href="/api/cinema/egyedifilmmodosit/<%= film._id %>"
-                    >Módosít</a
-                >
-                <button onclick="torol('<%= film._id%>')">Töröl</button>
+              <a href="/api/cinema/egyedifilmmodosit/<%= film._id %>">Módosít</a>
+              <button onclick="torolFilm('<%= film._id %>')">Töröl</button>
             </div>
-            <img
-                src="/images/<%= film.plakat %>"
-                alt="<%= film.cim %>"
-            />
+            <img src="/images/<%= film.plakat %>" alt="<%= film.cim %>">
             <p>A film hossza: <%= film.hossz %> perc</p>
             <div class="arkategoria">
-                <p>Státuszok:</p>
-                <ul>
-                    <% for( let i = 0; i < film.statuszok.length; i++ ) { %>
-                    <li><%= film.statuszok[i] %></li>
-
-                    <% } %>
-                </ul>
+              <p>Státuszok:</p>
+              <ul>
+                <% for( let i = 0; i < film.statuszok.length; i++ ) { %>
+                <li><%= film.statuszok[i] %></li>
+                <% } %>
+              </ul>
             </div>
-        </div>
+          </div>
         <script src="/js/egyediFilm.js"></script>
+        <script>
+            function torolFilm(id) {
+              if (confirm("A törlés végleges! Tényleg törölni szeretné ezt a filmet?")) {
+                torol(id);
+              }
+            }
+          </script>
     </body>
 </html>

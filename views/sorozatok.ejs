@@ -46,32 +46,59 @@
     </head>
     <body>
         <%- include('./nav.ejs') %>
-        <div class="container">
-            <h1>Sorozatok</h1>
+        <div class="nezok-container">
+            <h1 class="nezok-felirat">Sorozatok</h1>
+            <hr class="rounded">
+            <div class="col-12">
+                <input
+                    type="text"
+                    id="kereso"
+                    placeholder="Keresés sorozat cím alapján"
+                    oninput="kereso()"
+                />
+            </div>
             <div class="row">
                 <% for( let j = 0; j < sorozatok.length; j++ ) { %>
-                <div class="col-sm-12 col-lg-6 col-xl-4">
-                    <img
+                    <div class="col-sm-12 col-lg-6 col-xl-4">
+                      <img
                         src="/images/<%= sorozatok[j].plakat %>"
                         alt="<%= sorozatok[j].cim %>"
-                    />
-                    <h3>
-                        <%= sorozatok[j].cim %> <br />
-                        <a href="egyedisorozat/<%= sorozatok[j]._id %>"
-                            >Adatok</a
-                        >
-                    </h3>
-                    <p>Epizódok száma: <%= sorozatok[j].epizodokSzama %></p>
-                    <h2>Statuszok:</h2>
-                    <ul>
-                        <% for( let i = 0; i < sorozatok[j].statuszok.length;
-                        i++ ) { %>
+                      />
+                      <h3>
+                        <%= sorozatok[j].cim %>
+                      </h3>
+                      <p>Epizódok száma: <%= sorozatok[j].epizodokSzama %></p>
+                      <h2>Statuszok:</h2>
+                      <ul>
+                        <% for( let i = 0; i < sorozatok[j].statuszok.length; i++ ) { %>
                         <li><%= sorozatok[j].statuszok[i] %></li>
                         <% } %>
-                    </ul>
-                </div>
-                <% } %>
+                      </ul>
+                      <button class="adatok-gomb">
+                        <a href="egyedisorozat/<%= sorozatok[j]._id %>">Adatok</a>
+                      </button>
+                    </div>
+                  <% } %>
             </div>
         </div>
+        <script>
+            function kereso() {
+                const keresoInput = document.getElementById("kereso");
+                const keresoErtek = keresoInput.value.toLowerCase();
+                const sorozatokContainer = document.querySelector(".nezok-container");
+                const sorozatokKartyak = sorozatokContainer.querySelectorAll(".col-sm-12.col-lg-6.col-xl-4");
+
+                for (let i = 0; i < sorozatokKartyak.length; i++) {
+                    const sorozatokKartya = sorozatokKartyak[i];
+                    const sorozatokCim = sorozatokKartya.querySelector("h3").textContent.toLowerCase();
+
+                    if (sorozatokCim.includes(keresoErtek)) {
+                        sorozatokKartya.style.display = "block";
+                    } else {
+                        sorozatokKartya.style.display = "none";
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
