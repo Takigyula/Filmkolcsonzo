@@ -48,8 +48,11 @@ const Home = () => {
     ];
 
     const betolt = (index) => {
+        let i = Math.ceil(filmek.length / 6);
+        console.log(i);
         let homeContainer = document.querySelector('.home-container');
         homeContainer.style.backgroundImage = `url('${filmek[index].kep}')`;
+        homeContainer.style.height = `${i * 200 + 800}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
@@ -78,12 +81,11 @@ const Home = () => {
         thumbImg[index].style.width = '200px';
         thumbImg[index].style.transform = 'height width 1s';
     };
-    
 
     return (
         <div className="home-container">
             <FelsoNav />
-            
+
             <div className="slider-container">
                 <div className="slider-info-container">
                     <div className="infoWrapper">

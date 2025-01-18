@@ -1,9 +1,6 @@
 body {
-    text-shadow:
-    1.5px 1px 0 #000,
-    1px 1px 0 #000,
-    1px 1px 0 #000,
-    1px 1px 0 #000;
+    text-shadow: 1.5px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .filmek-home-container {
@@ -11,15 +8,10 @@ body {
     background-attachment: fixed;
     background-size: cover;
     padding-top: 100px;
-    width: 100vw;
-    height: 1500px;
-    text-shadow:
-    1.5px 1px 0 #000,
-    1px 1px 0 #000,
-    1px 1px 0 #000,
-    1px 1px 0 #000;
+    width: 99vw;
+    text-shadow: 1.5px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000,
+        1px 1px 0 #000;
 }
-
 
 .slider-raitings {
     width: 10%;
@@ -30,6 +22,4 @@ body {
     justify-content: center;
     padding: 50px;
     text-align: center;
-    ;
 }
-

@@ -13,6 +13,12 @@ const Filmek = () => {
             if (response.ok) {
                 let result = await response.json();
                 console.log(result.filmek);
+                let i = Math.ceil(result.filmek.length / 6);
+                console.log(i * 200 + 1000);
+                let homeContainer = document.querySelector(
+                    '.filmek-home-container'
+                );
+                homeContainer.style.height = `${i * 200 + 1000}px`;
 
                 setFilmek(result.filmek);
             }
@@ -21,15 +27,21 @@ const Filmek = () => {
         filmleker();
     }, []);
 
+    let i = Math.ceil(filmek.length / 6);
+    console.log(i * 200 + 1000);
+
     const betolt = (index) => {
+        console.log(filmek);
+
         let homeContainer = document.querySelector('.filmek-home-container');
         homeContainer.style.backgroundImage = `url('/images/${filmek[index].plakat}')`;
+        homeContainer.style.height = `${i * 200 + 1000}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
 
-        sliderInfoImg.src = `/public/images/${filmek[index].plakat}`;
+        sliderInfoImg.src = `/images/${filmek[index].plakat}`;
         sliderInfoKategoria.innerText = filmek[index].kategoria;
         sliderInfoCim.innerText = filmek[index].cim;
 
@@ -62,7 +74,7 @@ const Filmek = () => {
                         <div className="slider-info">
                             <img
                                 className="info-img"
-                                src="/public/images/deadpool.jpg"
+                                src="/images/deadpool.jpg"
                                 alt=""
                             />
                             <div className="slider-raitings">

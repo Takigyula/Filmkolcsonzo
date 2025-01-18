@@ -15,6 +15,10 @@ const sorozatSchema = new mongoose.Schema(
             required: true,
         },
         statuszok: [{ type: String }],
+        kategoria: {
+            type: String,
+            default: 'filmek',
+        },
     },
     {
         timestamps: true,

@@ -14,6 +14,12 @@ const Sorozatok = () => {
             if (response.ok) {
                 let result = await response.json();
                 console.log(result.sorozatok);
+                let i = Math.ceil(result.sorozatok.length / 6);
+                console.log(i * 200 + 1000);
+                let homeContainer = document.querySelector(
+                    '.sorozat-home-container'
+                );
+                homeContainer.style.height = `${i * 200 + 1000}px`;
 
                 setSorozatok(result.sorozatok);
             }
@@ -21,29 +27,25 @@ const Sorozatok = () => {
 
         sorozatleker();
     }, []);
-    
+
     const betolt = (index) => {
+        let i = Math.ceil(sorozatok.length / 6);
+        console.log(i * 200 + 1000);
         let homeContainer = document.querySelector('.sorozat-home-container');
         homeContainer.style.backgroundImage = `url('/images/${sorozatok[index].plakat}')`;
+        homeContainer.style.height = `${i * 200 + 1000}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
 
-        sliderInfoImg.src = `/public/images/${sorozatok[index].plakat}`;
+        sliderInfoImg.src = `/images/${sorozatok[index].plakat}`;
         sliderInfoKategoria.innerText = sorozatok[index].kategoria;
         sliderInfoCim.innerText = sorozatok[index].cim;
 
         let thumbImg = document.querySelectorAll('.thumb-img');
         thumbImg[index].style.border = '3px solid red';
     };
-    // {
-    //     let thumbImg = document.querySelectorAll('.thumb-img');
-    //     thumbImg[index].style.border = '3px solid orange';
-    //     thumbImg[index].style.height = '210px';
-    //     thumbImg[index].style.width = '210px';
-    //     thumbImg[index].style.transform = 'height width 1s';
-    // };
 
     const szinez = (index) => {
         let thumbImg = document.querySelectorAll('.thumb-img');
@@ -70,7 +72,7 @@ const Sorozatok = () => {
                         <div className="slider-info">
                             <img
                                 className="info-img"
-                                src="/public/images/brakingbad.jpg"
+                                src="/images/brakingbad.jpg"
                                 alt=""
                             />
                             <div className="slider-raitings">

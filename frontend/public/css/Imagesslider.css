@@ -68,8 +68,8 @@
     font-size: 2em;
     font-weight: 600;
 }
- 
- .sliderThumbs-container {
+
+.sliderThumbs-container {
     display: flex;
     flex-direction: row;
     gap: 4em;
@@ -79,7 +79,7 @@
     grid-template-columns: repeat(6, 1fr);
     margin: 100px auto;
     height: 500px;
-}  
+}
 
 .thumb-img {
     border-radius: 5px;
@@ -92,5 +92,3 @@
     color: white;
     font-weight: 400;
 }
-
-
