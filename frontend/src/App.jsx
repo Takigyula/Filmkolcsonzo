@@ -6,12 +6,14 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import './App.css';
 import Sorozatok from './pages/Sorozatok/Sorozatok';
+import Egyedi from './pages/Egyedi/Egyedi';
 
 function App() {
     return (
         <>
             <BrowserRouter>
                 <Routes>
+                    <Route path="/egyedi/:id" element={<Egyedi />} />   
                     <Route
                         path="/"
                         element={<Home />}

@@ -19,14 +19,15 @@
         ></script>
         <link
             rel="stylesheet"
-            href="/css/stilus.css"
+            href="/css/egyediSorozat.css"
         />
         <title>Mozi</title>
     </head>
     <body>
         <%- include('./nav.ejs') %>
-        <div class="container">
+        <div class="egyediSorozat">
             <h1><%= sorozat.cim %></h1>
+            <hr class="rounded">
             <div id="ket-gomb">
                 <a href="/api/cinema/egyedisorozatmodosit/<%= sorozat._id %>"
                     >Módosít</a
@@ -39,7 +40,7 @@
             />
             <p>Epizódok száma: <%= sorozat.epizodokSzama %></p>
 
-            <div class="statuszok">
+            <div class="arkategoria">
                 <p>Státuszok:</p>
                 <ul>
                     <% for( let i = 0; i < sorozat.statuszok.length; i++ ) { %>
@@ -49,5 +50,12 @@
             </div>
         </div>
         <script src="/js/egyediSorozat.js"></script>
+        <script>
+            function torolFilm(id) {
+              if (confirm("A törlés végleges! Tényleg törölni szeretné ezt a filmet?")) {
+                torol(id);
+              }
+            }
+          </script>
     </body>
 </html>

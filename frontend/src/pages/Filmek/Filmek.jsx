@@ -21,6 +21,11 @@ const Filmek = () => {
                 homeContainer.style.height = `${i * 200 + 1000}px`;
 
                 setFilmek(result.filmek);
+                let sliderButton = document.querySelector('.slider-btn');
+
+                sliderButton.addEventListener('click', () => {
+                    leker(result.filmek[3]._id)
+                });
             }
         };
 
@@ -40,6 +45,12 @@ const Filmek = () => {
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
+        let sliderButton = document.querySelector('.slider-btn');
+
+        sliderButton.addEventListener('click', () => {
+            console.log(filmek[index]._id);
+            leker(filmek[index]._id)
+        });
 
         sliderInfoImg.src = `/images/${filmek[index].plakat}`;
         sliderInfoKategoria.innerText = filmek[index].kategoria;
@@ -48,6 +59,10 @@ const Filmek = () => {
         let thumbImg = document.querySelectorAll('.thumb-img');
         thumbImg[index].style.border = '3px solid red';
     };
+
+    function leker(id) {
+        window.location.href = `/egyedi/${id}`;
+    }
 
     const szinez = (index) => {
         let thumbImg = document.querySelectorAll('.thumb-img');
@@ -88,6 +103,7 @@ const Filmek = () => {
                         <info className="slider-title">Deadpool</info>
                     </div>
                     <button className="slider-btn">Részletek</button>
+                
                 </div>
                 <div className="sliderThumbs-container">
                     {filmek.map((value, index) => (
