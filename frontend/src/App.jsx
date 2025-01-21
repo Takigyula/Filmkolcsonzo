@@ -7,6 +7,7 @@ import Register from './pages/Register/Register';
 import './App.css';
 import Sorozatok from './pages/Sorozatok/Sorozatok';
 import Egyedi from './pages/Egyedi/Egyedi';
+import Csomagok from './pages/Csomagok/Csomagok';
 
 function App() {
     return (
@@ -25,6 +26,10 @@ function App() {
                     <Route
                         path="/sorozatok"
                         element={<Sorozatok />}
+                    />
+                    <Route
+                        path="/csomagok"
+                        element={<Csomagok />}
                     />
                     <Route
                         path="/login"

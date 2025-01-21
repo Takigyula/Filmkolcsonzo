@@ -14,6 +14,7 @@ const FelsoNav = ({
     const sorozatokRef = useRef();
     const loginRef = useRef();
     const registerRef = useRef();
+    const csomagokRef = useRef();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
     const { getBelep, setBelep, getAdmin, setAdmin } = useContext(BelepContext);
@@ -78,6 +79,12 @@ const FelsoNav = ({
                     ref={sorozatokRef}
                 >
                     Sorozatok
+                </Link>
+                <Link
+                    to="/csomagok"
+                    ref={csomagokRef}
+                >
+                    Csomagok
                 </Link>
             </div>
             {isLoggedIn ? (

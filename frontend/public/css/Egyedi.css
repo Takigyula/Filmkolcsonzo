@@ -5,7 +5,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: max(100vh, 1700px);
+    text-align: center;
     width: 99vw;
+    color: white;
     /* position: fixed; */
     top: 0px;
     display: flex;
