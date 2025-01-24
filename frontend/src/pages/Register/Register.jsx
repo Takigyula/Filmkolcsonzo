@@ -102,7 +102,7 @@ const Register = () => {
                         />
                     </div>
                     <div className="input">
-                        <span>Előfizetői státusz:</span>
+                        <span id="elofizetoi-statusz">Előfizetői státusz:</span>
                         <select id="statusz">
                             <option value="vip">VIP</option>
                             <option value="Zsírkirály">Zsírkirály</option>
@@ -120,17 +120,7 @@ const Register = () => {
                     </div>
                 </div>
 
-                <div className="forgot-password">
-                    Van már fiókod? <a href="login">Jelentkezz be itt!</a>
-                </div>
                 <div className="submit=container">
-                    <button
-                        onClick={feltolt}
-                        className="button-37"
-                        role="button"
-                    >
-                        Regisztráció
-                    </button>
                 </div>
                 <div className="kepek-tarto">
                     {kepek.map((elem, index) => (
@@ -144,6 +134,16 @@ const Register = () => {
                         </div>
                     ))}
                 </div>
+                            <div className="forgot-password">
+                                Van már fiókod? <a href="login">Jelentkezz be itt!</a>
+                            </div>
+                    <button
+                        onClick={feltolt}
+                        className="button-37"
+                        role="button"
+                    >
+                        Regisztráció
+                    </button>
             </div>
         </div>
     );

@@ -44,7 +44,9 @@ body {
     font-size: 48px;
     font-weight: 700;
     -webkit-text-stroke: 0.9px black;
-    font-family: "Oswald", serif;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
 
 .underline{
@@ -61,17 +63,16 @@ body {
     gap: 25px;
 }
 
-.input{
-    display:flex;
+.input {
+    display: flex;
     align-items: center;
     margin: auto;
     width: 480px;
     height: 80px;
-    background: #eaeaea;
     border-radius: 6px;
-}
-
-.input input{
+  }
+  
+  .input input {
     height: 50px;
     width: 400px;
     background: transparent;
@@ -79,7 +80,15 @@ body {
     outline: none;
     color: #797979;
     font-size: 19px;
-}
+  }
+  
+  .input input:not(:focus):not(:placeholder-shown):not(:valid) {
+    background: #eaeaea;
+  }
+  
+  .input input:focus, .input input:valid {
+    background: transparent;
+  }
 
 .forgot-password{
     padding-left: 62px;

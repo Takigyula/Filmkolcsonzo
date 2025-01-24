@@ -37,7 +37,7 @@
 }
 
 .csomagok li {
-  background-color: #f9f9f9;
+  background-color: rgb(42, 42, 42);
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
