@@ -1,0 +1,52 @@
+
+.egyedi {
+  background-image: url('/images/hatter2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 293px;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+.film-info {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.film-description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.film-poster {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; 
+}
+
+.film-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px; 
+  margin-bottom: 10px;
+}
+
+hr {
+  height: 2px; 
+  border-width: 2px; 
+  border-color: rgb(255, 255, 255); 
+  border-style:solid;
+  width: 80%; 
+  margin: 0 auto; 
+}

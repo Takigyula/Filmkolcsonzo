@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-// import './Home.css';
 import FelsoNav from '../../components/Navbar/Navbar';
-// import Imagesslider from '../../components/Imagesslider/Imagesslider';
 
 const Sorozatok = () => {
     const [sorozatok, setSorozatok] = useState([]);
+    const [selectedSorozatId, setSelectedSorozatId] = useState(null); // Új állapot a kiválasztott sorozat azonosítójának tárolására
+
     useEffect(() => {
         const sorozatleker = async () => {
             const response = await fetch(
@@ -45,6 +45,15 @@ const Sorozatok = () => {
 
         let thumbImg = document.querySelectorAll('.thumb-img');
         thumbImg[index].style.border = '3px solid red';
+
+        // A kiválasztott sorozat azonosítójának tárolása
+        setSelectedSorozatId(sorozatok[index]._id);
+    };
+
+    const leker = () => {
+        if (selectedSorozatId) {
+            window.location.href = `/egyedi/${selectedSorozatId}`;
+        }
     };
 
     const szinez = (index) => {
@@ -87,7 +96,9 @@ const Sorozatok = () => {
                         </div>
                         <info className="slider-title">Totál Szívás</info>
                     </div>
-                    <button className="slider-btn">Részletek</button>
+                    <button className="slider-btn" onClick={leker}>
+                        Részletek
+                    </button>
                 </div>
                 <div className="sliderThumbs-container">
                     {sorozatok.map((value, index) => (
@@ -109,9 +120,6 @@ const Sorozatok = () => {
                     ))}
                 </div>
             </div>
-            {/* <div className="home-main-container">
-                <h1 id="csetflix">NextStream</h1>
-            </div> */}
         </div>
     );
 };
