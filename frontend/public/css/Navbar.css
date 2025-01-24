@@ -168,3 +168,10 @@
 .btn-17:hover:after {
   --progress: -102%;
 }
+.avatar-small {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid rgb(65, 60, 60);
+}

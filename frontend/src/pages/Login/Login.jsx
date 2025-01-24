@@ -5,7 +5,7 @@ import FelsoNav from '../../components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const { setBelep, setAdmin } = useContext(BelepContext);
+    const { setBelep, setAdmin, setAvatar } = useContext(BelepContext);
     const navigate = useNavigate();
 
     const belep = async (event) => {
@@ -27,9 +27,10 @@ const Login = () => {
         const valasz = await response.json();
 
         if (response.ok) {
-            
             setBelep(true);
             setAdmin(valasz.regisztralt.admine);
+            setAvatar(valasz.regisztralt.avatar);
+            localStorage.setItem('email', valasz.regisztralt.email);
             navigate('/'); // Sikeres bejelentkezés után átirányítás a filmek oldalra
         } else {
             window.alert(valasz.msg);

@@ -19,9 +19,17 @@ const LoginKezeles = (props) => {
         return JSON.parse(localStorage.getItem('admine'));
     };
 
+    const setAvatar = (adat) => {
+        localStorage.setItem('avatar', JSON.stringify(adat));
+    };
+
+    const getAvatar = () => {
+        return JSON.parse(localStorage.getItem('avatar'));
+    };
+
     return (
         <BelepContext.Provider
-            value={{ setBelep, getBelep, setAdmin, getAdmin }}
+            value={{ setBelep, getBelep, setAdmin, getAdmin, setAvatar, getAvatar }}
         >
             {props.children}
         </BelepContext.Provider>

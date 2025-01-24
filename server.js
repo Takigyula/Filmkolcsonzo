@@ -44,6 +44,7 @@ app.use(
 );
 // Felhasználó
 app.use('/api/cinema/nezok', require('./routes/nezokRoutes'));
+app.use('/api/cinema/nezokfront', require('./routes/nezokFrontRoutes'));
 // Foglalások
 app.use('/api/cinema/foglalasok', require('./routes/foglalasokRoutes'));
 // Frontend

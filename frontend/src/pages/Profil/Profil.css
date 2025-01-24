@@ -1,0 +1,139 @@
+.profil-container {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+    background-color: #1A233A;
+}
+
+.profil-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.profil-avatar {
+    margin: 0 0 1rem 0;
+}
+
+.profil-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.profil-info {
+    color:white;
+}
+.profil-info h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+.profil-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.profil-form {
+    margin: 1rem 0 0 0;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.profil-form input {
+    border: 1px solid #596280;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #1A233A;
+    color: #bcd0f7;
+}
+
+.profil-form .jelszo-container {
+    display: flex;
+    gap: 10px;
+}
+
+.profil-form .jelszo-container input {
+    width: 45%;
+}
+
+.profil-form .kepek-container {
+    margin-top: 20px;
+}
+
+.profil-form .kepek-container button {
+    background-color: #4c00b4;
+    border: 1px solid #333;
+    -webkit-text-stroke: 0px #333;
+    border-radius: 5px;
+    box-shadow: rgba(3, 61, 254, 0.1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 20px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.profil-form .kepek-container button:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+    transform: translateY(-2px);
+}
+
+.profil-form .mentes-container {
+    margin-top: 20px;
+}
+
+.profil-form .mentes-container button {
+    background-color: #4c00b4;
+    border: 1px solid #333;
+    -webkit-text-stroke: 0px #333;
+    border-radius: 5px;
+    box-shadow: rgba(3, 61, 254, 0.1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 20px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.profil-form .mentes-container button:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+    transform: translateY(-2px);
+}
+
+.kepek-tarto {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.kepek-tarto.active {
+    display: grid;
+}

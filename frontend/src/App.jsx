@@ -8,6 +8,7 @@ import './App.css';
 import Sorozatok from './pages/Sorozatok/Sorozatok';
 import Egyedi from './pages/Egyedi/Egyedi';
 import Csomagok from './pages/Csomagok/Csomagok';
+import Profil from './pages/Profil/Profil';
 
 function App() {
     return (
@@ -38,6 +39,10 @@ function App() {
                     <Route
                         path="/register"
                         element={<Register />}
+                    />
+                    <Route
+                        path="/profil"
+                        element={<Profil />}
                     />
                 </Routes>
             </BrowserRouter>

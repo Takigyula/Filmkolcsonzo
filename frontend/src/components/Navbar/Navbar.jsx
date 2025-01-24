@@ -17,12 +17,14 @@ const FelsoNav = ({
     const csomagokRef = useRef();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
-    const { getBelep, setBelep, getAdmin, setAdmin } = useContext(BelepContext);
+    const [avatar, setAvatar] = useState('');
+    const { getBelep, setBelep, getAdmin, getAvatar } = useContext(BelepContext);
     const navigate = useNavigate();
 
     useEffect(() => {
         setIsLoggedIn(getBelep());
         setIsAdmin(getAdmin());
+        setAvatar(getAvatar());
 
         if (filmekaktiv) {
             filmekRef.current.style.color = 'red';
@@ -55,8 +57,13 @@ const FelsoNav = ({
         setIsLoggedIn(false);
         setIsAdmin(false);
         setBelep(false);
-        setAdmin(false);
+        setIsAdmin(false);
+        localStorage.clear();
         navigate('/');
+    };
+
+    const profil = () => {
+        navigate('/profil');
     };
 
     return (
@@ -88,32 +95,37 @@ const FelsoNav = ({
                 </Link>
             </div>
             {isLoggedIn ? (
-                <button
-                    onClick={kilep}
-                    className="btn-17"
-                    
-                >
-                    Kijelentkezés
-                </button>
+                <div className="login-regisztracio">
+                    <img
+                        src={`/images/output/${avatar}`}
+                        alt="avatar"
+                        className="avatar-small"
+                        onClick={profil}
+                    />
+                    <button
+                        onClick={kilep}
+                        className="btn-17"
+                    >
+                        Kijelentkezés
+                    </button>
+                </div>
             ) : (
-                <>
-                    <div className="login-regisztracio">
-                        <Link
-                            className="nav_item"
-                            to="/login"
-                            ref={loginRef}
-                        >
-                            Bejelentkezés
-                        </Link>
-                        <Link
-                            className="nav_item"
-                            to="/register"
-                            ref={registerRef}
-                        >
-                            Regisztráció
-                        </Link>
-                    </div>
-                </>
+                <div className="login-regisztracio">
+                    <Link
+                        className="nav_item"
+                        to="/login"
+                        ref={loginRef}
+                    >
+                        Bejelentkezés
+                    </Link>
+                    <Link
+                        className="nav_item"
+                        to="/register"
+                        ref={registerRef}
+                    >
+                        Regisztráció
+                    </Link>
+                </div>
             )}
             {isAdmin ? (
                 <Link to="http://localhost:3500/api/cinema">Szerver</Link>
