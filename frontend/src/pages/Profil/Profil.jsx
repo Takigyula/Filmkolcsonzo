@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import BelepContext from '../../utils/LoginContext';
 import './Profil.css';
 import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar'; // Add this import
 
 const Profil = () => {
     const { getBelep, getAdmin, getAvatar, setAvatar } = useContext(BelepContext);
@@ -30,7 +31,6 @@ const Profil = () => {
 
         getNezo();
         // eslint-disable-next-line
-
     }, []);
 
     const updateNezo = async () => {
@@ -108,58 +108,66 @@ const Profil = () => {
     }
 
     return (
-        <div className="profil-container">
-            <div className="profil-header">
-                <h1>Üdvözöljük!</h1>
-            </div>
-            <div className="profil-body">
-                <div className="profil-avatar">
-                    <img src={`/images/output/${avatar}`} alt="avatar" />
+        <>
+            <Navbar /> {/* Add the Navbar component here */}
+            <div className="profil-container">
+                <div className="profil-header">
+                    <h1>Üdvözöljük!</h1>
                 </div>
-                <div className="profil-info">
-                    <h2>{email}</h2>
-                    <p>{isAdmin ? 'Admin' : ''}</p>
-                </div>
-                <div className="profil-form">
-                    <div className="jelszo-container">
-                        <input
-                            type="password"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                            placeholder="Új jelszó"
-                        />
-                        <input
-                            type="password"
-                            value={newPasswordAgain}
-                            onChange={(e) => setNewPasswordAgain(e.target.value)}
-                            placeholder="Új jelszó újra"
-                        />
+                <div className="profil-body">
+                    <div className="profil-avatar">
+                        <img src={`/images/output/${avatar}`} alt="avatar" />
                     </div>
+                    <div className="profil-info">
+                        <h2>{email}</h2>
+                        <p>{isAdmin ? 'Admin' : ''}</p>
+                    </div>
+                    <div className="profil-form">
                     <div className="kepek-container">
-                        <button onClick={felfed}>Válassz egy új avatárt!</button>
-                        <span className="avatar-name"></span>
-                        <div className="kepek-tarto">
-                            {kepek.map((elem, index) => (
-                                <div
-                                    className="kep"
-                                    key={index}
-                                >
-                                    <button onClick={() => beagyaz(elem)}>
-                                        <img src={elem} />
-                                    </button>
-                                </div>
-                            ))}
+                            <button onClick={felfed}>Válassz egy új avatárt!</button>
+                            <span className="avatar-name"></span>
+                            <div className="kepek-tarto">
+                                {kepek.map((elem, index) => (
+                                    <div
+                                        className="kep"
+                                        key={index}
+                                    >
+                                        <button onClick={() => beagyaz(elem)}>
+                                            <img src={elem} />
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="jelszo-container">
+                            <input
+                                type="password"
+                                value={newPassword}
+                                onChange={(e) => setNewPassword(e.target.value)}
+                                placeholder="Új jelszó"
+                            />
+                            <input
+                                type="password"
+                                value={newPasswordAgain}
+                                onChange={(e) => setNewPasswordAgain(e.target.value)}
+                                placeholder="Új jelszó újra"
+                            />
+                        </div>
+                     
+                        <div className="mentes-container">
+                            <button onClick={handleUpdate}>Mentés</button>
                         </div>
                     </div>
-                    <div className="mentes-container">
-                        <button onClick={handleUpdate}>Mentés</button>
+                    <div className='backtofooldal'>
+                    <Link to="/">
+                        <button>Vissza a főoldalra</button>
+                    </Link>
+                        
                     </div>
+                   
                 </div>
-                <Link to="/">
-                    <button>Vissza a főoldalra</button>
-                </Link>
             </div>
-        </div>
+        </>
     );
 };
 
