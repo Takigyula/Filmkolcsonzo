@@ -11,7 +11,7 @@ exports.getUjFilm = (req, res) => {
 };
 
 exports.postUjFilm = async (req, res) => {
-    const { cim, hossz, plakat, statuszok } = req.body;
+    const { cim, hossz, plakat, statuszok, leiras, kategoriak } = req.body;
 
     try {
         const newFilm = new Film({
@@ -19,6 +19,8 @@ exports.postUjFilm = async (req, res) => {
             hossz,
             plakat,
             statuszok,
+            leiras,
+            kategoriak,
         });
 
         await newFilm.save();
