@@ -15,10 +15,14 @@ const filmSchema = new mongoose.Schema(
             required: true,
         },
         statuszok: [{ type: String }],
-        kategoria: {
+        leiras: {
+            type: String,
+            required: true,
+        },
+        kategoriak: [{
             type: String,
             default: 'sorozatok',
-        },
+        }]
     },
     {
         timestamps: true,
