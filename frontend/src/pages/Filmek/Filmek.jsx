@@ -119,8 +119,9 @@ const Filmek = () => {
                                     onMouseEnter={() => szinez(index)}
                                     onMouseLeave={() => torol(index)}
                                 />
+                                <div className="thumb-title">{value.cim}</div>
                             </div>
-                            <div className="thumb-title">{value.cim}</div>
+                            
                         </div>
                     ))}
                 </div>
