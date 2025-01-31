@@ -40,7 +40,7 @@ const Filmek = () => {
 
         let homeContainer = document.querySelector('.filmek-home-container');
         homeContainer.style.backgroundImage = `url('/images/${filmek[index].plakat}')`;
-        homeContainer.style.height = `${i * 200 + 1000}px`;
+        homeContainer.style.height = `${i * 250 + 1000}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
