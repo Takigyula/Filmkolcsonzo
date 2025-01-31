@@ -4,6 +4,7 @@ import FelsoNav from '../../components/Navbar/Navbar';
 const Filmek = () => {
     const [filmek, setFilmek] = useState([]);
     useEffect(() => {
+        const statusz = localStorage.getItem('statusz');
         const filmleker = async () => {
             // console.log('Hello');
             const response = await fetch(
@@ -19,8 +20,8 @@ const Filmek = () => {
                     '.filmek-home-container'
                 );
                 homeContainer.style.height = `${i * 200 + 1000}px`;
-
-                setFilmek(result.filmek);
+                let nezhetoFilmek = result.filmek.filter(elem => elem.statuszok.includes(statusz));
+                setFilmek(nezhetoFilmek);
                 let sliderButton = document.querySelector('.slider-btn');
 
                 sliderButton.addEventListener('click', () => {

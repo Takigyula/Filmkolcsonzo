@@ -25,12 +25,17 @@ const Login = () => {
         });
 
         const valasz = await response.json();
+        if (response.ok) {
+            window.alert(valasz.msg);
+            window.location.replace('/csomagok');
+        }
 
         if (response.ok) {
             setBelep(true);
             setAdmin(valasz.regisztralt.admine);
             setAvatar(valasz.regisztralt.avatar);
             localStorage.setItem('email', valasz.regisztralt.email);
+            localStorage.setItem('elofizetes', valasz.regisztralt.statusz);
             navigate('/'); // Sikeres bejelentkezés után átirányítás a filmek oldalra
         } else {
             window.alert(valasz.msg);

@@ -9,9 +9,8 @@ const Register = () => {
 
         const email = document.querySelector('#email').value;
         const password = document.querySelector('#password').value;
-        const statusz = document.querySelector('#statusz').value;
 
-        console.log(email, password, statusz, avatar);
+        console.log(email, password, avatar);
 
         const response = await fetch(
             'http://localhost:3500/api/cinema/register',
@@ -23,7 +22,6 @@ const Register = () => {
                 body: JSON.stringify({
                     email,
                     password,
-                    statusz,
                     avatar,
                 }),
             }
@@ -101,14 +99,14 @@ const Register = () => {
                             id="password"
                         />
                     </div>
-                    <div className="input">
+                    {/* <div className="input">
                         <span id="elofizetoi-statusz">Előfizetői státusz:</span>
                         <select id="statusz">
-                            <option value="vip">VIP</option>
-                            <option value="Zsírkirály">Zsírkirály</option>
-                            <option value="Mindenható">Mindenható</option>
+                            <option value="standart">Standart</option>
+                            <option value="premium">Premium</option>
+                            <option value="delux">Deluxe</option>
                         </select>
-                    </div>
+                    </div> */}
                     <div className="input">
                         <button onClick={felfed}>Válassz egy avatárt!</button>
                         <span className="avatar-name"></span>

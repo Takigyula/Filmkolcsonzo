@@ -5,24 +5,17 @@ import FelsoNav from '../../components/Navbar/Navbar';
 
 const csomagok = [
   {
-    id: 1,
-    nev: 'VIP',
-    leiras: 'Ez az alapcsomag, amely tartalmazza az alapvető funkciókat.',
-    ar: 9.99,
-    kedvezmeny: 0,
-  },
-  {
     id: 2,
-    nev: 'Zsírkirály',
+    nev: 'Premium',
     leiras: 'Ez a prémium csomag, amely tartalmazza az összes funkcióval.',
     ar: 19.99,
     kedvezmeny: 10,
   },
   {
     id: 3,
-    nev: 'Mindenható',
+    nev: 'Deluxe',
     leiras: 'Ez a vállalati csomag, amely tartalmazza az összes funkcióval és további támogatással.',
-    ar: 49.99,
+    ar: 29.99,
     kedvezmeny: 20,
   },
 ];

@@ -2,9 +2,9 @@ const bcrypt = require('bcrypt');
 const Nezo = require('../models/Nezo');
 
 exports.postRegister = async (req, res) => {
-    const { email, password, statusz, avatar } = req.body;
+    const { email, password,  avatar } = req.body;
     try {
-        if (!email || !password || !statusz || !avatar) {
+        if (!email || !password || !avatar) {
             return res
                 .status(400)
                 .json({ msg: 'Minden mezőt kötelező kitölteni!' });
@@ -25,7 +25,6 @@ exports.postRegister = async (req, res) => {
         const newNezo = new Nezo({
             email,
             password: hashedPassword,
-            statusz,
             avatar,
         });
 
