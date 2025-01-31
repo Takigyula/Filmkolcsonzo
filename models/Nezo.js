@@ -39,3 +39,10 @@ const NezoSchema = new mongoose.Schema(
 const NezoModel = mongoose.model('viewer', NezoSchema);
 
 module.exports = NezoModel;
+const nezoSchema = new mongoose.Schema({
+    // ...
+    jelszoValtoztatas: {
+        type: Boolean,
+        default: false,
+    },
+});
