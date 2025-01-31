@@ -7,6 +7,9 @@
     padding: 20px;
   }
   
+  h3 {
+    text-align: center;
+  }
   .nezok-container .col-sm-12.col-lg-6.col-xl-4 {
     margin: 20px;
     padding: 20px;
@@ -103,6 +106,17 @@
   text-align: center;
 }
 
+.nezok-container .col-sm-12.col-lg-6.col-xl-4 .adatok-gomb {
+  display: block;
+  margin: 0 auto;
+  background-color: #fff;
+  color: black;
+  padding: 10px 20px;
+  border: 3px solid darkgrey;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
 
 
 hr.rounded {

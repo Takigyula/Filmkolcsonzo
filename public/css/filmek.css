@@ -104,3 +104,19 @@ hr.rounded {
   border-top: 7px solid rgb(0, 0, 0);
   border-radius: 5px;
 }
+
+h3{
+  text-align: center;
+}
+
+.filmek-container .col-sm-12.col-lg-6.col-xl-4 .adatok-gomb {
+  background-color: #fff;
+  color: black;
+  padding: 10px 20px;
+  border: 3px solid darkgrey;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin: 0 auto;
+  display: block;
+}
