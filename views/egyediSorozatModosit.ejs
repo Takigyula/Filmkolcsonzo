@@ -64,6 +64,13 @@
                         value="<%= modSorozat.plakat %>"
                     />
                 </p>
+                <p>
+                    <label for="leiras">Leirás: </label>
+                    <input
+                        type="text"
+                        id="leiras"
+                    />
+                </p>
                 <h4>Eredeti státuszok:</h4>
                 <ul>
                     <% for( let i = 0; i < modSorozat.statuszok.length; i++ ) {
@@ -80,6 +87,20 @@
                     <option value="Zsírkirály">Zsírkirály</option>
                     <option value="Mindenható">Mindenható</option>
                 </select>
+                <p>
+                    <label for="kategoriak">Kategóriák: </label>
+                    <select
+                    id="kategoriak"
+                    multiple
+                >
+                <option value="Akció">Akció</option>
+                <option value="Horror">Horror</option>
+                <option value="Vígjatek">Vígjáték</option>
+                <option value="Triller">Triller</option>
+                <option value="Scifi">Sci-fi</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Drama">Dráma</option>
+                </select></p>
                 <p>
                     <button id="feldolgoz">Feldolgoz</button>
                 </p>

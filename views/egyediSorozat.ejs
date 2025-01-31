@@ -38,16 +38,31 @@
                 src="/images/<%= sorozat.plakat %>"
                 alt="<%= sorozat.cim %>"
             />
-            <p>Epizódok száma: <%= sorozat.epizodokSzama %></p>
-
+            
             <div class="arkategoria">
+                <p>Epizódok száma: <%= sorozat.epizodokSzama %></p>
+                <hr>
                 <p>Státuszok:</p>
                 <ul>
                     <% for( let i = 0; i < sorozat.statuszok.length; i++ ) { %>
                     <li><%= sorozat.statuszok[i] %></li>
                     <% } %>
                 </ul>
+                <hr>
+                <p>Kategória:</p>
+                <ul>
+                    <% for( let i = 0; i < sorozat.kategoriak.length; i++ ) { %>
+                    <li><%= sorozat.kategoriak[i] %></li>
+                    <% } %>
+                </ul>
+                <hr>
+                <ul>
+                    <p>Leírás:</p>
+                    <%= sorozat.leiras %>
+                </ul>
             </div>
+            
+            
         </div>
         <script src="/js/egyediSorozat.js"></script>
         <script>

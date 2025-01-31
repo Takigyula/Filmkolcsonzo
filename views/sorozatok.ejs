@@ -67,13 +67,7 @@
                       <h3>
                         <%= sorozatok[j].cim %>
                       </h3>
-                      <p>Epizódok száma: <%= sorozatok[j].epizodokSzama %></p>
-                      <h2>Statuszok:</h2>
-                      <ul>
-                        <% for( let i = 0; i < sorozatok[j].statuszok.length; i++ ) { %>
-                        <li><%= sorozatok[j].statuszok[i] %></li>
-                        <% } %>
-                      </ul>
+                      
                       <button class="adatok-gomb">
                         <a href="egyedisorozat/<%= sorozatok[j]._id %>">Adatok</a>
                       </button>

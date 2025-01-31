@@ -21,7 +21,7 @@ exports.getEgyediFilmModosit = async (req, res) => {
 
 exports.updateEgyediFilmModosit = async (req, res) => {
     try {
-        const { id, cim, hossz, plakat, statuszok } = req.body;
+        const { id, cim, hossz, plakat, statuszok,leiras,kategoriak } = req.body;
         await Film.findByIdAndUpdate(
             { _id: id },
             {
@@ -29,6 +29,8 @@ exports.updateEgyediFilmModosit = async (req, res) => {
                 hossz,
                 plakat,
                 statuszok,
+                leiras,
+                kategoriak,
             }
         );
 

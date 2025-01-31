@@ -8,13 +8,22 @@ feldolgoz.addEventListener('click', async (event) => {
         document.querySelector('#epizodokSzama').value
     );
     const plakat = document.querySelector('#plakat').value;
-    const temp = Array.from(
+    const leiras = document.querySelector('#leiras').value;
+    const tempS = Array.from(
         document.querySelector('#statuszok').selectedOptions
     );
     let statuszok = [];
 
-    for (let i = 0; i < temp.length; i++) {
-        statuszok.push(temp[i].value);
+    for (let i = 0; i < tempS.length; i++) {
+        statuszok.push(tempS[i].value);
+    }
+    const tempK = Array.from(
+        document.querySelector('#kategoriak').selectedOptions
+    );
+    let kategoriak = [];
+
+    for (let i = 0; i < tempK.length; i++) {
+        kategoriak.push(tempK[i].value);
     }
 
     const response = await fetch('/api/cinema/egyedisorozatmodosit', {
@@ -28,6 +37,8 @@ feldolgoz.addEventListener('click', async (event) => {
             epizodokSzama,
             plakat,
             statuszok,
+            leiras,
+            kategoriak,
         }),
     });
 
