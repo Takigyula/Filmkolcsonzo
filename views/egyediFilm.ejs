@@ -33,14 +33,28 @@
               <button onclick="torolFilm('<%= film._id %>')">Töröl</button>
             </div>
             <img src="/images/<%= film.plakat %>" alt="<%= film.cim %>">
-            <p>A film hossza: <%= film.hossz %> perc</p>
             <div class="arkategoria">
+              <p>A film hossza: <%= film.hossz %> perc</p>
+              <hr>
               <p>Státuszok:</p>
               <ul>
                 <% for( let i = 0; i < film.statuszok.length; i++ ) { %>
                 <li><%= film.statuszok[i] %></li>
                 <% } %>
               </ul>
+              <hr>
+              <p>Kategória:</p>
+                <ul>
+                    <% for( let i = 0; i < film.kategoriak.length; i++ ) { %>
+                    <li><%= film.kategoriak[i] %></li>
+                    <% } %>
+                </ul>
+                <hr>
+                <ul>
+                    <p>Leírás:</p>
+                    <%= film.leiras %>
+                </ul>
+            </div>
             </div>
           </div>
         <script src="/js/egyediFilm.js"></script>

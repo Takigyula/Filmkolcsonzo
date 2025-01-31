@@ -76,14 +76,7 @@
                 <h3>
                   <%= filmek[j].cim %>
                 </h3>
-                <p>Film hossza: <%= filmek[j].hossz %> perc</p>
-                <h2>Statuszok:</h2>
-                <ul>
-                  <% for( let i = 0; i < filmek[j].statuszok.length; i++ )
-                  { %>
-                  <li><%= filmek[j].statuszok[i] %></li>
-                  <% } %>
-                </ul>
+                
                 <button class="adatok-gomb">
                   <a href="egyedifilm/<%= filmek[j]._id %>">Adatok</a>
                 </button>
