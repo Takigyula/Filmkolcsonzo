@@ -12,13 +12,15 @@ exports.getUjSorozat = (req, res) => {
 
 exports.postUjSorozat = async (req, res) => {
     try {
-        const { cim, epizodokSzama, plakat, statuszok } = req.body;
+        const { cim, epizodokSzama, plakat, statuszok, leiras, kategoriak } = req.body;
 
         const newSorozat = new Sorozat({
             cim,
             epizodokSzama,
             plakat,
             statuszok,
+            leiras,
+            kategoriak,
         });
         console.log(newSorozat);
         await newSorozat.save();

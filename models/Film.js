@@ -21,7 +21,7 @@ const filmSchema = new mongoose.Schema(
         },
         kategoriak: [{
             type: String,
-            default: 'sorozatok',
+            default: 'filmek',
         }]
     },
     {
