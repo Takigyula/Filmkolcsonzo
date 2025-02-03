@@ -4,10 +4,17 @@ import { useState } from 'react';
 
 const Register = () => {
     const [avatar, setAvatar] = useState('');
-    const feltolt = async (event) => {
+const feltolt = async (event) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
+    const email = document.querySelector('#email').value;
+
         event.preventDefault();
 
-        const email = document.querySelector('#email').value;
+    if (!emailRegex.test(email)) {
+        window.alert('Érvénytelen email formátum!');
+        return; // Prevent form submission
+    }
+
         const password = document.querySelector('#password').value;
 
         console.log(email, password, avatar);
