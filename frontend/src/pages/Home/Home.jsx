@@ -50,9 +50,9 @@ const Home = () => {
     const betolt = (index) => {
         let i = Math.ceil(filmek.length / 6);
         console.log(i);
-        let homeContainer = document.querySelector('.home-container');
+        let homeContainer = document.querySelector('.home-slider-container');
         homeContainer.style.backgroundImage = `url('${filmek[index].kep}')`;
-        homeContainer.style.height = `${i * 200 + 800}px`;
+        homeContainer.style.height = `${i * 250 + 800}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
@@ -86,16 +86,16 @@ const Home = () => {
         <div className="home-container">
             <FelsoNav />
 
-            <div className="slider-container">
-                <div className="slider-info-container">
+            <div className="home-slider-container">
+                <div className="home-slider-info-container">
                     <div className="infoWrapper">
-                        <div className="slider-info">
+                        <div className="home-slider-info">
                             <img
                                 className="info-img"
                                 src="../../public/images/deadpool.jpg"
                                 alt=""
                             />
-                            <div className="slider-raitings">
+                            <div className="home-slider-raitings">
                                 <p className="slider-raiting">*****</p>
                                 <p className="slider-category">
                                     <span className="category">Kategória</span>
@@ -107,7 +107,7 @@ const Home = () => {
                     </div>
                     <button className="slider-btn">Részletek</button>
                 </div>
-                <div className="sliderThumbs-container">
+                <div className="home-sliderThumbs-container">
                     {filmek.map((value, index) => (
                         <div
                             className="sliderThumbs"
