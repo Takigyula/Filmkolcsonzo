@@ -8,15 +8,15 @@
   transition: background-image 0.5s ease-in-out;
 }
 
-/*.slider-container {
+/* .slider-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   background-color: #141414;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-*/
+} */
+
 .slider-info-container {
   display: flex;
   flex-direction: column;

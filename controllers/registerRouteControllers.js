@@ -2,12 +2,17 @@ const bcrypt = require('bcrypt');
 const Nezo = require('../models/Nezo');
 
 exports.postRegister = async (req, res) => {
-    const { email, password,  avatar } = req.body;
+    const { email, password, avatar } = req.body;
     try {
         if (!email || !password || !avatar) {
             return res
                 .status(400)
                 .json({ msg: 'Minden mezőt kötelező kitölteni!' });
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ msg: 'Érvénytelen email formátum!' });
         }
 
         const regisztralt = await Nezo.findOne({ email });
@@ -19,7 +24,6 @@ exports.postRegister = async (req, res) => {
         }
 
         const salt = await bcrypt.genSalt(10);
-
         const hashedPassword = bcrypt.hashSync(password, salt);
 
         const newNezo = new Nezo({
