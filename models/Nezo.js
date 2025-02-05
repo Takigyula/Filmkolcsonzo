@@ -19,7 +19,7 @@ const NezoSchema = new mongoose.Schema(
         statusz: {
             type: String,
             required: true,
-            default: 'VIP',
+            default: 'Standard',
         },
         avatar: {
             type: String,
