@@ -15,7 +15,7 @@ const Sorozatok = () => {
                 let result = await response.json();
                 console.log(result.sorozatok);
                 let i = Math.ceil(result.sorozatok.length / 6);
-                console.log(i * 200 + 1000);
+                // console.log(i * 200 + 1000);
                 let homeContainer = document.querySelector(
                     '.sorozat-home-container'
                 );
