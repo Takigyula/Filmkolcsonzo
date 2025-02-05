@@ -1,11 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 // import './Home.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 // import Imagesslider from '../../components/Imagesslider/Imagesslider';
 
 const Home = () => {
+    const [selectedId, setSelectedId] = useState(null);
+
     const filmek = [
         {
+            _id: '67835ebb82727553786771f0',
             cim: 'Deadpool',
             kep: '/images/deadpool.jpg',
             kategoria: 'filmek',
@@ -48,11 +51,11 @@ const Home = () => {
     ];
 
     const betolt = (index) => {
-        let i = Math.ceil(filmek.length / 6);
+        let i = Math.ceil(filmek.length / 4);
         console.log(i);
-        let homeContainer = document.querySelector('.home-slider-container');
+        let homeContainer = document.querySelector('.home-container');
         homeContainer.style.backgroundImage = `url('${filmek[index].kep}')`;
-        homeContainer.style.height = `${i * 250 + 800}px`;
+        homeContainer.style.height = `${i * 300 + 800}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
@@ -64,6 +67,16 @@ const Home = () => {
 
         let thumbImg = document.querySelectorAll('.thumb-img');
         thumbImg[index].style.border = '3px solid red';
+
+        setSelectedId(filmek[index]._id);
+    };
+
+    const leker = () => {
+        if (selectedId) {
+            window.location.href = `/egyedi/${selectedId}`;
+        } else {
+            window.location.href = `/egyedi/67835ebb82727553786771f0`;
+        }
     };
 
     const szinez = (index) => {
@@ -102,10 +115,15 @@ const Home = () => {
                                     <span className="slider-tipus">Filmek</span>
                                 </p>
                             </div>
+                            <info className="slider-title">Deadpool</info>
+                            <button
+                                className="slider-btn"
+                                onClick={leker}
+                            >
+                                Részletek
+                            </button>
                         </div>
-                        <info className="slider-title">Deadpool</info>
                     </div>
-                    <button className="slider-btn">Részletek</button>
                 </div>
                 <div className="home-sliderThumbs-container">
                     {filmek.map((value, index) => (

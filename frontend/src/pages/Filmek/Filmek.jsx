@@ -14,11 +14,19 @@ const Filmek = () => {
 
             if (response.ok) {
                 let result = await response.json();
-                let nezhetoFilmek = statusz ? result.filmek.filter(elem => elem.statuszok.includes(statusz)) : result.filmek;
+                console.log(result);
+                let nezhetoFilmek = statusz
+                    ? result.filmek.filter((elem) =>
+                          elem.statuszok.includes(statusz)
+                      )
+                    : result.filmek;
+                console.log(result.filmek.length);
+                let i = Math.ceil(result.filmek.length / 6);
+                let homeContainer = document.querySelector(
+                    '.filmek-home-container'
+                );
+                homeContainer.style.height = `${i * 250 + 1000}px`;
                 setFilmek(nezhetoFilmek);
-                let homeContainer = document.querySelector('.filmek-home-container');
-                let i = Math.ceil(nezhetoFilmek.length / 6);
-                homeContainer.style.height = `${i * 200 + 1000}px`;
             }
         };
 
@@ -34,7 +42,7 @@ const Filmek = () => {
         homeContainer.style.height = `${i * 250 + 1000}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
-        let sliderInfoKategoria = document.querySelector('.slider-tipus'); 
+        let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
 
         sliderInfoImg.src = `/images/${filmek[index].plakat}`;
@@ -51,6 +59,8 @@ const Filmek = () => {
     const leker = () => {
         if (selectedFilmId) {
             window.location.href = `/egyedi/${selectedFilmId}`;
+        } else {
+            window.location.href = `/egyedi/67835ebb82727553786771f0`;
         }
     };
 
@@ -73,55 +83,62 @@ const Filmek = () => {
     return (
         <div className="filmek-home-container">
             <FelsoNav />
-
             <div className="slider-container">
-                <div className="filmek-slider-info-container">
+                <div className="slider-info-container">
                     <div className="infoWrapper">
-
-            <div className="filmek-slider-container">
-            <div className="infoWrapper">
-
-                        <div className="slider-info">
-                            <img
-                                className="info-img"
-                                src="/images/brakingbad.jpg"
-                                alt=""
-                            />
-                            <div className="slider-raitings">
-                                <p className="slider-raiting">*****</p>
-                                <p className="slider-category">
-                                    <span className="category">Kategória</span>
-                                    <span className="slider-tipus">
-                                        Sorozatok
-                                    </span>
-                                </p>
+                        <div className="filmek-slider-container">
+                            <div className="slider-info">
+                                <img
+                                    className="info-img"
+                                    src="/images/deadpool.jpg"
+                                    alt=""
+                                />
+                                <div className="slider-raitings">
+                                    <p className="slider-raiting">*****</p>
+                                    <p className="slider-category">
+                                        <span className="category">
+                                            Kategória
+                                        </span>
+                                        <span className="slider-tipus">
+                                            Filmek
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
+                            <info className="slider-title">Deadpool</info>
+                            <button
+                                className="slider-btn"
+                                onClick={leker}
+                            >
+                                Részletek
+                            </button>
                         </div>
-                        <info className="slider-title">Deadpool</info>
+                        <div className="sliderThumbs-container">
+                            {filmek.map((value, index) => (
+                                <div
+                                    className="sliderThumbs"
+                                    key={index}
+                                >
+                                    <div className="filmek-sliderThumbs-img">
+                                        <img
+                                            className="thumb-img"
+                                            src={`/images/${value.plakat}`}
+                                            onClick={() => betolt(index)}
+                                            onMouseEnter={() => szinez(index)}
+                                            onMouseLeave={() => torol(index)}
+                                        />
+                                    </div>
+                                    <div className="thumb-title">
+                                        {value.cim}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <button className="slider-btn" onClick={leker}>
-                        Részletek
-                    </button>
-                <div className="sliderThumbs-container">
-                    {filmek.map((value, index) => (
-                        <div className="sliderThumbs" key={index}>
-                            <img
-                                className="thumb-img"
-                                src={`/images/${value.plakat}`}
-                                onClick={() => betolt(index)}
-                                nMouseEnter={() => szinez(index)}
-                                    onMouseLeave={() => torol(index)}
-                            />
-                            <div className="thumb-title">{value.cim}</div>
-                        </div>
-                    ))}
                 </div>
             </div>
         </div>
-        </div>
-        </div>
-        </div>
-);
-}
+    );
+};
 
 export default Filmek;

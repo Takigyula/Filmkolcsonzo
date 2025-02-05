@@ -1,95 +1,93 @@
-
 .filmek-home-container {
-  background-color: #141414;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-size: cover;
-  background-position: center;
-  overflow-x: hidden;
-  background-image: url('/images/deadpool.jpg');
-  transition: background-image 0.5s ease-in-out;
+    background-image: url('/images/deadpool.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #141414;
+    padding-top: 100px;
+    width: 99vw;
+    transition: background-image 0.5s ease-in-out;
 }
 
 .filmek-slider-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-  display: grid;
-  justify-content: center !important;
-}  
-
-.slider-info-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center !important;
 }
 
- .slider-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} 
+.slider-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.slider-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .info-img {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .slider-raitings {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
- .slider-raiting {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ff9900;
-} 
+.slider-raiting {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9900;
+}
 
- .slider-category {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-} 
+.slider-category {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
 
 .slider-tipus {
-  font-size: 18px;
-  font-weight: bold;
-  color: #666;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
 }
 
 .slider-title {
-  font-size: 36px;
-  font-weight: bold;
-  color: rgb(250, 247, 247);
-  text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(250, 247, 247);
+    text-align: center;
 }
 
 .slider-btn {
-  background-color: #120fbb;
-  color: #fff;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    background-color: #120fbb;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .slider-btn:hover {
-  background-color: #3e8e41;
+    background-color: #3e8e41;
 }
 
 .sliderThumbs-container {
-  display: grid;
+    display: grid;
     flex-direction: row;
     gap: 2em;
     margin-left: 1em;
@@ -101,52 +99,54 @@
 }
 
 .sliderThumbs {
-  margin: 10px;
-  width: 200px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
+    margin: 10px;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.sliderThumbs-img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  border: 1px solid #ddd;
+.filmek-sliderThumbs-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #ddd;
 }
 
 .sliderThumbs-img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .thumb-img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  border: 1px solid #ddd;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #ddd;
 }
 
 .thumb-img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .thumb-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
 }
 
 /* Átlátszó háttér */
-.filmek-home-container, .slider-container, .slider-info-container, .sliderThumbs-container {
-  background-color: transparent;
+.filmek-home-container,
+.slider-container,
+.slider-info-container,
+.sliderThumbs-container {
+    background-color: transparent;
 }

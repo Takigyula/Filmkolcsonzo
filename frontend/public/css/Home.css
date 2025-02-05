@@ -1,18 +1,10 @@
-
-
 .home-container {
     background-image: url('./images/deadpool.jpg');
-    background-attachment: scroll;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-    height: max(100vh, 1700px); 
+    padding-top: 100px;
     width: 99vw;
-    /* position: fixed; */
-    top: 0px;
-    display: flex;
-    /* overflow-x: hidden; */
-    /* align-items: center; */
+    transition: background-image 0.5s ease-in-out;
 }
 
 .home-main-container {
@@ -39,8 +31,15 @@
     font-weight: 500;
 }
 
+.home-slider-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .slider-btn {
-    background-color: #0b16f2; 
+    background-color: #0b16f2;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -48,7 +47,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 1em;
-} 
+}
 
 .home-slider-container {
     width: 100%;
@@ -56,12 +55,12 @@
 
 .home-slider-info-container {
     display: flex;
-    margin-top: 200px;
+    /* margin-top: 200px; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
-  }
+}
 
 .home-sliderThumbs-container {
     display: grid;
@@ -69,4 +68,12 @@
     /* flex-wrap: wrap; */
     justify-content: center;
     padding: 50px;
-  }
+}
+
+.home-slider-raitings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}

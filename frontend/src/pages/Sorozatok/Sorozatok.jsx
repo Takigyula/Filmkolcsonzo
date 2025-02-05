@@ -6,6 +6,7 @@ const Sorozatok = () => {
     const [selectedSorozatId, setSelectedSorozatId] = useState(null); // Új állapot a kiválasztott sorozat azonosítójának tárolására
 
     useEffect(() => {
+        const statusz = localStorage.getItem('statusz');
         const sorozatleker = async () => {
             const response = await fetch(
                 'http://localhost:3500/api/cinema/sorozatok/series'
@@ -14,14 +15,17 @@ const Sorozatok = () => {
             if (response.ok) {
                 let result = await response.json();
                 console.log(result.sorozatok);
+                let nezhetoSorozatok = statusz
+                    ? result.sorozatok.filter((elem) =>
+                          elem.statuszok.includes(statusz)
+                      )
+                    : result.sorozatok;
                 let i = Math.ceil(result.sorozatok.length / 6);
-                // console.log(i * 200 + 1000);
                 let homeContainer = document.querySelector(
                     '.sorozat-home-container'
                 );
                 homeContainer.style.height = `${i * 200 + 1000}px`;
-
-                setSorozatok(result.sorozatok);
+                setSorozatok(nezhetoSorozatok);
             }
         };
 
@@ -29,6 +33,7 @@ const Sorozatok = () => {
     }, []);
 
     const betolt = (index) => {
+        console.log(sorozatok.length);
         let i = Math.ceil(sorozatok.length / 6);
         console.log(i * 250 + 1000);
         let homeContainer = document.querySelector('.sorozat-home-container');
@@ -36,7 +41,7 @@ const Sorozatok = () => {
         homeContainer.style.height = `${i * 250 + 1000}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
-        let sliderInfoKategoria = document.querySelector('.slider-tipus'); 
+        let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
 
         sliderInfoImg.src = `/images/${sorozatok[index].plakat}`;
@@ -53,6 +58,8 @@ const Sorozatok = () => {
     const leker = () => {
         if (selectedSorozatId) {
             window.location.href = `/egyedi/${selectedSorozatId}`;
+        } else {
+            window.location.href = `/egyedi/678519e1256d101fad46a800`;
         }
     };
 
@@ -78,46 +85,62 @@ const Sorozatok = () => {
             <div className="slider-container">
                 <div className="slider-info-container">
                     <div className="infoWrapper">
-                        <div className="slider-info">
-                            <img
-                                className="info-img"
-                                src="/images/brakingbad.jpg"
-                                alt=""
-                            />
-                            <div className="slider-raitings">
-                                <p className="slider-raiting">*****</p>
-                                <p className="slider-category">
-                                    <span className="category">Kategória</span>
-                                    <span className="slider-tipus">
-                                        Sorozatok
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <info className="slider-title">Totál Szívás</info>
-                    </div>
-                    <button className="slider-btn" onClick={leker}>
-                        Részletek
-                    </button>
-                </div>
-                <div className="sliderThumbs-container">
-                    {sorozatok.map((value, index) => (
-                        <div
-                            className="sliderThumbs"
-                            key={index}
-                        >
-                            <div className="sorozat-sliderThumbs-img">
+                        <div className="sorozatok-slider-container">
+                            <div className="slider-info">
                                 <img
-                                    className="thumb-img"
-                                    src={`/images/${value.plakat}`}
-                                    onClick={() => betolt(index)}
-                                    onMouseEnter={() => szinez(index)}
-                                    onMouseLeave={() => torol(index)}
+                                    className="info-img"
+                                    src="/images/brakingbad.jpg"
+                                    alt=""
                                 />
+                                <div className="slider-raitings">
+                                    <p className="slider-raiting">*****</p>
+                                    <p className="slider-category">
+                                        <span className="category">
+                                            Kategória
+                                        </span>
+                                        <span className="slider-tipus">
+                                            Sorozatok
+                                        </span>
+                                    </p>
+                                </div>
+                                <info className="slider-title">
+                                    Totál Szívás
+                                </info>
+                                <button
+                                    className="slider-btn"
+                                    onClick={leker}
+                                >
+                                    Részletek
+                                </button>
                             </div>
-                            <div className="thumb-title">{value.cim}</div>
+
+                            <div className="sliderThumbs-container">
+                                {sorozatok.map((value, index) => (
+                                    <div
+                                        className="sliderThumbs"
+                                        key={index}
+                                    >
+                                        <div className="sorozat-sliderThumbs-img">
+                                            <img
+                                                className="thumb-img"
+                                                src={`/images/${value.plakat}`}
+                                                onClick={() => betolt(index)}
+                                                onMouseEnter={() =>
+                                                    szinez(index)
+                                                }
+                                                onMouseLeave={() =>
+                                                    torol(index)
+                                                }
+                                            />
+                                        </div>
+                                        <div className="thumb-title">
+                                            {value.cim}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ))}
+                    </div>
                 </div>
             </div>
         </div>
