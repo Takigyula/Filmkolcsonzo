@@ -30,13 +30,13 @@ const Sorozatok = () => {
 
     const betolt = (index) => {
         let i = Math.ceil(sorozatok.length / 6);
-        console.log(i * 200 + 1000);
+        console.log(i * 250 + 1000);
         let homeContainer = document.querySelector('.sorozat-home-container');
         homeContainer.style.backgroundImage = `url('/images/${sorozatok[index].plakat}')`;
-        homeContainer.style.height = `${i * 200 + 1000}px`;
+        homeContainer.style.height = `${i * 250 + 1000}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
-        let sliderInfoKategoria = document.querySelector('.slider-tipus');
+        let sliderInfoKategoria = document.querySelector('.slider-tipus'); 
         let sliderInfoCim = document.querySelector('.slider-title');
 
         sliderInfoImg.src = `/images/${sorozatok[index].plakat}`;
