@@ -80,7 +80,7 @@ const Filmek = () => {
         <div className="filmek-home-container">
             <FelsoNav />
             <div className="slider-container">
-                <div className="slider-info-container">
+                <div className="filmek-slider-info-container">
                     <div className="infoWrapper">
                         <div className="slider-info">
                             <img
