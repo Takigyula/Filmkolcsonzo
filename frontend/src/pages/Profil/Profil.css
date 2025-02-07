@@ -229,3 +229,32 @@ body, html {
     box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
     transform: translateY(-2px);
 }
+.kepek-tarto {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    background-color: #1A233A;
+  }
+  
+  .kepek-tarto.active {
+    display: grid;
+  }
+  
+  .kepek-tarto .kep {
+    margin: 10px;
+  }
+  
+  .kepek-tarto .kep img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+  }
