@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import FelsoNav from '../../components/Navbar/Navbar';
+import SearchBar from '../Searchbar/Searchbar';
+import { FilmContext } from '../../Context/Filmcontext';
 
 const Filmek = () => {
+    const {kiFilmek} = useContext(FilmContext);
     const [filmek, setFilmek] = useState([]);
     const [selectedFilmId, setSelectedFilmId] = useState(null);
 
     useEffect(() => {
+        console.log(kiFilmek);
         const statusz = localStorage.getItem('statusz');
         const filmleker = async () => {
             const response = await fetch(
@@ -26,12 +30,13 @@ const Filmek = () => {
                     '.filmek-home-container'
                 );
                 homeContainer.style.height = `${i * 250 + 1000}px`;
-                setFilmek(nezhetoFilmek);
+                if (kiFilmek && kiFilmek.length > 0) setFilmek(kiFilmek);
+                else setFilmek(nezhetoFilmek);
             }
         };
 
         filmleker();
-    }, []);
+    }, [kiFilmek]);
 
     const betolt = (index) => {
         let i = Math.ceil(filmek.length / 6);
@@ -83,6 +88,7 @@ const Filmek = () => {
     return (
         <div className="filmek-home-container">
             <FelsoNav />
+            <SearchBar />
             <div className="slider-container">
                 <div className="slider-info-container">
                     <div className="infoWrapper">

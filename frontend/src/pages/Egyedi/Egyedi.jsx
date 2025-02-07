@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './Egyedi.css';
+// import './Egyedi.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 
 const Egyedi = () => {

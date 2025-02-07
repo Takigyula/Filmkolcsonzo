@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './Navbar.css';
 import { useContext, useEffect, useState, useRef } from 'react';
 import BelepContext from '../../utils/LoginContext';
+import '../../App.css';
 
 const FelsoNav = ({
     filmekaktiv,

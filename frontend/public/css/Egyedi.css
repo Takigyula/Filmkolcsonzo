@@ -1,15 +1,17 @@
 
 .egyedi {
-  background-image: url('./hatter.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url('/images/hatter2.jpg');
   background-attachment: fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 293px;
   background-color: #f0f0f0;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
 }
 
 .film-info {
@@ -18,22 +20,33 @@
   text-align: center;
 }
 
-.film-title {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
 .film-description {
   font-size: 18px;
-  color: #666;
+  color: rgb(244, 238, 238);
   margin-bottom: 20px;
 }
 
 .film-poster {
-  width: 100px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(251, 251, 251, 0.2);
+  margin: 0 auto; 
+}
+
+.film-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px; 
+  margin-bottom: 10px;
+}
+
+hr {
+  height: 2px; 
+  border-width: 2px; 
+  border-color: rgb(255, 255, 255); 
+  border-style:solid;
+  width: 80%; 
+  margin: 0 auto; 
 }
