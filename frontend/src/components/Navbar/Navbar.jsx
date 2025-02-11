@@ -4,7 +4,7 @@ import './Navbar.css';
 import { useContext, useEffect, useState, useRef } from 'react';
 import BelepContext from '../../utils/LoginContext';
 import '../../App.css';
-
+import SearchBar from '../../pages/Searchbar/Searchbar';
 const FelsoNav = ({
     filmekaktiv,
     sorozatokaktiv,
@@ -75,6 +75,7 @@ const FelsoNav = ({
                     className="logo-img"
                 />
             </Link>
+              <SearchBar />
             <div className="filmek-sorozatok">
                 <Link
                     to="/filmek"

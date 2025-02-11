@@ -88,7 +88,7 @@ const Filmek = () => {
     return (
         <div className="filmek-home-container">
             <FelsoNav />
-            <SearchBar />
+         
             <div className="slider-container">
                 <div className="slider-info-container">
                     <div className="infoWrapper">
