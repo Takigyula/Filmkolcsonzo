@@ -125,7 +125,14 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  
+  cursor: pointer;
+}
+.avatar-small:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.avatar-small:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
 }
 
 a#adminserver {
