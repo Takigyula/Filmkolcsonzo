@@ -1,52 +1,67 @@
+/* Egyedi.css */
 
-.egyedi {
-  background-image: url('/images/hatter2.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 293px;
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
   background-color: #f0f0f0;
 }
 
-h1 {
-  color: rgb(255, 255, 255);
+.egyedi {
+  position: relative;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+}
+
+.egyedi-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Háttérként */
 }
 
 .film-info {
-  width: 80%;
-  margin: 20px auto;
   text-align: center;
-}
-
-.film-description {
-  font-size: 18px;
-  color: rgb(244, 238, 238);
-  margin-bottom: 20px;
-}
-
-.film-poster {
-  width: 600px;
-  height: 400px;
-  object-fit: cover;
+  margin-top: 100px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Átlátszó háttér a szöveghez */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(251, 251, 251, 0.2);
-  margin: 0 auto; 
 }
 
 .film-title {
-  font-size: 36px;
+  font-size: 2.5rem;
+  margin: 0;
   font-weight: bold;
-  margin-top: 20px; 
-  margin-bottom: 10px;
 }
 
 hr {
-  height: 2px; 
-  border-width: 2px; 
-  border-color: rgb(255, 255, 255); 
-  border-style:solid;
-  width: 80%; 
-  margin: 0 auto; 
+  border: 1px solid #fff;
+  width: 50%;
+  margin: 10px auto;
+}
+
+.film-poster {
+  width: 300px; /* Kép szélessége */
+  height: auto; /* Magasság automatikus */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin: 20px 0;
+}
+
+.film-description {
+  max-width: 800px; /* Maximális szélesség a leírásnak */
+  text-align: center;
+  padding: 0 20px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.7); /* Átlátszó háttér a leíráshoz */
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
