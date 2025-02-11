@@ -127,3 +127,9 @@
   touch-action: manipulation;
   
 }
+
+a#adminserver {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 2px;
+}

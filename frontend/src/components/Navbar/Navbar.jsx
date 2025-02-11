@@ -97,6 +97,9 @@ const FelsoNav = ({
             </div>
             {isLoggedIn ? (
                 <div className="login-regisztracio">
+                    {isAdmin ? (
+               <Link id='adminserver' to="http://localhost:3500/api/cinema">Szerver</Link>
+            ) : null}
                     <img
                         src={`/images/output/${avatar}`}
                         alt="avatar"
@@ -128,9 +131,6 @@ const FelsoNav = ({
                     </Link>
                 </div>
             )}
-            {isAdmin ? (
-                <Link to="http://localhost:3500/api/cinema">Szerver</Link>
-            ) : null}
         </div>
     );
 };
