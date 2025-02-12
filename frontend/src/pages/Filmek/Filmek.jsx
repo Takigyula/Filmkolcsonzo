@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import FelsoNav from '../../components/Navbar/Navbar';
-import SearchBar from '../Searchbar/Searchbar';
 import { FilmContext } from '../../Context/Filmcontext';
 
 const Filmek = () => {
@@ -87,7 +86,7 @@ const Filmek = () => {
 
     return (
         <div className="filmek-home-container">
-            <FelsoNav />
+            <FelsoNav filmekSearch={true} />
          
             <div className="slider-container">
                 <div className="slider-info-container">

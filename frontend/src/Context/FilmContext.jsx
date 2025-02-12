@@ -2,14 +2,14 @@ import { useState, createContext } from 'react';
 
 export const FilmContext = createContext();
 
-const ContextProvider = (props) => {
+const ContextFilmProvider = (props) => {
     const [kiFilmek, setKiFilmek] = useState(0);
 
     return (
         <FilmContext.Provider
             value={{
                 kiFilmek,
-                setKiFilmek,
+                setKiFilmek
             }}
         >
             {props.children}
@@ -17,4 +17,4 @@ const ContextProvider = (props) => {
     );
 };
 
-export default ContextProvider;
+export default ContextFilmProvider;

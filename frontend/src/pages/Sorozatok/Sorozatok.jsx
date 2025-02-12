@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import FelsoNav from '../../components/Navbar/Navbar';
+import { SorozatContext } from '../../Context/SorozatContext.jsx';
 
 const Sorozatok = () => {
+    const {kiSorozatok} = useContext(SorozatContext);
     const [sorozatok, setSorozatok] = useState([]);
     const [selectedSorozatId, setSelectedSorozatId] = useState(null); // Új állapot a kiválasztott sorozat azonosítójának tárolására
 
     useEffect(() => {
+        console.log(kiSorozatok);
         const statusz = localStorage.getItem('statusz');
         const sorozatleker = async () => {
             const response = await fetch(
@@ -14,23 +17,25 @@ const Sorozatok = () => {
 
             if (response.ok) {
                 let result = await response.json();
-                console.log(result.sorozatok);
+                console.log(result);
                 let nezhetoSorozatok = statusz
                     ? result.sorozatok.filter((elem) =>
                           elem.statuszok.includes(statusz)
                       )
                     : result.sorozatok;
+                console.log(result.sorozatok.length);
                 let i = Math.ceil(result.sorozatok.length / 6);
                 let homeContainer = document.querySelector(
                     '.sorozat-home-container'
                 );
                 homeContainer.style.height = `${i * 200 + 1000}px`;
-                setSorozatok(nezhetoSorozatok);
+                if (kiSorozatok && kiSorozatok.length > 0) setSorozatok(kiSorozatok);
+                else setSorozatok(nezhetoSorozatok);
             }
         };
 
         sorozatleker();
-    }, []);
+    }, [kiSorozatok]);
 
     const betolt = (index) => {
         console.log(sorozatok.length);
@@ -81,7 +86,7 @@ const Sorozatok = () => {
 
     return (
         <div className="sorozat-home-container">
-            <FelsoNav />
+            <FelsoNav sorozatokSearch={true} />
             <div className="slider-container">
                 <div className="slider-info-container">
                     <div className="infoWrapper">
