@@ -31,7 +31,7 @@ body {
   text-align: center;
   margin-top: 100px;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.7); /* Átlátszó háttér a szöveghez */
+  /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a szöveghez */
   border-radius: 10px;
 }
 
@@ -48,8 +48,8 @@ hr {
 }
 
 .film-poster {
-  width: 300px; /* Kép szélessége */
-  height: auto; /* Magasság automatikus */
+  width: 700px; /* Kép szélessége */
+  height: 450px; /* Magasság automatikus */
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   margin: 20px 0;
@@ -61,7 +61,7 @@ hr {
   padding: 0 20px;
   font-size: 1.2rem;
   line-height: 1.5;
-  background: rgba(0, 0, 0, 0.7); /* Átlátszó háttér a leíráshoz */
+  /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a leíráshoz */
   border-radius: 10px;
   margin-bottom: 20px;
 }

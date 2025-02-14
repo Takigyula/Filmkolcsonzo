@@ -36,6 +36,7 @@ const SearchBar = ({tartalom}) => {
 
     leker();
   };
+  
 
   // const handleSubmit = (event) => {
    
@@ -46,7 +47,6 @@ const SearchBar = ({tartalom}) => {
   //     setSearchResults([]);
   //   }
   // }, [searchTerm]);
-
   return (
     <div className="search-bar">
       <form>
@@ -56,6 +56,7 @@ const SearchBar = ({tartalom}) => {
           onChange={e => handleSearch(e)}
           placeholder="Keresés..."
         />
+        
         {/* <button type="submit">Keresés</button> */}
       </form>
     </div>

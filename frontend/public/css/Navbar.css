@@ -1,12 +1,13 @@
 .navbar-container {
     align-items: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: 9% 41% 40% 10%;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 1em;
     position: fixed;
     top: 0px;
-    width: 100%;
+    width: 98%;
     text-shadow:
     1.5px 1px 0 #000,
     1px 1px 0 #000,
@@ -140,3 +141,4 @@ a#adminserver {
   margin: 10px;
   padding: 2px;
 }
+
