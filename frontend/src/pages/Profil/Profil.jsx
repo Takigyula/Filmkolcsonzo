@@ -63,6 +63,8 @@ const Profil = () => {
       if (response.ok) {
         setAvatar(newAvatar);
         alert('Avatar sikeresen frissítve!');
+        // Oldal frissítése
+        window.location.reload();
       } else {
         alert('Hiba az avatar frissítése során!');
       }
