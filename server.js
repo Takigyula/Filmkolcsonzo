@@ -5,21 +5,21 @@ const mongoDbConnection = require('./middlewares/dbConnection');
 const cors = require('cors');
 const Nezo = require('./models/Nezo');
 const bcrypt = require('bcrypt');
-const axios = require('axios');
+// const axios = require('axios');
 
 const id = 1;
 const statusz = 'előfizetett';
 
-axios.put(`http://localhost:3500/api/cinema/nezok/statusz`, {
-  id,
-  statusz
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+// axios.put(`http://localhost:3500/api/cinema/nezok/statusz`, {
+//   id,
+//   statusz
+// })
+// .then((response) => {
+//   console.log(response.data);
+// })
+// .catch((error) => {
+//   console.error(error);
+// });
 
 const PORT = process.env.PORT || 3500;
 const app = express();
@@ -61,6 +61,7 @@ app.use(
 );
 // Felhasználó
 app.use('/api/cinema/nezok', require('./routes/nezokRoutes'));
+app.use('/api/cinema/nezok/statusz', require('./routes/nezokStatuszRoutes'));
 app.put('/api/cinema/nezok/avatar', async (req, res) => {
     const { email, avatar } = req.body;
     try {
@@ -86,7 +87,7 @@ app.use('/api/cinema/register', require('./routes/registerRoutes'));
 app.use('/api/cinema/login', require('./routes/loginRoutes'));
 app.put('/api/cinema/nezok/jelszo', async (req, res) => {
     const { email, password } = req.body;
-    console.log({email, password});
+    console.log({ email, password });
     try {
         const nezo = await Nezo.findOne({ email });
         console.log(nezo);
@@ -94,7 +95,10 @@ app.put('/api/cinema/nezok/jelszo', async (req, res) => {
             if (password) {
                 const salt = await bcrypt.genSalt(10);
                 const hashedPassword = bcrypt.hashSync(password, salt);
-                await Nezo.findByIdAndUpdate({_id: nezo._id},{password: hashedPassword});
+                await Nezo.findByIdAndUpdate(
+                    { _id: nezo._id },
+                    { password: hashedPassword }
+                );
             }
             res.status(200).json({ msg: '' });
         } else {

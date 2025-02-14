@@ -25,18 +25,18 @@ const Login = () => {
         });
 
         const valasz = await response.json();
-        if (response.ok) {
-            window.alert(valasz.msg);
-            window.location.replace('/csomagok');
-        }
+        console.log(valasz);
 
         if (response.ok) {
+            window.alert(valasz.msg);
             setBelep(true);
             setAdmin(valasz.regisztralt.admine);
             setAvatar(valasz.regisztralt.avatar);
             localStorage.setItem('email', valasz.regisztralt.email);
             localStorage.setItem('elofizetes', valasz.regisztralt.statusz);
-            navigate('/'); // Sikeres bejelentkezés után átirányítás a filmek oldalra
+            localStorage.setItem('user', JSON.stringify(valasz.regisztralt));
+            window.location.replace('/csomagok');
+            // navigate('/'); // Sikeres bejelentkezés után átirányítás a filmek oldalra
         } else {
             window.alert(valasz.msg);
         }
