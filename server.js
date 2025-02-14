@@ -5,6 +5,21 @@ const mongoDbConnection = require('./middlewares/dbConnection');
 const cors = require('cors');
 const Nezo = require('./models/Nezo');
 const bcrypt = require('bcrypt');
+const axios = require('axios');
+
+const id = 1;
+const statusz = 'előfizetett';
+
+axios.put(`http://localhost:3500/api/cinema/nezok/statusz`, {
+  id,
+  statusz
+})
+.then((response) => {
+  console.log(response.data);
+})
+.catch((error) => {
+  console.error(error);
+});
 
 const PORT = process.env.PORT || 3500;
 const app = express();
