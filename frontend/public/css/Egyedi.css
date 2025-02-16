@@ -7,7 +7,14 @@ body {
 }
 
 .egyedi {
-  position: relative;
+  margin: 200px;
+  padding: 20px;
+  border:1px          solid #ddd;
+  border-radius : 100px;
+  box-shadow: 0 0 10px rgba(11, 3, 231, 0.5);
+  flex-basis: 30%;
+  transition: transform 0.2s ease-in-out;
+  /* position: relative;
   color: white;
   min-height: 100vh;
   display: flex;
@@ -15,7 +22,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
 }
 
 .egyedi-container {
@@ -39,28 +46,31 @@ body {
   font-size: 2.5rem;
   margin: 0;
   font-weight: bold;
+  color:white;
 }
 
 hr {
   border: 1px solid #fff;
-  width: 50%;
   margin: 10px auto;
 }
 
 .film-poster {
   width: 700px; /* Kép szélessége */
   height: 450px; /* Magasság automatikus */
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  margin: 20px 0;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(11, 3, 231, 0.5);
+  margin: 20px ;
+
 }
 
 .film-description {
   max-width: 800px; /* Maximális szélesség a leírásnak */
   text-align: center;
-  padding: 0 20px;
+  margin-top: 10px;
+  padding: 10px;
   font-size: 1.2rem;
   line-height: 1.5;
+  color: white;
   /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a leíráshoz */
   border-radius: 10px;
   margin-bottom: 20px;
