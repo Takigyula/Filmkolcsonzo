@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import FelsoNav from '../../components/Navbar/Navbar';
 import { FilmContext } from '../../Context/Filmcontext';
+import Kategoria from '../Kategorial/kategoria';
 
 const Filmek = () => {
     const {kiFilmek} = useContext(FilmContext);
@@ -87,6 +88,7 @@ const Filmek = () => {
     return (
         <div className="filmek-home-container">
             <FelsoNav filmekSearch={true} />
+            <Kategoria />
          
             <div className="slider-container">
                 <div className="slider-info-container">
