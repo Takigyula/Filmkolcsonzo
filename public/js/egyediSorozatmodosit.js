@@ -9,6 +9,8 @@ feldolgoz.addEventListener('click', async (event) => {
     );
     const plakat = document.querySelector('#plakat').value;
     const leiras = document.querySelector('#leiras').value;
+    const szereplok = document.querySelector('#szereplok').value;
+    const trailer = document.querySelector('#trailer').value;
     const tempS = Array.from(
         document.querySelector('#statuszok').selectedOptions
     );
@@ -39,6 +41,8 @@ feldolgoz.addEventListener('click', async (event) => {
             statuszok,
             leiras,
             kategoriak,
+            szereplok,
+            trailer,
         }),
     });
 

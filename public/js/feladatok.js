@@ -7,13 +7,15 @@ feldolgoz.addEventListener('click', async (event) => {
     const plakat = document.querySelector('#plakat').value;
     const idopontok = document.querySelector('#idopontok').value;
     const arkategoria = document.querySelector('#arkategoria').value;
+    const szereplok = document.querySelector('#szereplok').value;
+    const trailer = document.querySelector('#trailer').value;
 
     const response = await fetch('/api/cinema/ujfilm', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ cim, hossz, plakat, idopontok, arkategoria }),
+        body: JSON.stringify({ cim, hossz, plakat, idopontok, arkategoria,szereplok,trailer }),
     });
 
     const valasz = await response.json();

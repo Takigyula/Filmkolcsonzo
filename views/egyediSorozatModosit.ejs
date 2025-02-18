@@ -65,13 +65,29 @@
                     />
                 </p>
                 <p>
-                    <label for="leiras">Leírás: </label>
+                    <label for="szereplok">Szereplők: </label>
                     <input
                         type="text"
-                        id="leiras"
+                        id="szereplok"
+                        value="<%= modSorozat.szereplok %>"
                     />
                 </p>
-                <h4>Eredeti státuszok:</h4>
+                <p>
+                    <label for="leiras">Leírás: </label>
+                    <input
+                    type="text"
+                    id="leiras"
+                    value="<%= modSorozat.leiras %>"
+                    />
+                    </p>
+                    <p>
+                        <label for="trailer">Trailer: </label>
+                        <input
+                            type="text"
+                            id="trailer"
+                            value="<%= modSorozat.trailer %>"
+                        />
+                    <h4>Eredeti státuszok:</h4>
                 <ul>
                     <% for( let i = 0; i < modSorozat.statuszok.length; i++ ) {
                     %>
