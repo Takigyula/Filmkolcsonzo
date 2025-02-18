@@ -21,7 +21,7 @@ exports.getEgyediSorozatModosit = async (req, res) => {
 
 exports.updateEgyediSorozatModosit = async (req, res) => {
     try {
-        const { id, cim, epizodokSzama, plakat, statuszok,leiras,kategoriak } = req.body;
+        const { id, cim, epizodokSzama, plakat, statuszok,leiras,kategoriak,szereplok,trailer } = req.body;
 
         await Sorozat.findByIdAndUpdate(
             { _id: id },
@@ -32,6 +32,8 @@ exports.updateEgyediSorozatModosit = async (req, res) => {
                 statuszok,
                 leiras,
                 kategoriak,
+                szereplok,
+                trailer
             }
         );
 

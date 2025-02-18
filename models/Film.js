@@ -14,6 +14,14 @@ const filmSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        szereplok: {
+            type: String,
+            required: true,
+        },
+        trailer: {
+            type: String,
+            required: true,
+        },
         statuszok: [{ type: String }],
         leiras: {
             type: String,

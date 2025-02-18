@@ -17,6 +17,8 @@ feldolgoz.addEventListener('click', async (event) => {
         statuszok.push(tempS[i].value);
     }
     const leiras = document.querySelector('#leiras').value;
+    const szereplok = document.querySelector('#szereplok').value;
+    const trailer = document.querySelector('#trailer').value;
 
     const tempK = Array.from(
         document.querySelector('#kategoriak').selectedOptions
@@ -32,7 +34,7 @@ feldolgoz.addEventListener('click', async (event) => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ cim, epizodokSzama, plakat, statuszok,leiras,kategoriak }),
+        body: JSON.stringify({ cim, epizodokSzama, plakat, statuszok,leiras,kategoriak,szereplok,trailer }),
     });
 
     const valasz = await response.json();
