@@ -12,6 +12,10 @@
         1px 1px 0 #000;
 }
 
+.home-ures {
+    width: 10vw;
+}
+
 .login-regisztracio {
     display: flex;
     flex-direction: row;
