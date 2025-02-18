@@ -11,7 +11,8 @@ const FelsoNav = ({
     loginaktiv,
     registeraktiv,
     filmekSearch,
-    sorozatokSearch
+    sorozatokSearch,
+    homeSearch
 }) => {
     const filmekRef = useRef();
     const sorozatokRef = useRef();
@@ -81,6 +82,7 @@ const FelsoNav = ({
                 filmekSearch ?   <SearchBar tartalom="film" /> :  null          }
             {
                 sorozatokSearch ?   <SearchBar tartalom="sorozat" /> :  null          }
+                {homeSearch ? <div className='home-ures'></div> :  null }
 
             <div className="filmek-sorozatok">
                 <Link

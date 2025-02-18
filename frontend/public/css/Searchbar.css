@@ -1,42 +1,52 @@
+/* Keresősáv stílusai */
 .search-bar {
-    width: 40%;
-    max-width: 400px;
-    background: rgb(52, 52, 55);
-    display: flex;
-    align-items: center;
-    border-radius: 60px;
-    padding: 2px 20px;
-    /* backdrop-filter: blur(1px) saturate(180%); */
-  }
-  
- .container{
-  width: 100%;
-  min-height: 100%;
-  padding: 5%;
-  /* background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9));  */
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+form {
   display: flex;
   align-items: center;
-  justify-content: center;
- }
- .search-bar input{
-  background: local;
-  flex: 1;
-  border: 0;
+  position: relative;
+}
+
+input[type="search"] {
+  border: 2px solid rgba(255, 255, 255, 0.6); /* Átlátszó keret */
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2); /* Átlátszó háttér */
+  color: white;
+  width: 300px;
   outline: none;
-  padding: 24px 20px;
-  font-size: 20px;
-  color: #ffffff;
- }
- .search-bar button img{
-  width: 25px;
- }
- .search-bar button{
-  border: 0;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  background: #ff0a0a;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="search"]:focus {
+  border-color: #000000;
+  background-color: rgba(255, 255, 255, 0.4); /* Fókusz állapotban világosabb átlátszóság */
+}
+
+input[type="search"]::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* A "Keresés" szöveg színe */
+  font-style: italic;
+}
+
+/* Ha szükséges, gomb stílus (de most nincs használva) */
+button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 20px;
   cursor: pointer;
- }
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: rgba(41, 4, 250, 0.1);
+}

@@ -104,7 +104,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <FelsoNav />
+            <FelsoNav homeSearch={true} />
 
             <div className="home-slider-container">
                 <div className="home-slider-info-container">
