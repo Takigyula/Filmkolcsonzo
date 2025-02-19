@@ -137,9 +137,9 @@ const Sorozatok = () => {
                                                     torol(index)
                                                 }
                                             />
-                                        </div>
                                         <div className="thumb-title">
                                             {value.cim}
+                                        </div>
                                         </div>
                                     </div>
                                 ))}

@@ -137,7 +137,7 @@ const Home = () => {
                         <div
                             className="sliderThumbs"
                             key={index}
-                        >
+                            >
                             <div className="sliderThumbs-img">
                                 <img
                                     className="thumb-img"

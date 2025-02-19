@@ -27,7 +27,7 @@ exports.postLogin = async (req, res) => {
                 .status(200)
                 .json({ msg: 'Sikeres belépés!', regisztralt });
         } else {
-            return res.status(403).json({ msg: 'Nincs jogod belépni!' });
+            return res.status(403).json({ msg: 'Helytelen jelszó vagy email cím!' });
         }
     } catch (error) {
         res.status(500).json({ msg: error.message });
