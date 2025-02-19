@@ -8,7 +8,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     padding-top: 100px;
-    width: 99vw;
+    width: 100vw;
     transition: background-image 0.5s ease-in-out;
 }
 
