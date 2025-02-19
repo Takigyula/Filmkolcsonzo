@@ -60,7 +60,7 @@ hr {
   border-radius: 100px;
   box-shadow: 0 4px 20px rgba(11, 3, 231, 0.5);
   margin: 20px ;
-
+  
 }
 
 .film-description {
@@ -74,4 +74,43 @@ hr {
   /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a leíráshoz */
   border-radius: 10px;
   margin-bottom: 20px;
+}
+
+.film-szereplok {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  text-align: right;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.film-video {
+  position: absolute;
+  top: 180px;
+  right: 20px;
+  text-align: right;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.egyedi-kulso {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.film-video {
+  color: #ffcc00; /* Különböző szín a trailer linkhez */
+  text-decoration: underline; /* Aláhúzás a linkhez */
+}
+
+.egyedi-tartalom {
+  position: relative;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
 }
