@@ -93,9 +93,12 @@ hr {
   right: 20px;
   text-align: right;
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #fff;
+  color: #ffffff00;
+  text-shadow: none;
+  iframe {
+    width: 800px;
+    height: 550px; 
+  }
 }
 
 .egyedi-kulso {
@@ -103,9 +106,24 @@ hr {
   grid-template-columns: repeat(2, 1fr);
 }
 
+
 .film-video {
-  color: #ffcc00; /* Különböző szín a trailer linkhez */
-  text-decoration: underline; /* Aláhúzás a linkhez */
+  display: block;
+  width: 100%;
+  color: #ffffff00;
+}
+
+.film-video a {
+  display: none;
+}
+
+.film-video iframe {
+  display: block;
+  position:relative;
+  top: 15px;
+  left: 5px;
+  width: 700px;
+  height: 450px;
 }
 
 .egyedi-tartalom {
@@ -114,3 +132,4 @@ hr {
   gap: 2em;
   flex-direction: column;
 }
+

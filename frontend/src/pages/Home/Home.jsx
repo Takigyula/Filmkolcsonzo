@@ -11,49 +11,49 @@ const Home = () => {
             _id: '67835ebb82727553786771f0',
             cim: 'Deadpool',
             kep: '/images/deadpool.jpg',
-            kategoria: 'filmek',
+            kategoria: 'Filmek',
         },
         {
             id:'',
             cim: 'Spiderman',
             kep: '/images/spiderman.jpg',
-            kategoria: 'filmek',
+            kategoria: 'Filmek',
         },
         {
             id:'67835a706f687bac4ac0689a',
             cim: 'Top Gun',
             kep: '/images/topgun.jpg',
-            kategoria: 'filmek',
+            kategoria: 'Filmek',
         },
         { 
             id: '67851436256d101fad46a7e6',
             cim: 'Sötét lovag',
             kep: '/images/sotetlovag.jpg',
-            kategoria: 'filmek',
+            kategoria: 'Filmek',
         },
         {
             id:'678358f2f37449a204814781',
             cim: 'Prison Break',
             kep: '/images/PrisonBreak.jpg',
-            kategoria: 'sorozatok',
+            kategoria: 'Sorozatok',
         },
         {
             id:'67851b55256d101fad46a812',
             cim: 'The Nun',
             kep: '/images/thenun.jpg',
-            kategoria: 'sorozatok',
+            kategoria: 'Sorozatok',
         },
         {
             id:'67835a466f687bac4ac06896',
             cim: 'Vikings',
             kep: '/images/Vikings.jpg',
-            kategoria: 'sorozatok',
+            kategoria: 'Sorozatok',
         },
         {
             id:'67835938f37449a20481478',
             cim: 'Csernobil',
             kep: '/images/chernobyl.jpg',
-            kategoria: 'sorozatok',
+            kategoria: 'Sorozatok',
         },
     ];
 
@@ -118,7 +118,7 @@ const Home = () => {
                             <div className="home-slider-raitings">
                                 <p className="slider-raiting">*****</p>
                                 <p className="slider-category">
-                                    <span className="category">Kategória</span>
+                                    <span className="category">Kategória:  </span>
                                     <span className="slider-tipus">Filmek</span>
                                 </p>
                             </div>
@@ -133,6 +133,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="home-sliderThumbs-container">
+                <h3>Felkapott</h3>
                     {filmek.map((value, index) => (
                         <div
                             className="sliderThumbs"

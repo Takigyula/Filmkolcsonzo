@@ -71,7 +71,7 @@ const Egyedi = () => {
             {film.trailer}
             {/* <YouTube /> */}
             <div class="ratio ratio-16x9">
-  <iframe src="https://www.youtube.com/embed/uYPbbksJxIg?rel=0" title="YouTube video" allowfullscreen></iframe>
+  <iframe src={film.trailer} title="Trailer" allowfullscreen></iframe>
 </div>
             </p>
             </div>

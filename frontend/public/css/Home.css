@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
 
 .home-sliderThumbs-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     /* flex-wrap: wrap; */
     justify-content: center;
     padding: 50px;
@@ -82,4 +82,11 @@ body::-webkit-scrollbar {
 }
 .info-img {
     height: 210px;
+ }
+
+h3 {
+    color: white;
+    position: absolute;
+    font-size: 25px;
+    margin: -20px;
  }
