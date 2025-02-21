@@ -1,14 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
 import FelsoNav from '../../components/Navbar/Navbar';
 import { FilmContext } from '../../Context/Filmcontext';
+import { KategoriaContext } from '../../Context/KategoriaContext';
 import Kategoria from '../Kategorial/kategoria';
 
 const Filmek = () => {
     const {kiFilmek} = useContext(FilmContext);
+    const {kiKategoriak} = useContext(KategoriaContext);
     const [filmek, setFilmek] = useState([]);
     const [selectedFilmId, setSelectedFilmId] = useState(null);
 
     useEffect(() => {
+        console.log(kiKategoriak);
         console.log(kiFilmek);
         const statusz = localStorage.getItem('statusz');
         const filmleker = async () => {
