@@ -2,44 +2,108 @@ import React, { useContext, useEffect, useState } from 'react';
 import FelsoNav from '../../components/Navbar/Navbar';
 import { FilmContext } from '../../Context/Filmcontext';
 import { KategoriaContext } from '../../Context/KategoriaContext';
-import Kategoria from '../Kategorial/kategoria';
+import Kategoria from '../Kategoria/Kategoria';
 
 const Filmek = () => {
-    const {kiFilmek} = useContext(FilmContext);
-    const {kiKategoriak} = useContext(KategoriaContext);
+    const { kiFilmek } = useContext(FilmContext);
+    const { kategoria, setKategoriaFilmek } = useContext(KategoriaContext);
     const [filmek, setFilmek] = useState([]);
     const [selectedFilmId, setSelectedFilmId] = useState(null);
 
     useEffect(() => {
-        console.log(kiKategoriak);
-        console.log(kiFilmek);
+        // console.log(kategoria);
+        console.log('Kifilmek: ', kiFilmek);
         const statusz = localStorage.getItem('statusz');
         const filmleker = async () => {
-            const response = await fetch(
-                'http://localhost:3500/api/cinema/filmek/films'
-            );
+            if (kiFilmek.length === 0) {
+                const response = await fetch(
+                    'http://localhost:3500/api/cinema/filmek/films'
+                );
 
-            if (response.ok) {
-                let result = await response.json();
-                console.log(result);
-                let nezhetoFilmek = statusz
-                    ? result.filmek.filter((elem) =>
-                          elem.statuszok.includes(statusz)
-                      )
-                    : result.filmek;
-                console.log(result.filmek.length);
-                let i = Math.ceil(result.filmek.length / 6);
+                if (response.ok) {
+                    let result = await response.json();
+                    // console.log(result);
+                    let nezhetoFilmek = statusz
+                        ? result.filmek.filter((elem) =>
+                              elem.statuszok.includes(statusz)
+                          )
+                        : result.filmek;
+                    // console.log(nezhetoFilmek);
+                    const kategoriaFilmek = nezhetoFilmek.filter((elem) => {
+                        if (kategoria !== 'Minden') {
+                            return elem.kategoriak.includes(kategoria);
+                        } else {
+                            return true;
+                        }
+                    });
+                    setKategoriaFilmek(kategoriaFilmek);
+                    //console.log(kategoriaFilmek);
+
+                    let i = Math.ceil(kategoriaFilmek.length / 6);
+                    let homeContainer = document.querySelector(
+                        '.filmek-home-container'
+                    );
+                    homeContainer.style.height = `${i * 250 + 1000}px`;
+
+                    setFilmek(kategoriaFilmek);
+                }
+            } else {
+                let i = Math.ceil(kiFilmek.length / 6);
                 let homeContainer = document.querySelector(
                     '.filmek-home-container'
                 );
                 homeContainer.style.height = `${i * 250 + 1000}px`;
-                if (kiFilmek && kiFilmek.length > 0) setFilmek(kiFilmek);
-                else setFilmek(nezhetoFilmek);
+
+                const kategoriaFilmek = kiFilmek.filter((elem) => {
+                    if (kategoria !== 'Minden') {
+                        return elem.kategoriak.includes(kategoria);
+                    } else {
+                        return true;
+                    }
+                });
+                setKategoriaFilmek(kategoriaFilmek);
+
+                setFilmek(kategoriaFilmek);
             }
         };
+        // const filmleker = async () => {
+        //     const response = await fetch(
+        //         'http://localhost:3500/api/cinema/filmek/films'
+        //     );
+
+        //     if (response.ok) {
+        //         let result = await response.json();
+        //         // console.log(result);
+        //         let nezhetoFilmek = statusz
+        //             ? result.filmek.filter((elem) =>
+        //                   elem.statuszok.includes(statusz)
+        //               )
+        //             : result.filmek;
+        //         // console.log(nezhetoFilmek);
+        //         const kategoriaFilmek = nezhetoFilmek.filter((elem) => {
+        //             if (kategoria !== 'Minden') {
+        //                 return elem.kategoriak.includes(kategoria);
+        //             } else {
+        //                 return true;
+        //             }
+        //         });
+        //         setKategoriaFilmek(kategoriaFilmek);
+        //         //console.log(kategoriaFilmek);
+
+        //         let i = Math.ceil(result.filmek.length / 6);
+        //         let homeContainer = document.querySelector(
+        //             '.filmek-home-container'
+        //         );
+        //         homeContainer.style.height = `${i * 250 + 1000}px`;
+
+        //         if (kiFilmek && kiFilmek.length > 0) setFilmek(kiFilmek);
+        //         // else setFilmek(nezhetoFilmek);
+        //         else setFilmek(kategoriaFilmek);
+        //     }
+        // };
 
         filmleker();
-    }, [kiFilmek]);
+    }, [kiFilmek, kategoria]);
 
     const betolt = (index) => {
         let i = Math.ceil(filmek.length / 6);
@@ -92,7 +156,7 @@ const Filmek = () => {
         <div className="filmek-home-container">
             <FelsoNav filmekSearch={true} />
             <Kategoria />
-         
+
             <div className="slider-container">
                 <div className="slider-info-container">
                     <div className="infoWrapper">
@@ -107,7 +171,7 @@ const Filmek = () => {
                                     <p className="slider-raiting">*****</p>
                                     <p className="slider-category">
                                         <span className="category">
-                                            Kategória
+                                            Kategória : &nbsp;
                                         </span>
                                         <span className="slider-tipus">
                                             Filmek
@@ -137,9 +201,9 @@ const Filmek = () => {
                                             onMouseEnter={() => szinez(index)}
                                             onMouseLeave={() => torol(index)}
                                         />
-                                    <div className="thumb-title">
-                                        {value.cim}
-                                    </div>
+                                        <div className="thumb-title">
+                                            {value.cim}
+                                        </div>
                                     </div>
                                 </div>
                             ))}

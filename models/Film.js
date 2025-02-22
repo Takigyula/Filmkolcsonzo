@@ -27,10 +27,16 @@ const filmSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        kategoriak: [{
+        kategoria: {
             type: String,
-            default: 'filmek',
-        }]
+            default: 'Filmek',
+        },
+        kategoriak: [
+            {
+                type: String,
+                default: 'filmek',
+            },
+        ],
     },
     {
         timestamps: true,

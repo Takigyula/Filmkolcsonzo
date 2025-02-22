@@ -3,7 +3,7 @@ import FelsoNav from '../../components/Navbar/Navbar';
 import { SorozatContext } from '../../Context/SorozatContext.jsx';
 
 const Sorozatok = () => {
-    const {kiSorozatok} = useContext(SorozatContext);
+    const { kiSorozatok } = useContext(SorozatContext);
     const [sorozatok, setSorozatok] = useState([]);
     const [selectedSorozatId, setSelectedSorozatId] = useState(null); // Új állapot a kiválasztott sorozat azonosítójának tárolására
 
@@ -29,7 +29,8 @@ const Sorozatok = () => {
                     '.sorozat-home-container'
                 );
                 homeContainer.style.height = `${i * 200 + 1000}px`;
-                if (kiSorozatok && kiSorozatok.length > 0) setSorozatok(kiSorozatok);
+                if (kiSorozatok && kiSorozatok.length > 0)
+                    setSorozatok(kiSorozatok);
                 else setSorozatok(nezhetoSorozatok);
             }
         };
@@ -101,7 +102,7 @@ const Sorozatok = () => {
                                     <p className="slider-raiting">*****</p>
                                     <p className="slider-category">
                                         <span className="category">
-                                            Kategória
+                                            Kategória: &nbsp;
                                         </span>
                                         <span className="slider-tipus">
                                             Sorozatok
@@ -137,9 +138,9 @@ const Sorozatok = () => {
                                                     torol(index)
                                                 }
                                             />
-                                        <div className="thumb-title">
-                                            {value.cim}
-                                        </div>
+                                            <div className="thumb-title">
+                                                {value.cim}
+                                            </div>
                                         </div>
                                     </div>
                                 ))}

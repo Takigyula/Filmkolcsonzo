@@ -1,25 +1,30 @@
 .film-kategoria {
-  position: relative;
-  display: inline;
+    position: fixed;
+    display: inline;
+    left: 50px;
+}
+
+.film-kategoria .options {
+    list-style-type: none;
 }
 
 .film-kategoria select {
-  width: 150px;
-  height: 30px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+    width: 150px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .film-kategoria select:focus {
-  outline: none;
-  border-color: #aaa;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+    border-color: #aaa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .film-kategoria option {
-  padding: 10px;
-  font-size: 16px;
+    padding: 10px;
+    font-size: 16px;
 }

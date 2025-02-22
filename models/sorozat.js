@@ -27,10 +27,16 @@ const sorozatSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        kategoriak: [{
+        kategoria: {
             type: String,
-            default: 'sorozatok',
-        }],
+            default: 'Sorozatok',
+        },
+        kategoriak: [
+            {
+                type: String,
+                default: 'sorozatok',
+            },
+        ],
     },
     {
         timestamps: true,

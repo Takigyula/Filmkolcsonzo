@@ -3,13 +3,19 @@ import { useState, createContext } from 'react';
 export const KategoriaContext = createContext();
 
 const ContextKategoriaProvider = (props) => {
-    const [kiKategoriak, setKiKategoriak] = useState('');
+    const [kategoria, setKategoria] = useState('');
+    const [kategoriaFilmek, setKategoriaFilmek] = useState([]);
+    const [kategoriaSorozatok, setKategoriaSorozatok] = useState([]);
 
     return (
         <KategoriaContext.Provider
             value={{
-                kiKategoriak,
-                setKiKategoriak
+                kategoria,
+                kategoriaFilmek,
+                kategoriaSorozatok,
+                setKategoria,
+                setKategoriaFilmek,
+                setKategoriaSorozatok,
             }}
         >
             {props.children}
