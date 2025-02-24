@@ -14,7 +14,7 @@ const Home = () => {
             kategoria: 'Filmek',
         },
         {
-            id:'',
+            id:'67bc7444e1818b61ff242748',
             cim: 'Spiderman',
             kep: '/images/spiderman.jpg',
             kategoria: 'Filmek',
@@ -75,7 +75,7 @@ const Home = () => {
         let thumbImg = document.querySelectorAll('.thumb-img');
         thumbImg[index].style.border = '3px solid red';
 
-        setSelectedId(filmek[index]._id);
+        setSelectedId(filmek[index].id);
     };
 
     const leker = () => {
