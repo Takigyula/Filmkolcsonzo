@@ -49,6 +49,7 @@ const Login = () => {
                 sorozatokaktiv={false}
                 loginaktiv={true}
                 registeraktiv={false}
+                loginSearch={true}
             />
             <div className="login-form-container">
                 <div className="header">

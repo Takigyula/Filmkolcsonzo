@@ -85,6 +85,7 @@ const feltolt = async (event) => {
                 sorozatokaktiv={false}
                 loginaktiv={false}
                 registeraktiv={true}
+                registerSearch={true}
             />
             <div className="register-form-container">
                 <div className="header">

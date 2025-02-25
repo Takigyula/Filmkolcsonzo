@@ -150,3 +150,7 @@
 .sliderThumbs-container {
     background-color: transparent;
 }
+
+.selected-value {
+    color:white
+}

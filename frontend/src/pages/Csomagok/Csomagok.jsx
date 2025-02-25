@@ -29,7 +29,7 @@ const Csomagok = () => {
 
     return (
         <div className="csomagok">
-            <FelsoNav />
+            <FelsoNav csomagSearch={true} />
             <h1>Válassza ki az előfizetési csomagját!</h1>
             <ul>
                 {csomagok.map((csomag) => (
