@@ -129,7 +129,7 @@ const Profil = () => {
 
   return (
     <div className="profil-container">
-      <Navbar />
+      <Navbar profilSearch={true} />
       <div className="profil-header"></div>
       <div className="profil-body">
         <div className="profil-avatar">

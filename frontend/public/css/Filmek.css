@@ -152,5 +152,18 @@
 }
 
 .selected-value {
-    color:white
+    color:white;
+    padding: 4px;
+    background-color: rgb(46, 46, 46);
+    cursor: pointer;
+    
+}
+
+.options{
+    background-color: rgb(61, 61, 61);
+    padding: 2px;
+    border-radius: 2px;
+    border-color: white;
+    border-width: 2px;
+    
 }
