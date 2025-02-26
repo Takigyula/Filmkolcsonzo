@@ -1,20 +1,20 @@
 /* Egyedi.css */
 
 body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
 }
 
 .egyedi {
-  margin: 200px;
-  padding: 20px;
-  border:1px          solid #ddd;
-  border-radius : 100px;
-  box-shadow: 0 0 10px rgba(11, 3, 231, 0.5);
-  flex-basis: 30%;
-  transition: transform 0.2s ease-in-out;
-  /* position: relative;
+    margin: 200px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 100px;
+    box-shadow: 0 0 10px rgba(11, 3, 231, 0.5);
+    flex-basis: 30%;
+    transition: transform 0.2s ease-in-out;
+    /* position: relative;
   color: white;
   min-height: 100vh;
   display: flex;
@@ -26,120 +26,116 @@ body {
 }
 
 .egyedi-container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Háttérként */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Háttérként */
 }
 
 .film-info {
-  text-align: center;
-  margin-top: 100px;
-  padding: 20px;
-  /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a szöveghez */
-  border-radius: 10px;
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a szöveghez */
+    border-radius: 10px;
 }
 
 .film-title {
-  font-size: 2.5rem;
-  margin: 0;
-  font-weight: bold;
-  color:white;
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+    color: white;
 }
 
 hr {
-  border: 1px solid #fff;
-  margin: 10px auto;
+    border: 1px solid #fff;
+    margin: 10px auto;
 }
 
 .film-poster {
-  width: 700px; /* Kép szélessége */
-  height: 450px; /* Magasság automatikus */
-  border-radius: 100px;
-  box-shadow: 0 4px 20px rgba(11, 3, 231, 0.5);
-  margin: 20px ;
-  
+    width: 700px; /* Kép szélessége */
+    height: 450px; /* Magasság automatikus */
+    border-radius: 100px;
+    box-shadow: 0 4px 20px rgba(11, 3, 231, 0.5);
+    margin: 20px;
 }
 
 .film-description {
-  max-width: 800px; /* Maximális szélesség a leírásnak */
-  text-align: center;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: white;
-  /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a leíráshoz */
-  border-radius: 10px;
-  margin-bottom: 20px;
+    max-width: 800px; /* Maximális szélesség a leírásnak */
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: white;
+    /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a leíráshoz */
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .film-szereplok {
-  position: absolute;
-  top: 80px;
-  right: 20px;
-  text-align: right;
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #fff;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    text-align: right;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
 }
 
 .film-video {
-  position: absolute;
-  top: 180px;
-  right: 20px;
-  text-align: right;
-  margin: 0;
-  color: #ffffff00;
-  text-shadow: none;
-  /* iframe {
+    position: absolute;
+    top: 180px;
+    right: 20px;
+    text-align: right;
+    margin: 0;
+    color: #ffffff00;
+    text-shadow: none;
+    /* iframe {
     width: 800px;
     height: 550px; 
   } */
 }
 
 .egyedi-kulso {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-
 .film-video {
-  display: block;
-  width: 100%;
-  color: #ffffff00;
+    display: block;
+    width: 100%;
+    color: #ffffff00;
 }
 
 .film-video a {
-  display: none;
+    display: none;
 }
 
 .film-video iframe {
-  display: block;
-  position:relative;
-  top: 15px;
-  left: 5px;
-  width: 700px;
-  height: 450px;
+    display: block;
+    position: relative;
+    top: 15px;
+    left: 5px;
+    width: 700px;
+    height: 450px;
 }
 
 .egyedi-tartalom {
-  position: relative;
-  display: flex;
-  gap: 2em;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
 }
 
-
-
 .csillag-ertekeles {
-  position: absolute;
-  right: -30px;
-  color: white;
-  bottom: -160px;
-  font-size: 100px;
-  transform: scale(0.2); 
+    position: absolute;
+    right: -740px;
+    color: white;
+    bottom: 10px;
+    font-size: 100px;
+    transform: scale(0.2);
 }

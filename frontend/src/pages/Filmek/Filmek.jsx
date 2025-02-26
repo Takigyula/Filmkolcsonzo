@@ -116,6 +116,7 @@ const Filmek = () => {
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
+        let sliderInfoRaiting = document.querySelector('.slider-raiting');
 
         sliderInfoImg.src = `/images/${filmek[index].plakat}`;
         sliderInfoKategoria.innerText = filmek[index].kategoria;
@@ -123,6 +124,15 @@ const Filmek = () => {
 
         let thumbImg = document.querySelectorAll('.thumb-img');
         thumbImg[index].style.border = '3px solid red';
+
+        let csillagok = '';
+
+        for (let i = 0; i < filmek[index].stars; i++) {
+            csillagok += '*';
+        }
+        console.log(filmek[index]);
+
+        sliderInfoRaiting.innerText = csillagok;
 
         // A kiválasztott sorozat azonosítójának tárolása
         setSelectedFilmId(filmek[index]._id);
@@ -168,7 +178,7 @@ const Filmek = () => {
                                     alt=""
                                 />
                                 <div className="slider-raitings">
-                                    <p className="slider-raiting">*****</p>
+                                    <p className="slider-raiting"></p>
                                     <p className="slider-category">
                                         <span className="category">
                                             Kategória : &nbsp;

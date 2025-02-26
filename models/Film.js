@@ -37,6 +37,10 @@ const filmSchema = new mongoose.Schema(
                 default: 'filmek',
             },
         ],
+        stars: {
+            type: Number,
+            default: 0,
+        },
     },
     {
         timestamps: true,
