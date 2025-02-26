@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import './Egyedi.css';
 import FelsoNav from '../../components/Navbar/Navbar';
-import YouTube from 'react-youtube';                            
+import Telicsillag from './telicsillag.png';                            
+import Urescsillag from './urescsillag.png';                            
 
 const Egyedi = () => {
     const { id } = useParams();
@@ -51,6 +52,13 @@ const Egyedi = () => {
         leker();
     }, [id]);
 
+    const atvalt = (szam) =>  {
+        let csillagok = document.querySelectorAll('.ertekeles');
+        if (szam === 1) {
+            csillagok[szam - 1].src = Urescsillag;
+        }
+    }
+
     return (
         <div className="egyedi">
             <FelsoNav />
@@ -74,6 +82,17 @@ const Egyedi = () => {
   <iframe src={film.trailer} title="Trailer" allowfullscreen></iframe>
 </div>
             </p>
+            </div>
+            <div className="csillag-ertekeles">
+            <p style={{display: 'flex', alignItems: 'center'}}>Értékelés:
+                <span onClick={() => atvalt(1)}><img className='ertekeles' src={Urescsillag} /></span>
+                <span onClick={() => atvalt(2)}><img className='ertekeles' src={Urescsillag} /></span>
+                <span onClick={() => atvalt(3)}><img className='ertekeles' src={Urescsillag} /></span>
+                <span onClick={() => atvalt(4)}><img className='ertekeles' src={Urescsillag} /></span>
+                <span onClick={() => atvalt(5)}><img className='ertekeles' src={Urescsillag} /></span>
+                <input type='submit' value='Szavazás' style={{height: '200px', width: '450px', fontSize: '80px'}} />
+            </p>
+
             </div>
             </div>
         </div>

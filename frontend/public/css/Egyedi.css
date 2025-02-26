@@ -95,10 +95,10 @@ hr {
   margin: 0;
   color: #ffffff00;
   text-shadow: none;
-  iframe {
+  /* iframe {
     width: 800px;
     height: 550px; 
-  }
+  } */
 }
 
 .egyedi-kulso {
@@ -133,3 +133,13 @@ hr {
   flex-direction: column;
 }
 
+
+
+.csillag-ertekeles {
+  position: absolute;
+  right: -30px;
+  color: white;
+  bottom: -160px;
+  font-size: 100px;
+  transform: scale(0.2); 
+}

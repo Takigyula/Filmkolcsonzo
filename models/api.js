@@ -1,6 +1,8 @@
-const express = require('express');
+const express = require(' express');
 const app = express();
 const mysql = require('mysql');
+const router = express.Router();
+const RatingController = require('../controllers/RatingController');
 
 // Adatbázis kapcsolat beállítása
 const db = mysql.createConnection({
@@ -38,6 +40,23 @@ app.put('/api/cinema/nezok/statusz', (req, res) => {
     }
 
     res.send({ message: 'Statusz frissítve' });
+  });
+});
+
+// API endpoint az értékelések létrehozásához
+app.post('/api/ratings', (req, res) => {
+  const { filmId, userId, rating } = req.body;
+
+  // Adatbázisbeli művelet az értékelés létrehozásához
+  const query = 'INSERT INTO ertekelesek (filmId, userId, rating) VALUES (?, ?, ?)';
+  db.query(query, [filmId, userId, rating], (err, results) => {
+    if (err) {
+      console.error('Adatbázis hiba:', err);
+      res.status(500).send({ message: 'Adatbázis hiba' });
+      return;
+ }
+
+    res.status(201).send({ message: 'Értékelés sikeresen hozzáadva', id: results.insertId });
   });
 });
 
