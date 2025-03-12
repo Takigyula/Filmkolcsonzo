@@ -9,6 +9,7 @@ import Sorozatok from './pages/Sorozatok/Sorozatok';
 import Egyedi from './pages/Egyedi/Egyedi';
 import Csomagok from './pages/Csomagok/Csomagok';
 import Profil from './pages/Profil/Profil';
+import Gyik from './pages/Gyik/Gyik';
 // import Kategoria from './pages/Kategorial/kategoria';
 
 function App() {
@@ -44,6 +45,10 @@ function App() {
                     <Route
                         path="/profil"
                         element={<Profil />}
+                    />
+                    <Route
+                        path="/gyik"
+                        element={<Gyik />}
                     />
                 </Routes>
             </BrowserRouter>

@@ -37,7 +37,7 @@ body {
 }
 
 .text {
-    color: white;
+    color: rgb(253, 252, 252);
     font-size: 48px;
     font-weight: 700;
     -webkit-text-stroke: 0.9px black;
@@ -66,17 +66,17 @@ body {
     margin: auto;
     width: 350px;
     height: 80px;
-    background: #eaeaea;
+    background: #f6f5f5;
     border-radius: 6px;
 }
 
 .input input {
     height: 50px;
-    width: 100px;
+    /* width: 100px; */
     background: transparent;
     border: none;
     outline: none;
-    color: #797979;
+    color: #000000;
     font-size: 19px;
 }
 
@@ -86,7 +86,7 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
     font-size: 19px;
 }
 
@@ -175,7 +175,7 @@ body {
 }
 
 .input input, .input select {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 select option {

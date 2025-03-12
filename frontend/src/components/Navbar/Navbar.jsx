@@ -17,12 +17,14 @@ const FelsoNav = ({
     registerSearch,
     loginSearch,
     profilSearch,
+    gyikSearch,
 }) => {
     const filmekRef = useRef();
     const sorozatokRef = useRef();
     const loginRef = useRef();
     const registerRef = useRef();
     const csomagokRef = useRef();
+    const gyakoriRef = useRef();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
     const [avatar, setAvatar] = useState('');
@@ -58,7 +60,7 @@ const FelsoNav = ({
             filmekRef.current.style.color = 'white';
             sorozatokRef.current.style.color = 'white';
             loginRef.current.style.color = 'white';
-        }
+        } 
     }, []);
 
     const kilep = () => {
@@ -91,6 +93,7 @@ const FelsoNav = ({
                 {registerSearch ? <div className='home-ures'></div> :  null }
                 {loginSearch ? <div className='home-ures'></div> :  null }
                 {profilSearch ? <div className='home-ures'></div> :  null }
+                {gyikSearch ? <div className='home-user'></div> : null}
             <div className="filmek-sorozatok">
                 <Link
                     to="/filmek"
@@ -110,6 +113,14 @@ const FelsoNav = ({
                 >
                     Csomagok
                 </Link>
+                
+                <Link
+                    to="/gyik"
+                    ref={gyakoriRef}
+                >
+                    Gyakori Kérdések   
+                </Link>
+                
             </div>
             {isLoggedIn ? (
                 <div className="login-regisztracio">

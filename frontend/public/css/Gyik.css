@@ -1,0 +1,75 @@
+.gyik {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .gyik h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+  
+  .gyik-kategoriak {
+    margin-bottom: 20px;
+    padding: 20px;
+    /* background-color: #fff; */
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gyik-kategoriak h2 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(254, 254, 254);
+    margin-bottom: 10px;
+  }
+  
+  .gyik-kategoriak h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(251, 251, 251);
+    margin-bottom: 5px;
+  }
+  
+  .gyik-kategoriak p {
+    font-size: 14px;
+    color: rgb(254, 252, 252);
+    margin-bottom: 10px;
+  }
+  
+  .gyik-kategoriak ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .gyik-kategoriak li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .gyik-kategoriak li:last-child {
+    border-bottom: none;
+  }
+  
+  .gyik-kategoriak ul li:hover {
+    /* background-color: #f9f9f9; */
+    cursor: pointer;
+  }
+  
+  .gyik-kategoriak h2 + ul {
+    margin-top: 10px;
+  }
+  
+  .gyik-kategoriak h3 + p {
+    margin-top: 5px;
+  }
