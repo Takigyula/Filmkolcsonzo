@@ -1,30 +1,88 @@
 .film-kategoria {
-    position: fixed;
-    display: inline;
+    position: relative;
+    display: inline-block;
     left: 50px;
-}
-
-.film-kategoria .options {
-    list-style-type: none;
-}
-
-.film-kategoria select {
-    width: 150px;
-    height: 30px;
-    padding: 10px;
+    width: 180px;
+    background-color: #f0f0f0;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 3px;
+    padding: 1px;
     cursor: pointer;
-}
-
-.film-kategoria select:focus {
-    outline: none;
-    border-color: #aaa;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.film-kategoria option {
-    padding: 10px;
-    font-size: 16px;
-}
+    transition: all 0.3s ease-in-out;
+    border-style: groove;
+  }
+  
+  .film-kategoria .options {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+  }
+  
+  .film-kategoria .options li {
+    padding: 5px;
+    border-bottom: 1px solid #555;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+  }
+  
+  .film-kategoria .options li:last-child {
+    border-bottom: none;
+  }
+  
+  .film-kategoria .options li:hover {
+    background-color: #444;
+  }
+  
+  .film-kategoria select {
+    display: none;
+  }
+  
+  .film-kategoria .selected {
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .film-kategoria .selected:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .film-kategoria:hover .options {
+    display: block;
+    transform: scaleY(1);
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .film-kategoria:hover .options li {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .film-kategoria .options li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .film-kategoria:hover .selected {
+    background-color: #f0f0f0;
+  }
