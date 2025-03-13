@@ -1,6 +1,6 @@
 .gyik {
-    max-width: 800px;
-    margin: 40px auto;
+    max-width: 1000px;
+    margin: 100px auto;
     padding: 20px;
     /* background-color: #f9f9f9; */
     border: 1px solid #ddd;
@@ -10,7 +10,7 @@
   
   .gyik h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
     font-size: 24px;
     font-weight: bold;
     color: rgb(255, 255, 255);

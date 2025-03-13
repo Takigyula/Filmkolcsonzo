@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import FelsoNav from '../../components/Navbar/Navbar';
 
 const Gyik = () => {
+
   return (
     <div className="gyik">
+      <FelsoNav  />
       <h1>Gyakori Kérdések</h1>
       <div className="gyik-kategoriak">
         <h2>Általános Kérdések</h2>
         <ul>
           <li>
+            {/* <p>{aktualisKategoria}</p> */}
             <h3>Mi az oldal célja?</h3>
             <p>Az oldal célja, hogy segítsen az embereknek megtalálni a válaszokat a gyakori kérdésekre.</p>
           </li>
