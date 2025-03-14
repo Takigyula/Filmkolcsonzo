@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #201f1f;
+    background-color: rgb(31, 30, 30);
     background-image: url(./hatter.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -25,7 +25,8 @@
     padding: 30px;
     font-family: "Fredoka", sans-serif;
   }
-  
+
+
   .header {
     display: flex;
     flex-direction: column;
@@ -149,4 +150,8 @@
   
   .FelsoNav a:hover {
     color: #4c00b4;
+  }
+
+  .button{
+    color: #201f1f !important;
   }
