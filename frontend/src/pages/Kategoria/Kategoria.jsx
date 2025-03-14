@@ -65,10 +65,10 @@ const Kategoria = () => {
                     </li>
                     <li>
                         <button
-                            value="Scifi"
+                            value="Sci-fi"
                             onClick={handleSelect}
                         >
-                            Scifi
+                            Sci-fi
                         </button>
                     </li>
                     <li>
