@@ -2,7 +2,7 @@ const path = require('node:path');
 const Film = require('../models/Film');
 
 exports.getFilmek = async (req, res) => {
-    const filmek = await Film.find({});
+    const filmek = await Film.find({}).populate('ertekelok');
 
     try {
         const viewsUt = path.join(__dirname, '..', 'views', 'filmek.ejs');
