@@ -5,19 +5,19 @@
     /* background-color: #f9f9f9; */
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    font-family: "Fredoka", sans-serif;
   }
   
   .gyik h1 {
     text-align: center;
     margin-bottom: 21px;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     color: rgb(255, 255, 255);
   }
   
   .gyik-kategoriak {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding: 20px;
     /* background-color: #fff; */
     border: 1px solid #ddd;
@@ -26,23 +26,24 @@
   
   .gyik-kategoriak h2 {
     margin-top: 0;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
-    color: rgb(254, 254, 254);
-    margin-bottom: 10px;
+    color: rgb(31, 7, 249);
+    margin-bottom: 15px;
   }
   
   .gyik-kategoriak h3 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
-    color: rgb(251, 251, 251);
+    color: rgb(250, 250, 250);
     margin-bottom: 5px;
   }
   
   .gyik-kategoriak p {
-    font-size: 14px;
+    font-size: 17px;
     color: rgb(254, 252, 252);
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease-in-out;
   }
   
   .gyik-kategoriak ul {
@@ -52,8 +53,8 @@
   }
   
   .gyik-kategoriak li {
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 18px;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
   }
   
@@ -67,9 +68,12 @@
   }
   
   .gyik-kategoriak h2 + ul {
-    margin-top: 10px;
+    margin-top: 20px;
   }
   
   .gyik-kategoriak h3 + p {
-    margin-top: 5px;
+    margin-top: 13px;
   }
+
+ 
+
