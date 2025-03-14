@@ -20,6 +20,8 @@ const Filmek = () => {
                     'http://localhost:3500/api/cinema/filmek/films'
                 );
 
+                const valasz = await response.json();
+                console.log();
                 if (response.ok) {
                     let result = await response.json();
                     // console.log(result);
@@ -190,19 +192,13 @@ const Filmek = () => {
                                 </div>
                             </div>
                             <info className="slider-title">Deadpool</info>
-                            <button
-                                className="slider-btn"
-                                onClick={leker}
-                            >
+                            <button className="slider-btn" onClick={leker}>
                                 Részletek
                             </button>
                         </div>
                         <div className="sliderThumbs-container">
                             {filmek.map((value, index) => (
-                                <div
-                                    className="sliderThumbs"
-                                    key={index}
-                                >
+                                <div className="sliderThumbs" key={index}>
                                     <div className="filmek-sliderThumbs-img">
                                         <img
                                             className="thumb-img"

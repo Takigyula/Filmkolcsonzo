@@ -59,6 +59,7 @@ app.use(
     '/api/cinema/egyedifilmmodosit',
     require('./routes/egyediFilmModositRoutes')
 );
+app.use('/api/cinema/csillagmodosit', require('./routes/csillagModositRoutes'));
 // Felhasználó
 app.use('/api/cinema/nezok', require('./routes/nezokRoutes'));
 app.use('/api/cinema/nezok/statusz', require('./routes/nezokStatuszRoutes'));

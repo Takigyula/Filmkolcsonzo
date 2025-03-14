@@ -11,6 +11,7 @@ const Egyedi = () => {
     const { getBelep } = useContext(BelepContext);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [film, setFilm] = useState({});
+    const [ertekelt, setErtekelt] = useState(true);
     const [isSeries, setIsSeries] = useState(false); // Új állapot a sorozat ellenőrzéséhez
 
     useEffect(() => {
@@ -24,6 +25,15 @@ const Egyedi = () => {
             if (response.ok) {
                 let result = await response.json();
                 let egyediFilm = result.filmek.find((film) => film._id === id);
+                let userId = String(
+                    JSON.parse(localStorage.getItem('user'))._id
+                );
+                console.log(userId);
+                console.log(egyediFilm.ertekelok);
+                console.log(egyediFilm.ertekelok.includes(userId));
+                if (egyediFilm.ertekelok.includes(userId)) {
+                    setErtekelt(false);
+                }
 
                 if (egyediFilm) {
                     // Ha találtunk filmet, beállítjuk az állapotokat
@@ -78,7 +88,7 @@ const Egyedi = () => {
         }
     };
 
-    const szavazas = () => {
+    const szavazas = async () => {
         let csillagok = document.querySelectorAll('.ertekeles');
         let szam = 0;
 
@@ -90,11 +100,30 @@ const Egyedi = () => {
 
         if (isLoggedIn) {
             window.alert('Sikeresen értékelted a filmet!');
+            let userId = JSON.parse(localStorage.getItem('user'))._id;
+            console.log(userId);
+            const response = await fetch(
+                `http://localhost:3500/api/cinema/csillagmodosit/${film._id}`,
+                {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ szam, userId }),
+                }
+            );
+
+            let valasz = await response.json();
+
+            if (response.ok) {
+                console.log(valasz.msg);
+                window.location.reload();
+            }
         } else {
             window.alert('A szavazáshoz be kell jelentkezned!');
         }
 
-        console.log(stars);
+        console.log(szam);
     };
 
     return (
@@ -128,52 +157,39 @@ const Egyedi = () => {
                             ></iframe>
                         </div>
                     </p>
-                    <p
-                        className="csillag-ertekeles"
-                        style={{ display: 'flex', alignItems: 'center' }}
-                    >
-                        Értékelés:
-                        <span onClick={() => atvalt(1)}>
-                            <img
-                                className="ertekeles"
-                                src={Urescsillag}
+                    {ertekelt ? (
+                        <p
+                            className="csillag-ertekeles"
+                            style={{ display: 'flex', alignItems: 'center' }}
+                        >
+                            Értékelés:
+                            <span onClick={() => atvalt(1)}>
+                                <img className="ertekeles" src={Urescsillag} />
+                            </span>
+                            <span onClick={() => atvalt(2)}>
+                                <img className="ertekeles" src={Urescsillag} />
+                            </span>
+                            <span onClick={() => atvalt(3)}>
+                                <img className="ertekeles" src={Urescsillag} />
+                            </span>
+                            <span onClick={() => atvalt(4)}>
+                                <img className="ertekeles" src={Urescsillag} />
+                            </span>
+                            <span onClick={() => atvalt(5)}>
+                                <img className="ertekeles" src={Urescsillag} />
+                            </span>
+                            <input
+                                type="submit"
+                                value="Szavazás"
+                                style={{
+                                    height: '200px',
+                                    width: '450px',
+                                    fontSize: '80px',
+                                }}
+                                onClick={szavazas}
                             />
-                        </span>
-                        <span onClick={() => atvalt(2)}>
-                            <img
-                                className="ertekeles"
-                                src={Urescsillag}
-                            />
-                        </span>
-                        <span onClick={() => atvalt(3)}>
-                            <img
-                                className="ertekeles"
-                                src={Urescsillag}
-                            />
-                        </span>
-                        <span onClick={() => atvalt(4)}>
-                            <img
-                                className="ertekeles"
-                                src={Urescsillag}
-                            />
-                        </span>
-                        <span onClick={() => atvalt(5)}>
-                            <img
-                                className="ertekeles"
-                                src={Urescsillag}
-                            />
-                        </span>
-                        <input
-                            type="submit"
-                            value="Szavazás"
-                            style={{
-                                height: '200px',
-                                width: '450px',
-                                fontSize: '80px',
-                            }}
-                            onClick={szavazas}
-                        />
-                    </p>
+                        </p>
+                    ) : null}
                 </div>
             </div>
         </div>

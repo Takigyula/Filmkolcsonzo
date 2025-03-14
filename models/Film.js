@@ -41,6 +41,12 @@ const filmSchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
+        ertekelok: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'viewer',
+            },
+        ],
     },
     {
         timestamps: true,
