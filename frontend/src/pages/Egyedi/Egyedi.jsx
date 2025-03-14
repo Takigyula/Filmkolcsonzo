@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import './Egyedi.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 import Telicsillag from './telicsillag.png';
 import Urescsillag from './urescsillag.png';
+import BelepContext from '../../utils/LoginContext';
 
 const Egyedi = () => {
     const { id } = useParams();
+    const { getBelep } = useContext(BelepContext);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [film, setFilm] = useState({});
     const [isSeries, setIsSeries] = useState(false); // Új állapot a sorozat ellenőrzéséhez
 
     useEffect(() => {
+        setIsLoggedIn(getBelep());
         const leker = async () => {
             // Először próbáljuk lekérni a filmeket
             let response = await fetch(
@@ -76,7 +80,6 @@ const Egyedi = () => {
 
     const szavazas = () => {
         let csillagok = document.querySelectorAll('.ertekeles');
-        let stars = film.stars;
         let szam = 0;
 
         for (let i = 0; i < csillagok.length; i++) {
@@ -85,7 +88,11 @@ const Egyedi = () => {
             }
         }
 
-        stars += szam;
+        if (isLoggedIn) {
+            window.alert('Sikeresen értékelted a filmet!');
+        } else {
+            window.alert('A szavazáshoz be kell jelentkezned!');
+        }
 
         console.log(stars);
     };

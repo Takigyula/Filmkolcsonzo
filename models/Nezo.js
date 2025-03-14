@@ -32,6 +32,11 @@ const NezoSchema = new mongoose.Schema(
                 ref: 'reservation',
             },
         ],
+        ertekeltFilmek: [
+            {
+                type: String,
+            },
+        ],
     },
     { timestamps: true }
 );
