@@ -1,79 +1,99 @@
-.gyik {
-    max-width: 1000px;
-    margin: 100px auto;
-    padding: 20px;
-    /* background-color: #f9f9f9; */
-    border: 1px solid #ddd;
+.gyik-kontener {
+    width: 100%;
+    /* border: 1px solid #ddd; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: "Fredoka", sans-serif;
-  }
-  
-  .gyik h1 {
+    padding-top: 100px;
+    padding-bottom: 1em;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.gyik-belso-kontener {
+    width: 60%;
+    margin: auto;
+}
+
+.gyik-belso-kontener h1 {
     text-align: center;
     margin-bottom: 21px;
     font-size: 28px;
     font-weight: bold;
     color: rgb(255, 255, 255);
-  }
-  
-  .gyik-kategoriak {
+}
+
+.gyik-kategoriak {
     margin-bottom: 25px;
     padding: 20px;
     /* background-color: #fff; */
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .gyik-kategoriak h2 {
+}
+
+.gyik-kategoriak h2 {
     margin-top: 0;
     font-size: 30px;
     font-weight: bold;
     color: rgb(31, 7, 249);
     margin-bottom: 15px;
-  }
-  
-  .gyik-kategoriak h3 {
+}
+
+.gyik-kategoriak h3 {
+    position: unset;
     font-size: 20px;
     font-weight: bold;
     color: rgb(250, 250, 250);
-    margin-bottom: 5px;
-  }
-  
-  .gyik-kategoriak p {
+    margin: 0px;
+    width: 100%;
+}
+
+.gyik-kategoriak p {
     font-size: 17px;
     color: rgb(254, 252, 252);
     margin-bottom: 16px;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .gyik-kategoriak ul {
+}
+
+.gyik-kategoriak ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .gyik-kategoriak li {
+}
+
+.gyik-kategoriak li {
     margin-bottom: 18px;
     padding: 15px;
     border-bottom: 1px solid #ddd;
-  }
-  
-  .gyik-kategoriak li:last-child {
+}
+
+.gyik-kategoriak li:last-child {
     border-bottom: none;
-  }
-  
-  .gyik-kategoriak ul li:hover {
+}
+
+.gyik-kategoriak ul li:hover {
     /* background-color: #f9f9f9; */
     cursor: pointer;
-  }
-  
-  .gyik-kategoriak h2 + ul {
+}
+
+.gyik-kategoriak h2 + ul {
     margin-top: 20px;
-  }
-  
-  .gyik-kategoriak h3 + p {
+}
+
+.gyik-kategoriak h3 + p {
     margin-top: 13px;
-  }
+}
 
- 
+@media screen and (max-width: 1240px) {
+    .gyik-belso-kontener {
+        width: 80%;
+    }
+}
 
+@media screen and (max-width: 780px) {
+    .gyik-belso-kontener {
+        margin-top: 100px;
+        width: 90%;
+    }
+
+    .gyik-kategoriak {
+        padding: 5px;
+    }
+}

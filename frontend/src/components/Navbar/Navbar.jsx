@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
 import logo from './logo.png';
-import './Navbar.css';
 import { useContext, useEffect, useState, useRef } from 'react';
 import BelepContext from '../../utils/LoginContext';
 import '../../App.css';
@@ -13,6 +12,7 @@ const FelsoNav = ({
     filmekSearch,
     sorozatokSearch,
     homeSearch,
+    egyediSearch,
     csomagSearch,
     registerSearch,
     loginSearch,
@@ -28,7 +28,8 @@ const FelsoNav = ({
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
     const [avatar, setAvatar] = useState('');
-    const { getBelep, setBelep, getAdmin, getAvatar } = useContext(BelepContext);
+    const { getBelep, setBelep, getAdmin, getAvatar } =
+        useContext(BelepContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -60,7 +61,7 @@ const FelsoNav = ({
             filmekRef.current.style.color = 'white';
             sorozatokRef.current.style.color = 'white';
             loginRef.current.style.color = 'white';
-        } 
+        }
     }, []);
 
     const kilep = () => {
@@ -78,22 +79,27 @@ const FelsoNav = ({
 
     return (
         <div className="navbar-container">
-            <Link to="/">
-                <img
-                    src={logo}
-                    className="logo-img"
-                />
-            </Link>
-            {
-                filmekSearch ?   <SearchBar tartalom="film" /> :  null          }
-            {
-                sorozatokSearch ?   <SearchBar tartalom="sorozat" /> :  null          }
-                {homeSearch ? <div className='home-ures'></div> :  null }
-                {csomagSearch ? <div className='home-ures'></div> :  null }
-                {registerSearch ? <div className='home-ures'></div> :  null }
-                {loginSearch ? <div className='home-ures'></div> :  null }
-                {profilSearch ? <div className='home-ures'></div> :  null }
-                {gyikSearch ? <div className='home-user'></div> : null}
+            <div className="navbar-bal">
+                <div className="navbar-logo">
+                    <Link to="/">
+                        <img
+                            src={logo}
+                            className="logo-img"
+                        />
+                    </Link>
+                </div>
+                <div className="navbar-kereses">
+                    {filmekSearch ? <SearchBar tartalom="film" /> : null}
+                    {sorozatokSearch ? <SearchBar tartalom="sorozat" /> : null}
+                    {homeSearch ? <div className="home-ures"></div> : null}
+                    {egyediSearch ? <div className="home-ures"></div> : null}
+                    {csomagSearch ? <div className="home-ures"></div> : null}
+                    {registerSearch ? <div className="home-ures"></div> : null}
+                    {loginSearch ? <div className="home-ures"></div> : null}
+                    {profilSearch ? <div className="home-ures"></div> : null}
+                    {gyikSearch ? <div className="home-user"></div> : null}
+                </div>
+            </div>
             <div className="filmek-sorozatok">
                 <Link
                     to="/filmek"
@@ -113,20 +119,24 @@ const FelsoNav = ({
                 >
                     Csomagok
                 </Link>
-                
+
                 <Link
                     to="/gyik"
                     ref={gyakoriRef}
                 >
-                    Gyakori Kérdések   
+                    Gyakori Kérdések
                 </Link>
-                
             </div>
             {isLoggedIn ? (
                 <div className="login-regisztracio">
                     {isAdmin ? (
-               <Link id='adminserver' to="http://localhost:3500/api/cinema">Szerver</Link>
-            ) : null}
+                        <Link
+                            id="adminserver"
+                            to="http://localhost:3500/api/cinema"
+                        >
+                            Szerver
+                        </Link>
+                    ) : null}
                     <img
                         src={`/images/output/${avatar}`}
                         alt="avatar"

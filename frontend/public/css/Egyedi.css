@@ -1,42 +1,27 @@
-/* Egyedi.css */
-
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+.egyedi-kontener {
+    /* background-attachment: fixed; */
+    padding-top: 100px;
+    padding-bottom: 1em;
+    width: 100vw;
 }
 
-.egyedi {
-    margin: 200px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 100px;
-    box-shadow: 0 0 10px rgba(11, 3, 231, 0.5);
-    flex-basis: 30%;
-    transition: transform 0.2s ease-in-out;
-    /* position: relative;
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background-size: cover;
-  background-position: center; */
+.egyedi-kulso-kontener {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.egyedi-container {
+/* .egyedi-container {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Háttérként */
-}
+    z-index: -1;
+} */
 
-.film-info {
+.egyedi-film-info {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 0px;
     padding: 20px;
     /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a szöveghez */
     border-radius: 10px;
@@ -63,52 +48,45 @@ hr {
 }
 
 .film-description {
-    max-width: 800px; /* Maximális szélesség a leírásnak */
     text-align: center;
     margin-top: 10px;
     padding: 10px;
     font-size: 1.2rem;
     line-height: 1.5;
     color: white;
-    /* background: rgba(0, 0, 0, 0.7); Átlátszó háttér a leíráshoz */
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
+.film-egyedi-tartalom {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    padding-top: 1.5em;
+}
+
 .film-szereplok {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1em;
     margin: 0;
     font-size: 1rem;
-    line-height: 1.5;
+    padding: 1em;
     color: #fff;
 }
 
+.film-szereplok h3 {
+    position: unset;
+    margin: 0px;
+}
+
 .film-video {
-    position: absolute;
-    top: 180px;
-    right: 20px;
     text-align: right;
-    margin: 0;
+    margin: 0px auto;
     color: #ffffff00;
     text-shadow: none;
-    /* iframe {
-    width: 800px;
-    height: 550px; 
-  } */
-}
-
-.egyedi-kulso {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.film-video {
-    display: block;
-    width: 100%;
-    color: #ffffff00;
+    width: 90%;
 }
 
 .film-video a {
@@ -117,25 +95,81 @@ hr {
 
 .film-video iframe {
     display: block;
-    position: relative;
-    top: 15px;
-    left: 5px;
-    width: 700px;
+    margin: auto;
+    width: 100%;
     height: 450px;
 }
 
-.egyedi-tartalom {
-    position: relative;
-    display: flex;
-    gap: 2em;
-    flex-direction: column;
+.ertekeles {
+    height: 30px;
+}
+
+.ertekeles img {
+    height: 30px;
+    object-fit: cover;
 }
 
 .csillag-ertekeles {
-    position: absolute;
-    right: -740px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: white;
     bottom: 10px;
-    font-size: 100px;
-    transform: scale(0.2);
+    font-size: 30px;
+    z-index: 10;
+    /* transform: scale(0.2); */
+}
+
+.csillag-ertekeles-szoveg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.csillag-ertekeles-gomb input {
+    padding: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    .egyedi-kulso-kontener {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .egyedi-film-info {
+        width: 100vw;
+        margin-top: 30px;
+    }
+
+    .egyedi-film-info-kep {
+        width: 100%;
+    }
+
+    .egyedi-film-info-kep img {
+        width: 100%;
+        border-radius: 0px;
+        height: auto;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .egyedi-kulso-kontener {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .egyedi-film-info {
+        width: 100vw;
+        margin-top: 100px;
+    }
+
+    .egyedi-film-info-kep {
+        width: 100%;
+    }
+
+    .egyedi-film-info-kep img {
+        width: 100%;
+        border-radius: 0px;
+        height: auto;
+        margin: 0px;
+    }
 }

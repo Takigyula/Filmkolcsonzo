@@ -2,7 +2,7 @@
     background-image: url('/images/deadpool.jpg');
     background-attachment: fixed;
     background-size: cover;
-    background-color: #141414;
+    background-color: #1a233a;
     padding-top: 100px;
     width: 100vw;
     transition: background-image 0.5s ease-in-out;
@@ -99,7 +99,7 @@
 }
 
 .sliderThumbs {
-    margin: 10px;
+    margin: auto;
     width: 200px;
     height: 300px;
     display: flex;
@@ -152,18 +152,46 @@
 }
 
 .selected-value {
-    color:white;
+    color: white;
     padding: 4px;
     background-color: rgb(46, 46, 46);
     cursor: pointer;
-    
 }
 
-.options{
+.options {
     background-color: rgb(61, 61, 61);
     padding: 2px;
     border-radius: 2px;
     border-color: white;
     border-width: 2px;
-    
+}
+
+@media screen and (max-width: 1500px) {
+    .sliderThumbs-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .sliderThumbs-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sliderThumbs-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filmek-home-container {
+        /* background-image: none; */
+        background-color: #1a233a;
+        /* margin-top: 80px; */
+    }
+
+    .slider-container {
+        margin-top: 80px;
+    }
 }

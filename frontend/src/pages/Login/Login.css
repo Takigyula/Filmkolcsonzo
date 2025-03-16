@@ -9,7 +9,7 @@ body {
     background-size: cover;
 }
 
-.container{
+/* .container{
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -24,9 +24,9 @@ body {
     width: 600px;
     background: white;
     padding: 30px;
-}
+} */
 
-.header{
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,24 +39,24 @@ body {
     color: red;
 }
 
-.text{
+.text {
     color: white;
     font-size: 48px;
     font-weight: 700;
     -webkit-text-stroke: 0.9px black;
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
-    'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  }
+        'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
 
-.underline{
+.underline {
     width: 61px;
     height: 6px;
     background: cyan;
     border-radius: 9px;
 }
 
-.inputs{
+.inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
@@ -70,9 +70,9 @@ body {
     width: 480px;
     height: 80px;
     border-radius: 6px;
-  }
-  
-  .input input {
+}
+
+.input input {
     height: 50px;
     width: 400px;
     background: transparent;
@@ -80,37 +80,38 @@ body {
     outline: none;
     color: #797979;
     font-size: 19px;
-  }
-  
-  .input input:not(:focus):not(:placeholder-shown):not(:valid) {
-    background: #eaeaea;
-  }
-  
-  .input input:focus, .input input:valid {
-    background: transparent;
-  }
+}
 
-.forgot-password{
+.input input:not(:focus):not(:placeholder-shown):not(:valid) {
+    background: #eaeaea;
+}
+
+.input input:focus,
+.input input:valid {
+    background: transparent;
+}
+
+.forgot-password {
     padding-left: 62px;
     margin-top: 27px;
     color: lightgrey;
     font-size: 18px;
     -webkit-text-stroke: 0.5px black;
-    font-family: "Oswald", serif;
+    font-family: 'Oswald', serif;
 }
 
-.forgot-password span{
+.forgot-password span {
     color: white;
     cursor: pointer;
 }
 
-.submit-container{
+.submit-container {
     display: flex;
     gap: 30px;
     margin: 60px auto;
 }
 
-.submit{
+.submit {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,40 +124,40 @@ body {
     font-weight: 700;
     cursor: pointer;
     text-align: center;
-    font-family: "Oswald", serif;   
+    font-family: 'Oswald', serif;
 }
 
 .button-37 {
-  background-color: cornflowerblue;
-  border: 1px solid black;
- -webkit-text-stroke: 0px black;
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
-  box-sizing: border-box;
-  color: white;
-  cursor: pointer;
-  font-family: "Oswald", serif;
-  font-optical-sizing: auto;
-  font-size: 18px;
-  font-weight: 400;
-  outline: none;
-  outline: 0;
-  padding: 10px 25px;
-  text-align: center;
-  transform: translateY(0);
-  transition: transform 150ms, box-shadow 150ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    -webkit-text-stroke: 0px black;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-family: 'Oswald', serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 25px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .button-37:hover {
-  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
-  transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+    transform: translateY(-2px);
 }
 
 @media (min-width: 768px) {
-  .button-37 {
-    padding: 10px 30px;
-  }
-} 
+    .button-37 {
+        padding: 10px 30px;
+    }
+}

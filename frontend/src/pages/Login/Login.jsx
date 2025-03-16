@@ -50,6 +50,7 @@ const Login = () => {
                 loginaktiv={true}
                 registeraktiv={false}
                 loginSearch={true}
+                className="login-nav"
             />
             <div className="login-form-container">
                 <div className="header">
@@ -72,7 +73,7 @@ const Login = () => {
                         </div>
                     </div>
                     <div className="forgot-password">
-                        Nincs még fiókod?<a href="/register">Regisztrálj</a>
+                        Nincs még fiókod? <a href="/register">Regisztrálj</a>
                     </div>
                     <div className="submit=container">
                         <button

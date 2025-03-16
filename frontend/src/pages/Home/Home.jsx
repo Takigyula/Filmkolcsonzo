@@ -14,43 +14,43 @@ const Home = () => {
             kategoria: 'Filmek',
         },
         {
-            id:'67bc7444e1818b61ff242748',
+            id: '67bc7444e1818b61ff242748',
             cim: 'Spiderman',
             kep: '/images/spiderman.jpg',
             kategoria: 'Filmek',
         },
         {
-            id:'67835a706f687bac4ac0689a',
+            id: '67835a706f687bac4ac0689a',
             cim: 'Top Gun',
             kep: '/images/topgun.jpg',
             kategoria: 'Filmek',
         },
-        { 
+        {
             id: '67851436256d101fad46a7e6',
             cim: 'Sötét lovag',
             kep: '/images/sotetlovag.jpg',
             kategoria: 'Filmek',
         },
         {
-            id:'678358f2f37449a204814781',
+            id: '678358f2f37449a204814781',
             cim: 'Prison Break',
             kep: '/images/PrisonBreak.jpg',
             kategoria: 'Sorozatok',
         },
         {
-            id:'67851b55256d101fad46a812',
+            id: '67851b55256d101fad46a812',
             cim: 'The Nun',
             kep: '/images/thenun.jpg',
             kategoria: 'Sorozatok',
         },
         {
-            id:'67835a466f687bac4ac06896',
+            id: '67835a466f687bac4ac06896',
             cim: 'Vikings',
             kep: '/images/Vikings.jpg',
             kategoria: 'Sorozatok',
         },
         {
-            id:'67835938f37449a20481478',
+            id: '67835938f37449a20481478',
             cim: 'Csernobil',
             kep: '/images/chernobyl.jpg',
             kategoria: 'Sorozatok',
@@ -58,11 +58,21 @@ const Home = () => {
     ];
 
     const betolt = (index) => {
+        let szelesseg = window.innerWidth;
+        console.log(szelesseg);
+        // console.log(szelesseg.slice(0, -2));
+
         let i = Math.ceil(filmek.length / 4);
         console.log(i);
+        if (szelesseg < 600) {
+            i = filmek.length;
+        } else if (szelesseg < 900) {
+            i = Math.ceil(filmek.length / 2);
+        }
+
         let homeContainer = document.querySelector('.home-container');
         homeContainer.style.backgroundImage = `url('${filmek[index].kep}')`;
-        homeContainer.style.height = `${i * 300 + 800}px`;
+        homeContainer.style.height = `${i * 300 + 650}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
@@ -112,13 +122,15 @@ const Home = () => {
                         <div className="home-slider-info">
                             <img
                                 className="info-img"
-                                src="../../public/images/deadpool.jpg"
+                                src="/images/deadpool.jpg"
                                 alt=""
                             />
                             <div className="home-slider-raitings">
                                 <p className="slider-raiting">*****</p>
                                 <p className="slider-category">
-                                    <span className="category">Kategória:  </span>
+                                    <span className="category">
+                                        Kategória:{' '}
+                                    </span>
                                     <span className="slider-tipus">Filmek</span>
                                 </p>
                             </div>
@@ -132,13 +144,15 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+                <div className="home-h3-sor">
+                    <h3>Felkapott</h3>
+                </div>
                 <div className="home-sliderThumbs-container">
-                <h3>Felkapott</h3>
                     {filmek.map((value, index) => (
                         <div
-                            className="sliderThumbs"
+                            className="home-sliderThumbs"
                             key={index}
-                            >
+                        >
                             <div className="sliderThumbs-img">
                                 <img
                                     className="thumb-img"

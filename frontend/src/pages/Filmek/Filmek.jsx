@@ -20,8 +20,6 @@ const Filmek = () => {
                     'http://localhost:3500/api/cinema/filmek/films'
                 );
 
-                const valasz = await response.json();
-                console.log();
                 if (response.ok) {
                     let result = await response.json();
                     // console.log(result);
@@ -40,21 +38,57 @@ const Filmek = () => {
                     });
                     setKategoriaFilmek(kategoriaFilmek);
                     //console.log(kategoriaFilmek);
-
-                    let i = Math.ceil(kategoriaFilmek.length / 6);
+                    let szelesseg = window.innerWidth;
+                    console.log(szelesseg);
+                    // console.log(szelesseg.slice(0, -2));
                     let homeContainer = document.querySelector(
                         '.filmek-home-container'
                     );
-                    homeContainer.style.height = `${i * 250 + 1000}px`;
+
+                    let i = Math.ceil(kategoriaFilmek.length / 6);
+                    if (szelesseg < 600) {
+                        i = kategoriaFilmek.length;
+                        homeContainer.style.height = `${i * 320 + 1000}px`;
+                    } else if (szelesseg < 1000) {
+                        i = Math.ceil(kategoriaFilmek.length / 2);
+                        homeContainer.style.height = `${i * 320 + 800}px`;
+                    } else if (szelesseg < 1500) {
+                        i = Math.ceil(kategoriaFilmek.length / 4);
+                        homeContainer.style.height = `${i * 320 + 800}px`;
+                    } else {
+                        homeContainer.style.height = `${i * 320 + 800}px`;
+                    }
+                    // let i = Math.ceil(kategoriaFilmek.length / 6);
+                    // let homeContainer = document.querySelector(
+                    //     '.filmek-home-container'
+                    // );
+                    // homeContainer.style.height = `${i * 250 + 1000}px`;
 
                     setFilmek(kategoriaFilmek);
                 }
             } else {
-                let i = Math.ceil(kiFilmek.length / 6);
-                let homeContainer = document.querySelector(
-                    '.filmek-home-container'
-                );
-                homeContainer.style.height = `${i * 250 + 1000}px`;
+                // let szelesseg = window.innerWidth;
+                // console.log(szelesseg);
+                // // console.log(szelesseg.slice(0, -2));
+                // let homeContainer = document.querySelector(
+                //     '.filmek-home-container'
+                // );
+                // let i = Math.ceil(kiFilmek.length / 6);
+                // if (szelesseg < 600) {
+                //     i = kiFilmek.length;
+                //     homeContainer.style.height = `${i * 320 + 1000}px`;
+                // } else if (szelesseg < 1000) {
+                //     i = Math.ceil(kiFilmek.length / 2);
+                //     homeContainer.style.height = `${i * 320 + 800}px`;
+                // } else if (szelesseg < 1500) {
+                //     i = Math.ceil(kiFilmek.length / 4);
+                //     homeContainer.style.height = `${i * 320 + 800}px`;
+                // }
+                // let i = Math.ceil(kiFilmek.length / 6);
+                // let homeContainer = document.querySelector(
+                //     '.filmek-home-container'
+                // );
+                // homeContainer.style.height = `${i * 250 + 1000}px`;
 
                 const kategoriaFilmek = kiFilmek.filter((elem) => {
                     if (kategoria !== 'Minden') {
@@ -66,6 +100,41 @@ const Filmek = () => {
                 setKategoriaFilmek(kategoriaFilmek);
 
                 setFilmek(kategoriaFilmek);
+                let szelesseg = window.innerWidth;
+                console.log(szelesseg);
+                console.log(kategoriaFilmek.length);
+                let homeContainer = document.querySelector(
+                    '.filmek-home-container'
+                );
+                let i = kategoriaFilmek.length;
+                if (szelesseg < 600) {
+                    if (i < 2) {
+                        homeContainer.style.height = `${2 * 320 + 800}px`;
+                    } else {
+                        homeContainer.style.height = `${i * 320 + 1000}px`;
+                    }
+                } else if (szelesseg < 1000) {
+                    let j = Math.ceil(kategoriaFilmek.length / 2);
+                    if (i < 3) {
+                        homeContainer.style.height = `${2 * 320 + 800}px`;
+                    } else {
+                        homeContainer.style.height = `${j * 320 + 800}px`;
+                    }
+                } else if (szelesseg < 1500) {
+                    let j = Math.ceil(kategoriaFilmek.length / 4);
+                    if (i < 5) {
+                        homeContainer.style.height = `${1.5 * 320 + 800}px`;
+                    } else {
+                        homeContainer.style.height = `${j * 320 + 800}px`;
+                    }
+                } else {
+                    let j = Math.ceil(kategoriaFilmek.length / 6);
+                    if (i < 7) {
+                        homeContainer.style.height = `${2 * 320 + 800}px`;
+                    } else {
+                        homeContainer.style.height = `${j * 320 + 800}px`;
+                    }
+                }
             }
         };
         // const filmleker = async () => {
@@ -108,12 +177,29 @@ const Filmek = () => {
     }, [kiFilmek, kategoria]);
 
     const betolt = (index) => {
-        let i = Math.ceil(filmek.length / 6);
-        console.log(i * 250 + 1000);
+        let szelesseg = window.innerWidth;
+        console.log(szelesseg);
+        // console.log(szelesseg.slice(0, -2));
         let homeContainer = document.querySelector('.filmek-home-container');
+
+        let i = Math.ceil(filmek.length / 6);
+        if (szelesseg < 600) {
+            i = filmek.length;
+            homeContainer.style.height = `${i * 320 + 1000}px`;
+        } else if (szelesseg < 1000) {
+            i = Math.ceil(filmek.length / 2);
+            homeContainer.style.height = `${i * 320 + 800}px`;
+        } else if (szelesseg < 1500) {
+            i = Math.ceil(filmek.length / 4);
+            homeContainer.style.height = `${i * 320 + 800}px`;
+        } else {
+            homeContainer.style.height = `${i * 320 + 800}px`;
+        }
+
+        console.log(i);
+
         homeContainer.style.backgroundImage = `url('/images/${filmek[index].plakat}')`;
         // Additional logic for displaying film details...
-        homeContainer.style.height = `${i * 250 + 1000}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
@@ -167,9 +253,9 @@ const Filmek = () => {
     return (
         <div className="filmek-home-container">
             <FelsoNav filmekSearch={true} />
-            <Kategoria />
 
             <div className="slider-container">
+                <Kategoria />
                 <div className="slider-info-container">
                     <div className="infoWrapper">
                         <div className="filmek-slider-container">
@@ -192,13 +278,19 @@ const Filmek = () => {
                                 </div>
                             </div>
                             <info className="slider-title">Deadpool</info>
-                            <button className="slider-btn" onClick={leker}>
+                            <button
+                                className="slider-btn"
+                                onClick={leker}
+                            >
                                 Részletek
                             </button>
                         </div>
                         <div className="sliderThumbs-container">
                             {filmek.map((value, index) => (
-                                <div className="sliderThumbs" key={index}>
+                                <div
+                                    className="sliderThumbs"
+                                    key={index}
+                                >
                                     <div className="filmek-sliderThumbs-img">
                                         <img
                                             className="thumb-img"

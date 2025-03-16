@@ -1,5 +1,4 @@
 import React from 'react';
-import './Csomagok.css';
 import FelsoNav from '../../components/Navbar/Navbar';
 import PaymentProcess from './PaymentProcess';
 // import axios from 'axios';
@@ -28,7 +27,7 @@ const Csomagok = () => {
     const userId = localStorage.getItem('userId');
 
     return (
-        <div className="csomagok">
+        <div className="csomagok-kontener">
             <FelsoNav csomagSearch={true} />
             <h1>Válassza ki az előfizetési csomagját!</h1>
             <ul>

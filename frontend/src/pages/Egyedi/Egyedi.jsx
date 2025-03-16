@@ -11,6 +11,7 @@ const Egyedi = () => {
     const { getBelep } = useContext(BelepContext);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [film, setFilm] = useState({});
+    const [szereplok, setSzereplok] = useState([]);
     const [ertekelt, setErtekelt] = useState(true);
     const [isSeries, setIsSeries] = useState(false); // Új állapot a sorozat ellenőrzéséhez
 
@@ -25,18 +26,24 @@ const Egyedi = () => {
             if (response.ok) {
                 let result = await response.json();
                 let egyediFilm = result.filmek.find((film) => film._id === id);
-                let userId = String(
-                    JSON.parse(localStorage.getItem('user'))._id
-                );
-                console.log(userId);
-                console.log(egyediFilm.ertekelok);
-                console.log(egyediFilm.ertekelok.includes(userId));
-                if (egyediFilm.ertekelok.includes(userId)) {
-                    setErtekelt(false);
+                if (isLoggedIn) {
+                    let userId = String(
+                        JSON.parse(localStorage.getItem('user'))._id
+                    );
+                    console.log(userId);
+                    console.log(egyediFilm.ertekelok);
+                    console.log(egyediFilm.ertekelok.includes(userId));
+                    if (egyediFilm.ertekelok.includes(userId)) {
+                        setErtekelt(false);
+                    }
                 }
 
                 if (egyediFilm) {
                     // Ha találtunk filmet, beállítjuk az állapotokat
+                    let cast = egyediFilm.szereplok;
+                    console.log(cast.split(','));
+                    setSzereplok(cast.split(','));
+
                     setFilm(egyediFilm);
                     setIsSeries(egyediFilm.type === 'series');
 
@@ -74,7 +81,7 @@ const Egyedi = () => {
     }, [id]);
 
     const atvalt = (szam) => {
-        let csillagok = document.querySelectorAll('.ertekeles');
+        let csillagok = document.querySelectorAll('.ertekeles-csillag');
         if (szam === 1) {
             csillagok[szam - 1].src = Telicsillag;
         } else if (szam === 2) {
@@ -89,7 +96,7 @@ const Egyedi = () => {
     };
 
     const szavazas = async () => {
-        let csillagok = document.querySelectorAll('.ertekeles');
+        let csillagok = document.querySelectorAll('.ertekeles-csillag');
         let szam = 0;
 
         for (let i = 0; i < csillagok.length; i++) {
@@ -127,27 +134,33 @@ const Egyedi = () => {
     };
 
     return (
-        <div className="egyedi">
-            <FelsoNav />
-            <div className="egyedi-kulso">
-                <div className="film-info">
+        <div className="egyedi-kontener">
+            <FelsoNav egyediSearch={true} />
+
+            <div className="egyedi-kulso-kontener">
+                <div className="egyedi-film-info">
                     {/* Ha sorozat, akkor a sorozat nevét jelenítjük meg, különben a film címét */}
                     <h1 className="film-title">
                         {isSeries ? `${film.cim}` : ` ${film.cim}`}
                     </h1>
                     <hr />
-                    <img
-                        src={`/images/${film.plakat}`}
-                        alt=""
-                        className="film-poster"
-                    />
+                    <div className="egyedi-film-info-kep">
+                        <img
+                            src={`/images/${film.plakat}`}
+                            alt=""
+                            className="film-poster"
+                        />
+                    </div>
                     <p className="film-description">{film.leiras}</p>
                 </div>
-                <div className="egyedi-tartalom">
-                    <p className="film-szereplok">{film.szereplok}</p>
-                    <p className="film-video">
+                <div className="film-egyedi-tartalom">
+                    <div className="film-szereplok">
+                        <h3>Szereplők: </h3>
+                        <p>{film.szereplok}</p>
+                    </div>
+                    <div className="film-video">
                         {/* <iframe idth="420" height="315" src={film.trailer} allowfullscreen /> */}
-                        {film.trailer}
+                        {/* {film.trailer} */}
                         {/* <YouTube /> */}
                         <div class="ratio ratio-16x9">
                             <iframe
@@ -156,40 +169,68 @@ const Egyedi = () => {
                                 allowfullscreen
                             ></iframe>
                         </div>
-                    </p>
+                    </div>
                     {ertekelt ? (
-                        <p
-                            className="csillag-ertekeles"
-                            style={{ display: 'flex', alignItems: 'center' }}
-                        >
-                            Értékelés:
-                            <span onClick={() => atvalt(1)}>
-                                <img className="ertekeles" src={Urescsillag} />
-                            </span>
-                            <span onClick={() => atvalt(2)}>
-                                <img className="ertekeles" src={Urescsillag} />
-                            </span>
-                            <span onClick={() => atvalt(3)}>
-                                <img className="ertekeles" src={Urescsillag} />
-                            </span>
-                            <span onClick={() => atvalt(4)}>
-                                <img className="ertekeles" src={Urescsillag} />
-                            </span>
-                            <span onClick={() => atvalt(5)}>
-                                <img className="ertekeles" src={Urescsillag} />
-                            </span>
-                            <input
-                                type="submit"
-                                value="Szavazás"
-                                style={{
-                                    height: '200px',
-                                    width: '450px',
-                                    fontSize: '80px',
-                                }}
-                                onClick={szavazas}
-                            />
-                        </p>
-                    ) : null}
+                        <div className="csillag-ertekeles">
+                            <div className="csillag-ertekeles-szoveg">
+                                <span>Értékelés:</span>
+                                <span
+                                    onClick={() => atvalt(1)}
+                                    className="ertekeles"
+                                >
+                                    <img
+                                        src={Urescsillag}
+                                        className="ertekeles-csillag"
+                                    />
+                                </span>
+                                <span
+                                    onClick={() => atvalt(2)}
+                                    className="ertekeles"
+                                >
+                                    <img
+                                        src={Urescsillag}
+                                        className="ertekeles-csillag"
+                                    />
+                                </span>
+                                <span
+                                    onClick={() => atvalt(3)}
+                                    className="ertekeles"
+                                >
+                                    <img
+                                        src={Urescsillag}
+                                        className="ertekeles-csillag"
+                                    />
+                                </span>
+                                <span
+                                    onClick={() => atvalt(4)}
+                                    className="ertekeles"
+                                >
+                                    <img
+                                        src={Urescsillag}
+                                        className="ertekeles-csillag"
+                                    />
+                                </span>
+                                <span
+                                    onClick={() => atvalt(5)}
+                                    className="ertekeles"
+                                >
+                                    <img
+                                        src={Urescsillag}
+                                        className="ertekeles-csillag"
+                                    />
+                                </span>
+                            </div>
+                            <div className="csillag-ertekeles-gomb">
+                                <input
+                                    type="submit"
+                                    value="Szavazás"
+                                    onClick={szavazas}
+                                />
+                            </div>
+                        </div>
+                    ) : (
+                        <div></div>
+                    )}
                 </div>
             </div>
         </div>
