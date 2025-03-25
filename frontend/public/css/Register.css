@@ -186,7 +186,7 @@ div.text {
         
         .kepek-tarto {
             grid-template-columns: repeat(2, 1fr);
-            
+            overflow: scroll;
         }
 }
                         
