@@ -99,25 +99,25 @@ div.text {
     margin-top: 20px;
     background-color: #ffffff;
     border: 1px solid #000000;
-}
+    }
 
 .kepek-tarto.active {
     display: grid;
-}
-
+    }
+    
 .forgot-password {
     padding-left: 50px;
     margin-top: 20px;
     color: rgb(255, 255, 255);
     font-size: 16px;
     -webkit-text-stroke: 0.5px rgb(0, 0, 0);
-}
-
-.forgot-password a {
-    color: #954aff;
-    cursor: pointer;
-}
-
+    }
+    
+    .forgot-password a {
+        color: #954aff;
+        cursor: pointer;
+        }
+        
 .submit-container {
     display: flex;
     gap: 20px;
@@ -146,11 +146,11 @@ div.text {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-}
-
-.button-37:hover {
-    box-shadow: rgb(69, 7, 226) 0 3px 9px 0;
-    transform: translateY(-2px);
+    }
+    
+    .button-37:hover {
+        box-shadow: rgb(69, 7, 226) 0 3px 9px 0;
+        transform: translateY(-2px);
 }
 
 /* .FelsoNav {
@@ -163,24 +163,30 @@ div.text {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.FelsoNav a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin-right: 20px;
-}
-
-.input-button {
-    color: #000000;
-}
-
-.FelsoNav a:hover {
-    color: #4c00b4;
-} */
-
+    }
+    
+    .FelsoNav a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        margin-right: 20px;
+        }
+        
+        .input-button {
+            color: #000000;
+            }
+            
+            .FelsoNav a:hover {
+                color: #4c00b4;
+                } */
+                
 @media screen and (max-width: 768px) {
     .register-container {
         margin-top: 180px;
-    }
+        }
+        
+        .kepek-tarto {
+            grid-template-columns: repeat(2, 1fr);
+            overflow: scroll;
+        }
 }
+                        

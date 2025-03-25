@@ -205,3 +205,12 @@ select option {
     color: white;
 }
 
+@media screen and (max-width: 768px) {
+    .kepek-tarto {
+        grid-template-columns: repeat(2, 1fr);
+        overflow: scroll;
+        
+    }
+}
+   
+
