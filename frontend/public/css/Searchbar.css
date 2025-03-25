@@ -43,7 +43,7 @@ input[type='search']::placeholder {
 /* Ha szükséges, gomb stílus (de most nincs használva) */
 button {
     background-color: transparent;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 15px;
     margin-left: 10px;
