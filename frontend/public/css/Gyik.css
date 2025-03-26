@@ -26,13 +26,15 @@
     /* background-color: #fff; */
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px #000000;
 }
 
 .gyik-kategoriak h2 {
     margin-top: 0;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(75 113 201);
+    color: rgb(0 123 255);
+    
     margin-bottom: 15px;
 }
 
