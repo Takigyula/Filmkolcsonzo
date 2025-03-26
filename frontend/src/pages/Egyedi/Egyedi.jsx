@@ -16,6 +16,8 @@ const Egyedi = () => {
     const [isSeries, setIsSeries] = useState(false); // Új állapot a sorozat ellenőrzéséhez
 
     useEffect(() => {
+        console.log(ertekelt);
+        
         setIsLoggedIn(getBelep());
         const leker = async () => {
             // Először próbáljuk lekérni a filmeket
@@ -106,7 +108,7 @@ const Egyedi = () => {
         }
 
         if (isLoggedIn) {
-            window.alert('Sikeresen értékelted a filmet!');
+            // window.alert('Sikeresen értékelted a filmet!');
             let userId = JSON.parse(localStorage.getItem('user'))._id;
             console.log(userId);
             const response = await fetch(
@@ -121,10 +123,17 @@ const Egyedi = () => {
             );
 
             let valasz = await response.json();
+            console.log(valasz);
+            
 
             if (response.ok) {
                 console.log(valasz.msg);
                 window.location.reload();
+            } else {
+                window.alert(valasz.msg);
+                setErtekelt(false);
+                window.location.reload();
+
             }
         } else {
             window.alert('A szavazáshoz be kell jelentkezned!');
