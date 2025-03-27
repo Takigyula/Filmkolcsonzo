@@ -99,11 +99,20 @@ body::-webkit-scrollbar {
     height: 210px;
 }
 
+.slider-tipus {
+    color: rgb(224, 224, 224);
+}
+
+.slider-category {
+    color: rgb(151, 151, 151);
+}
+
 h3 {
-    color: white;
+    color: rgb(239, 239, 239);
     position: absolute;
     font-size: 25px;
     margin: -20px;
+    text-shadow: 2px 2px #000000;
 }
 
 /* .home-main-container {

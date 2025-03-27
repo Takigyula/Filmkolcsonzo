@@ -56,6 +56,31 @@ const Home = () => {
             kep: '/images/chernobyl.jpg',
             kategoria: 'Sorozatok',
         },
+        {
+            id: '67e27a2824cb366cb83f1f9a',
+            cim: 'Trónok harca',
+            kep: '/images/tronokharca.jpg',
+            kategoria: 'Sorozatok',
+        },
+        {
+            id: '67d9b2ed090b3d0c91373839',
+            cim: 'Peaky Blinders',
+            kep: '/images/peakyblinders.jpg',
+            kategoria: 'Sorozatok',
+        },
+        {
+            id: '6787b883a49a844062cbfbdb',
+            cim: 'Arcane',
+            kep: '/images/arcane.jpg',
+            kategoria: 'Sorozatok',
+        },
+        {
+            id: '67d820dcf4265c3e74ca42cb',
+            cim: 'Gran Turismo',
+            kep: '/images/GranTurismo.jpg',
+            kategoria: 'Filmek',
+        },
+        
     ];
 
     const betolt = (index) => {
