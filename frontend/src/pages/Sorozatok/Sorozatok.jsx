@@ -24,14 +24,50 @@ const Sorozatok = () => {
                       )
                     : result.sorozatok;
                 console.log(result.sorozatok.length);
+                if (kiSorozatok && kiSorozatok.length > 0)
+                    setSorozatok(kiSorozatok);
+                else setSorozatok(nezhetoSorozatok);
+                let szelesseg = window.innerWidth;
+
                 let i = Math.ceil(result.sorozatok.length / 6);
                 let homeContainer = document.querySelector(
                     '.sorozat-home-container'
                 );
-                homeContainer.style.height = `${i * 200 + 1000}px`;
-                if (kiSorozatok && kiSorozatok.length > 0)
-                    setSorozatok(kiSorozatok);
-                else setSorozatok(nezhetoSorozatok);
+                if (szelesseg < 600) {
+                    i = result.sorozatok.length;
+                    console.log(i);
+                    if (i < 2) {
+                        homeContainer.style.height = `${2 * 320 + 800}px`;
+                    } else {
+                        homeContainer.style.height = `${i * 320 + 1000}px`;
+                    }
+                } else if (szelesseg < 1000) {
+                    let j = Math.ceil(result.sorozatok.length / 2);
+                    console.log(i);
+
+                    if (i < 3) {
+                        homeContainer.style.height = `${2 * 320 + 800}px`;
+                    } else {
+                        homeContainer.style.height = `${j * 320 + 800}px`;
+                    }
+                } else if (szelesseg < 1500) {
+                    console.log(i);
+                    let j = Math.ceil(result.sorozatok.length / 4);
+                    homeContainer.style.height = `${j * 320 + 800}px`;
+                    // if (i < 5) {
+                    //     homeContainer.style.height = `${1.5 * 320 + 800}px`;
+                    // } else {
+                    // }
+                } else {
+                    console.log(i);
+                    let j = Math.ceil(result.sorozatok.length / 6);
+                    console.log(j);
+                    homeContainer.style.height = `${j * 320 + 800}px`;
+                    // if (i < 7) {
+                    //     homeContainer.style.height = `${2 * 320 + 800}px`;
+                    // } else {
+                    // }
+                }
             }
         };
 
@@ -39,16 +75,35 @@ const Sorozatok = () => {
     }, [kiSorozatok]);
 
     const betolt = (index) => {
+        let szelesseg = window.innerWidth;
         console.log(sorozatok.length);
-        let i = Math.ceil(sorozatok.length / 6);
-        console.log(i * 250 + 1000);
         let homeContainer = document.querySelector('.sorozat-home-container');
+
+        let i = Math.ceil(sorozatok.length / 6);
+        if (szelesseg < 600) {
+            console.log(i);
+            i = sorozatok.length;
+            homeContainer.style.height = `${i * 320 + 1000}px`;
+        } else if (szelesseg < 1000) {
+            console.log(i);
+            i = Math.ceil(sorozatok.length / 2);
+            homeContainer.style.height = `${i * 320 + 800}px`;
+        } else if (szelesseg < 1500) {
+            i = Math.ceil(sorozatok.length / 4);
+            console.log(i);
+            homeContainer.style.height = `${i * 320 + 800}px`;
+        } else {
+            console.log(i);
+            homeContainer.style.height = `${i * 320 + 800}px`;
+        }
+
         homeContainer.style.backgroundImage = `url('/images/${sorozatok[index].plakat}')`;
-        homeContainer.style.height = `${i * 250 + 1000}px`;
+        // homeContainer.style.height = `${i * 250 + 1000}px`;
 
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
+        let sliderInfoRaiting = document.querySelector('.slider-raiting');
 
         sliderInfoImg.src = `/images/${sorozatok[index].plakat}`;
         sliderInfoKategoria.innerText = sorozatok[index].kategoria;
@@ -57,15 +112,24 @@ const Sorozatok = () => {
         let thumbImg = document.querySelectorAll('.thumb-img');
         thumbImg[index].style.border = '3px solid red';
 
+        let csillagok = '';
+
+        for (let i = 0; i < sorozatok[index].stars; i++) {
+            csillagok += '*';
+        }
+        console.log(sorozatok[index]);
+
+        sliderInfoRaiting.innerText = csillagok;
+
         // A kiválasztott sorozat azonosítójának tárolása
         setSelectedSorozatId(sorozatok[index]._id);
     };
 
     const leker = () => {
         if (selectedSorozatId) {
-            window.location.href = `/egyedi/${selectedSorozatId}`;
+            window.location.href = `/egyedisorozat/${selectedSorozatId}`;
         } else {
-            window.location.href = `/egyedi/678519e1256d101fad46a800`;
+            window.location.href = `/egyedisorozat/678519e1256d101fad46a800`;
         }
     };
 
@@ -99,7 +163,7 @@ const Sorozatok = () => {
                                     alt=""
                                 />
                                 <div className="slider-raitings">
-                                    <p className="slider-raiting">*****</p>
+                                    <p className="slider-raiting"></p>
                                     <p className="slider-category">
                                         <span className="category">
                                             Kategória: &nbsp;

@@ -6,7 +6,7 @@ import Telicsillag from './telicsillag.png';
 import Urescsillag from './urescsillag.png';
 import BelepContext from '../../utils/LoginContext';
 
-const Egyedi = () => {
+const EgyediSorozat = () => {
     const { id } = useParams();
     const { getBelep } = useContext(BelepContext);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -30,7 +30,7 @@ const Egyedi = () => {
                 let result = await response.json();
                 let egyediFilm = result.filmek.find((film) => film._id === id);
 
-                if (getBelep()) {
+                if (getBelep) {
                     let userId = String(
                         JSON.parse(localStorage.getItem('user'))._id
                     );
@@ -54,29 +54,29 @@ const Egyedi = () => {
                     // Háttérkép beállítása
                     // let egyediKontener = document.querySelector('.egyedi-container');
                     // egyediKontener.style.backgroundImage = `url('/images/${egyediFilm.plakat}')`;
-                    // } else {
-                    //     // Ha nem találtunk filmet, próbáljuk lekérni a sorozatokat
-                    //     response = await fetch(
-                    //         'http://localhost:3500/api/cinema/sorozatok/series'
-                    //     );
+                } else {
+                    // Ha nem találtunk filmet, próbáljuk lekérni a sorozatokat
+                    response = await fetch(
+                        'http://localhost:3500/api/cinema/sorozatok/series'
+                    );
 
-                    //     if (response.ok) {
-                    //         result = await response.json();
-                    //         let egyediSorozat = result.sorozatok.find(
-                    //             (sorozat) => sorozat._id === id
-                    //         );
+                    if (response.ok) {
+                        result = await response.json();
+                        let egyediSorozat = result.sorozatok.find(
+                            (sorozat) => sorozat._id === id
+                        );
 
-                    //         if (egyediSorozat) {
-                    //             // Ha találtunk sorozatot, beállítjuk az állapotokat
-                    //             setFilm(egyediSorozat);
-                    //             setIsSeries(true);
+                        if (egyediSorozat) {
+                            // Ha találtunk sorozatot, beállítjuk az állapotokat
+                            setFilm(egyediSorozat);
+                            setIsSeries(true);
 
-                    //             // Háttérkép beállítása
-                    //             let egyediKontener =
-                    //                 document.querySelector('.egyedi-container');
-                    //             egyediKontener.style.backgroundImage = `url('/images/${egyediSorozat.plakat}')`;
-                    //         }
-                    //     }
+                            // Háttérkép beállítása
+                            let egyediKontener =
+                                document.querySelector('.egyedi-container');
+                            egyediKontener.style.backgroundImage = `url('/images/${egyediSorozat.plakat}')`;
+                        }
+                    }
                 }
             }
         };
@@ -246,4 +246,4 @@ const Egyedi = () => {
     );
 };
 
-export default Egyedi;
+export default EgyediSorozat;

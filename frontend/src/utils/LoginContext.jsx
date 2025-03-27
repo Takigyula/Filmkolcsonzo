@@ -8,7 +8,8 @@ const LoginKezeles = (props) => {
     };
 
     const getBelep = () => {
-        return JSON.parse(localStorage.getItem('belepve'));
+        if (localStorage.getItem('belepve')) return true;
+        else return false;
     };
 
     const setAdmin = (adat) => {
@@ -29,7 +30,14 @@ const LoginKezeles = (props) => {
 
     return (
         <BelepContext.Provider
-            value={{ setBelep, getBelep, setAdmin, getAdmin, setAvatar, getAvatar }}
+            value={{
+                setBelep,
+                getBelep,
+                setAdmin,
+                getAdmin,
+                setAvatar,
+                getAvatar,
+            }}
         >
             {props.children}
         </BelepContext.Provider>

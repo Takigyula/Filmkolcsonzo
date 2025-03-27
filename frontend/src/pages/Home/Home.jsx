@@ -5,6 +5,7 @@ import FelsoNav from '../../components/Navbar/Navbar';
 
 const Home = () => {
     const [selectedId, setSelectedId] = useState(null);
+    const [category, setCategory] = useState('Filmek');
 
     const filmek = [
         {
@@ -50,7 +51,7 @@ const Home = () => {
             kategoria: 'Sorozatok',
         },
         {
-            id: '67835938f37449a20481478',
+            id: '67835938f37449a204814783',
             cim: 'Csernobil',
             kep: '/images/chernobyl.jpg',
             kategoria: 'Sorozatok',
@@ -77,6 +78,7 @@ const Home = () => {
         let sliderInfoImg = document.querySelector('.info-img');
         let sliderInfoKategoria = document.querySelector('.slider-tipus');
         let sliderInfoCim = document.querySelector('.slider-title');
+        let sliderInfoRaiting = document.querySelector('.slider-raiting');
 
         sliderInfoImg.src = filmek[index].kep;
         sliderInfoKategoria.innerText = filmek[index].kategoria;
@@ -85,12 +87,26 @@ const Home = () => {
         let thumbImg = document.querySelectorAll('.thumb-img');
         thumbImg[index].style.border = '3px solid red';
 
+        let csillagok = '';
+
+        for (let i = 0; i < filmek[index].stars; i++) {
+            csillagok += '*';
+        }
+        console.log(filmek[index]);
+
+        sliderInfoRaiting.innerText = csillagok;
+
         setSelectedId(filmek[index].id);
+        setCategory(filmek[index].kategoria);
     };
 
     const leker = () => {
         if (selectedId) {
-            window.location.href = `/egyedi/${selectedId}`;
+            if (category === 'Filmek') {
+                window.location.href = `/egyedi/${selectedId}`;
+            } else {
+                window.location.href = `/egyedisorozat/${selectedId}`;
+            }
         } else {
             window.location.href = `/egyedi/67835ebb82727553786771f0`;
         }
@@ -126,7 +142,7 @@ const Home = () => {
                                 alt=""
                             />
                             <div className="home-slider-raitings">
-                                <p className="slider-raiting">*****</p>
+                                <p className="slider-raiting"></p>
                                 <p className="slider-category">
                                     <span className="category">
                                         Kategória:{' '}

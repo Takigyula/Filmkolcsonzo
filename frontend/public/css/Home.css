@@ -1,5 +1,5 @@
 .home-container {
-    background-image: url('./images/deadpool.jpg');
+    background-image: url('/images/deadpool.jpg');
     background-attachment: fixed;
     background-size: cover;
     padding-top: 100px;

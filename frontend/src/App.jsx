@@ -10,6 +10,7 @@ import Egyedi from './pages/Egyedi/Egyedi';
 import Csomagok from './pages/Csomagok/Csomagok';
 import Profil from './pages/Profil/Profil';
 import Gyik from './pages/Gyik/Gyik';
+import EgyediSorozat from './pages/EgyediSorozat/EgyediSorozat';
 // import Kategoria from './pages/Kategorial/kategoria';
 
 function App() {
@@ -17,7 +18,14 @@ function App() {
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/egyedi/:id" element={<Egyedi />} />   
+                    <Route
+                        path="/egyedi/:id"
+                        element={<Egyedi />}
+                    />
+                    <Route
+                        path="/egyedisorozat/:id"
+                        element={<EgyediSorozat />}
+                    />
                     <Route
                         path="/"
                         element={<Home />}
