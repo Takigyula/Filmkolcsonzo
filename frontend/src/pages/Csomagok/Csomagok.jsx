@@ -7,16 +7,18 @@ const csomagok = [
     {
         id: 2,
         nev: 'Prémium',
-        leiras: 'Ez a prémium csomag, amely tartalmazza az összes funkcióval.',
-        ar: 19.99,
+        leiras: [
+        'Élvezd a korlátlan szórakozást kiváló minőségben!', 
+    ],
+        ar: 4.99,
         kedvezmeny: 10,
     },
     {
         id: 3,
         nev: 'Delux',
-        leiras: 'Ez a vállalati csomag, amely tartalmazza az összes funkcióval és további támogatással.',
-        ar: 29.99,
-        kedvezmeny: 20,
+        leiras: 'Tapasztald meg a legmagasabb szintű szórakozást! (A Delux csomag minden előnyt tartalmaz a Prémium csomagból.)',
+        ar: 14.99,
+        kedvezmeny: 10,
     },
 ];
 

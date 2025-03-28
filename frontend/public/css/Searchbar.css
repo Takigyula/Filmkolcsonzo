@@ -14,29 +14,24 @@ form {
 }
 
 input[type='search'] {
-    border: 2px solid rgba(255, 255, 255, 0.6); /* Átlátszó keret */
+    border: 3px solid rgba(117, 181, 245, 0.741); /* Átlátszó keret */
     padding: 10px 15px;
     font-size: 16px;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Átlátszó háttér */
-    color: white;
+    background-color: rgba(1, 0, 0, 0.599); /* Átlátszó háttér */
+    color: rgb(255, 255, 255);
     width: 300px;
     outline: none;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 input[type='search']:focus {
-    border-color: #000000;
-    background-color: rgba(
-        255,
-        255,
-        255,
-        0.4
-    ); /* Fókusz állapotban világosabb átlátszóság */
+    border-color: rgb(29, 157, 249);
+    background-color: rgba(0, 0, 0, 0.888); /* Fókusz állapotban világosabb átlátszóság */
 }
 
 input[type='search']::placeholder {
-    color: rgba(255, 255, 255, 0.6); /* A "Keresés" szöveg színe */
+    color: rgba(255, 255, 255, 0.701); /* A "Keresés" szöveg színe */
     font-style: italic;
 }
 

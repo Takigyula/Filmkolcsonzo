@@ -18,8 +18,13 @@
     padding: 0px;
 }
 
+html{
+    background-color: #252525 !important;
+}
+
+
 body {
-    background-color: black;
+    background-color: #252525 !important;
 
     font-family: 'Fredoka', sans-serif;
     margin: 0;
