@@ -190,6 +190,7 @@ const Egyedi = () => {
                                     <img
                                         src={Urescsillag}
                                         className="ertekeles-csillag"
+                                    alt="csillag1"
                                     />
                                 </span>
                                 <span
@@ -199,6 +200,7 @@ const Egyedi = () => {
                                     <img
                                         src={Urescsillag}
                                         className="ertekeles-csillag"
+                                        alt="csillag2"
                                     />
                                 </span>
                                 <span
@@ -208,6 +210,7 @@ const Egyedi = () => {
                                     <img
                                         src={Urescsillag}
                                         className="ertekeles-csillag"
+                                        alt="csillag3"
                                     />
                                 </span>
                                 <span
@@ -217,6 +220,7 @@ const Egyedi = () => {
                                     <img
                                         src={Urescsillag}
                                         className="ertekeles-csillag"
+                                        alt="csillag4"
                                     />
                                 </span>
                                 <span
@@ -226,6 +230,7 @@ const Egyedi = () => {
                                     <img
                                         src={Urescsillag}
                                         className="ertekeles-csillag"
+                                        alt="csillag5"
                                     />
                                 </span>
                             </div>
